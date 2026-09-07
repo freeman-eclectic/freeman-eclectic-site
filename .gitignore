@@ -5,3 +5,11 @@
 # React Router
 /.react-router/
 /build/
+
+# The design folder is working material, not source: the artboards, the
+# photograph archives (design/fb at 1536px, design/real's crops), the stock
+# originals and the bench texture. All of it stays on disk and none of it is
+# versioned. NOT BACKED UP by being in this repo — keep a copy elsewhere.
+# The approved artboards also live in the published canvas artifact, which can
+# be extracted back to working files if this folder is ever lost.
+design/

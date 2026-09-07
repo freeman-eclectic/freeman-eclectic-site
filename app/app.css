@@ -1,15 +1,73 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------------------
+   The Workbench — design tokens
+   Values lifted from the approved artboards, not rounded to a grid.
+   Light-only: the page is a dark wood surface, which is not the same thing as
+   a dark theme. There is deliberately no dark-mode variant.
+   --------------------------------------------------------------------------- */
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* paper + type */
+  --color-ground: #f6f1e8; /* cream: prints, light plate faces */
+  --color-ground-deep: #ede5d7; /* ash: the header strip, practical plates */
+  --color-ink: #2b2f33; /* slate charcoal: type on ash */
+  --color-ink-soft: #5c636a; /* secondary type on ash */
+  --color-line: #d9cfbf; /* hairline on ash */
+
+  /* accents */
+  --color-amber: #b7742e; /* primary accent on ash */
+  --color-amber-deep: #8f5820; /* amber, hovered */
+  --color-brass: #9c8a5a; /* muted labels, separators */
+  --color-tan: #c79a5f; /* the wordmark's "Eclectic", accents on dark */
+  --color-khaki: #c4b27e; /* eyebrows on slate */
+
+  /* the bench and the things resting on it */
+  --color-bench: #241e18; /* wood, showing through */
+  --color-bench-deep: #1e1a16; /* the page behind the wood */
+  --color-slate-plate: #22262a; /* engraved slate plates */
+  --color-slate-edge: oklch(96% 0.006 80 / 0.11); /* slate plate border */
+  --color-cream-dim: #dcd3c4; /* body copy on slate */
+  --color-cream-dimmer: #a8a29a; /* muted copy on slate */
+
+  /* fonts */
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* the two shadows that make an object sit ON the bench */
+  --shadow-plate: 18px 18px 0 rgb(0 0 0 / 0.45);
+  --shadow-print: 16px 16px 0 rgb(0 0 0 / 0.42);
+  --shadow-strip: 0 8px 0 rgb(0 0 0 / 0.34);
+
+  /* the reference width the scatter coordinates were drawn against */
+  --container-canvas: 1440px;
 }
 
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
-
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-bench-deep);
+    color: var(--color-ground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+  }
+  a {
+    color: var(--color-amber);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--color-amber-deep);
+  }
+  /* engraved type: cut into the slate, catching a little light on the lower lip */
+  .engrave {
+    text-shadow:
+      0 -1px 0 rgb(0 0 0 / 0.85),
+      0 1px 0 rgb(246 241 232 / 0.07);
+  }
+  /* cream type sitting directly on bare wood needs its own separation */
+  .on-wood {
+    text-shadow: 0 1px 2px rgb(0 0 0 / 0.7);
   }
 }
