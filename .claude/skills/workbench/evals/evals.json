@@ -1,0 +1,26 @@
+{
+  "skill_name": "workbench",
+  "evals": [
+    {
+      "id": 1,
+      "name": "add-a-section-to-an-existing-page",
+      "prompt": "Add a section to the For Business page covering lead times and what happens if a date slips. Put it after the order steps.",
+      "expected_output": "A new Band on /for-business using SlatePlate or AshPlate and design tokens, copy in app/content/business.ts rather than inline, the existing lead-time sentence used verbatim rather than a new invented number, no prices or store language, headings' line breaks guarded with hidden md:inline, and verification at 375/768/1280/1440 against band edges rather than document overflow.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "technical-sounding-request-that-is-really-design",
+      "prompt": "Make the site header stick to the top of the viewport when you scroll down.",
+      "expected_output": "Recognises AshStrip as the header, keeps it above the bench in the stacking order, preserves the ash strip's shadow-strip and 44px-minimum nav targets, and considers what a sticky pale strip does to the bench metaphor rather than just adding sticky top-0. Should not invent a new colour or a raw hex.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "add-pieces-to-the-table-grid",
+      "prompt": "We photographed three more boards. Add them to the pieces grid on For Your Table: a walnut one with a whitetail deer, an ash one with the Split Rock lighthouse, and a cherry one with a brook trout.",
+      "expected_output": "New entries in the PIECES array in app/content/table.ts using the existing PieceSpec shape, each with a dry specific caption in the house style and an Ask about this piece TextLink wired through pieceMail(name), no prices, no buttons. Should notice the image files do not exist yet and say so rather than inventing filenames that 404.",
+      "files": []
+    }
+  ]
+}
