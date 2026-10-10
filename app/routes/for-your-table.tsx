@@ -5,6 +5,7 @@ import { Band, Bench } from "~/components/Bench";
 import { Footer } from "~/components/Footer";
 import { AshPlate, Btn, Eyebrow, SlatePlate } from "~/components/Plate";
 import { TextLink } from "~/components/Bits";
+import { FACEBOOK_URL, INSTAGRAM_URL } from "~/content/contact";
 import { GalleryPhotograph } from "~/components/Lightbox";
 import { Print } from "~/components/Print";
 import {
@@ -22,11 +23,11 @@ import { EMAIL, pieceMail, plainMail } from "~/lib/mail";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "For Your Table — Freeman Eclectic" },
+    { title: "For Your Table | Freeman Eclectic" },
     {
       name: "description",
       content:
-        "Turned cribbage boards, games, engraved slate coasters, carved crosses and custom decor, made in one small Minnesota shop. No cart — ask about a piece and the answer comes back from the bench.",
+        "Cribbage boards, family games, engraved slate coasters and glassware, and custom decor, made in a small Minnesota shop. Ask about any piece by email.",
     },
   ];
 }
@@ -60,12 +61,12 @@ export default function ForYourTable() {
               Sit down and play.
             </h1>
             <p className="mt-[22px] max-w-[680px] text-[17.5px] leading-[1.6] text-ink-soft">
-              A game gets taught to a kid on a Saturday and argued over for years afterwards. That
-              is what these are built for &mdash; cribbage, Farkle, Wahoo, Mancala, Coin Drop,
-              Scratched, and the License Plate Hunt for the drive up north.
+              You teach a kid cribbage on a Saturday and argue over the score for years. We build
+              games for that: cribbage, Farkle, Wahoo, Mancala, Coin Drop, the horse racing game,
+              and the License Plate Hunt for the drive up north.
             </p>
             <p className="mt-3 flex flex-wrap items-center gap-x-3 text-[15px] text-ink-soft">
-              <TextLink href={pieceMail()}>Ask about this piece</TextLink>
+              <TextLink href={pieceMail()}>Ask about a piece</TextLink>
               <span className="text-brass" aria-hidden="true">
                 &middot;
               </span>
@@ -89,12 +90,13 @@ export default function ForYourTable() {
               The board comes out after supper.
             </h2>
             <p className="m-0 text-base leading-[1.6] text-ink-soft">
-              Round cribbage boards turned from a single hardwood blank, the peg holes drilled
-              around the rim and a carving cut into the well. Plus Farkle, Wahoo, Mancala, Coin Drop
-              and Scratched.
+              Cribbage boards for two players or four, so nobody at the table sits out. The round
+              ones have the peg holes drilled around the rim and a loon, a cabin, or a ship carved
+              in 3D at the center. Farkle trays with the scoring table engraved in, Chinese
+              checkers, and snakes and ladders.
             </p>
             <div className="mt-4.5">
-              <TextLink href={pieceMail()}>Ask about this piece</TextLink>
+              <TextLink href={pieceMail()}>Ask about a game</TextLink>
             </div>
           </AshPlate>
 
@@ -113,13 +115,13 @@ export default function ForYourTable() {
               Slate, glass, and a coffee ring.
             </h2>
             <p className="m-0 text-base leading-[1.6] text-cream-dim">
-              Engraved slate coasters &mdash; the pieces that leave the booth fastest &mdash; with
-              engraved drinkware, cutting boards, and glass dishes holding a carved wood inset. Made
-              to be used.
+              Slate coasters are the first thing to sell out at our craft-show booth. We also
+              engrave mugs, rocks glasses, and stemless glasses with a lake scene or a line of
+              Minnesota humor, and make hardwood cutting boards that stay out on the counter.
             </p>
             <div className="mt-4.5">
               <TextLink href={pieceMail()} tone="khaki">
-                Ask about this piece
+                Ask about a piece
               </TextLink>
             </div>
           </SlatePlate>
@@ -141,12 +143,12 @@ export default function ForYourTable() {
               Something to hand over.
             </h2>
             <p className="m-0 text-base leading-[1.6] text-ink-soft">
-              A wedding, a retirement, a cabin housewarming, a graduation. Carved crosses, turned
-              boards and coasters in cherry, walnut, maple and ash. Add a name and it becomes a
-              keepsake.
+              For a wedding, a retirement, or a cabin housewarming. A cribbage board in black
+              walnut, or a set of coasters with the name of their lake. Add a name and a date and
+              it becomes a keepsake.
             </p>
             <div className="mt-4.5">
-              <TextLink href={pieceMail()}>Ask about this piece</TextLink>
+              <TextLink href={pieceMail()}>Ask about a gift</TextLink>
             </div>
           </AshPlate>
 
@@ -156,13 +158,13 @@ export default function ForYourTable() {
               For the wall and the door.
             </h2>
             <p className="m-0 text-base leading-[1.6] text-cream-dim">
-              Turned oak medallions and rosettes, carved crosses, name boards with coat hooks, and
-              carved scenes of cabins, pines and lighthouses. Tell us the room and we will draw
-              something for it.
+              Live-edge family name boards with coat hooks, plaques, and engraved scenes of
+              cabins, pines, and lighthouses. Tell us about the room and we will draw something
+              for it.
             </p>
             <div className="mt-4.5">
               <TextLink href={pieceMail()} tone="khaki">
-                Ask about this piece
+                Ask about custom decor
               </TextLink>
             </div>
           </SlatePlate>
@@ -189,9 +191,8 @@ export default function ForYourTable() {
               Pick one out and ask about it.
             </h2>
             <p className="m-0 text-[16.5px] leading-[1.6] text-ink-soft">
-              Every one of these came off the bench. There is no cart on this site &mdash; if
-              something here is close to what you want, ask, and we will tell you what it takes to
-              make one like it.
+              We made every one of these. If something here is close to what you want, ask about
+              it and we will tell you what it takes to make one for you.
             </p>
           </AshPlate>
 
@@ -214,9 +215,9 @@ export default function ForYourTable() {
               Put the name on it.
             </h2>
             <p className="m-0 text-[16.5px] leading-[1.6] text-ink-soft">
-              Names, dates, and a place can be engraved into most pieces &mdash; in the well of a
-              turned board, along the edge of a long one, or across the face of slate. Tell us the
-              wording and we will send a mockup before anything is cut.
+              We can engrave a name, a date, or a place on most pieces: along the edge of a long
+              cribbage board, across the face of a slate coaster, or down the side of a glass. Send
+              the wording and we will send back a mockup before anything is cut.
             </p>
           </AshPlate>
           {personalisationPrints.map((s) => (
@@ -233,11 +234,11 @@ export default function ForYourTable() {
               How to ask
             </Eyebrow>
             <h2 className="m-0 mb-4 font-serif text-[clamp(1.55rem,2.8vw,32px)] font-light leading-[1.14] text-ink">
-              There is no cart here, by design.
+              Ask, and we will write back.
             </h2>
             <p className="m-0 text-[17px] leading-[1.6] text-ink-soft">
-              Nothing on this site is bought with a click. An email or a message reaches the shop
-              directly, and the answer comes back from the bench.
+              There is no checkout on this site. Email us or send a message, and the people who
+              make the pieces will answer.
             </p>
             <hr className="mt-[30px] mb-6 h-px border-0 bg-line" />
             <Eyebrow tone="brass" className="mb-3">
@@ -253,7 +254,7 @@ export default function ForYourTable() {
             </div>
             <div className="mt-[30px] flex flex-wrap gap-3.5">
               <Btn href={pieceMail()} variant="ink">
-                Ask about this piece
+                Ask about a piece
               </Btn>
               <Btn href={plainMail} variant="outline">
                 Email us
@@ -263,8 +264,8 @@ export default function ForYourTable() {
               <a href={plainMail}>{EMAIL}</a>
               <span className="text-brass">&nbsp;&middot;&nbsp;</span>
               Or send us a message on{" "}
-              <a href="https://www.instagram.com/">Instagram</a> or{" "}
-              <a href="https://www.facebook.com/p/Freeman-Eclectic-61572489123732/">Facebook</a>.
+              <a href={INSTAGRAM_URL}>Instagram</a> or{" "}
+              <a href={FACEBOOK_URL}>Facebook</a>.
             </p>
           </AshPlate>
           {askPrints.map((s) => (

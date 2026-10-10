@@ -80,7 +80,7 @@ export const standardPrints: PrintSpec[] = [
 export const placePrints: PrintSpec[] = [
   { src: "/img/aurora-lake-slate-coaster-img_5373.webp", w: 600, h: 350, l: 3.89, t: 4.69, rot: -1.6, z: 1,
     alt: "A slate coaster engraved with the northern lights over a lake",
-    caption: "Northern lights over the lake, in slate. The North Shore turns up in the work a lot." },
+    caption: "Northern lights over the lake, engraved in slate." },
   { src: "/img/island-lake-slate-coaster-img_5397.webp", w: 300, h: 186, l: 8.33, t: 68.75, rot: 1.9, z: 2,
     alt: "A slate coaster engraved with a pine island on a lake",
     caption: "An island lake, engraved in slate." },
@@ -97,7 +97,7 @@ export const closePrints: PrintSpec[] = [
     minor: true,
     alt: "A slate coaster engraved with a dock and the name Lone Lake" },
   { src: "/img/round-wooden-marble-game-board-img_4051.webp", w: 250, h: 180, l: 78.47, t: 9.52, rot: 2.3, z: 1,
-    alt: "A round wooden marble game board with coloured marbles and a die",
+    alt: "A round wooden marble game board with colored marbles and a die",
     caption: "Marbles, a round board, and an afternoon." },
   { src: "/img/foggy-dock-slate-coaster-img_5372.webp", w: 260, h: 120, l: 77.5, t: 71.43, rot: -1.7, z: 1,
     minor: true,
@@ -109,25 +109,25 @@ export const PROCESS_SPLIT = [
   {
     label: "What the machines do",
     body:
-      "Hold a line, repeat a design across a whole run, and cut a relief deeper and cleaner " +
-      "than a blade alone would. They do the patient, exact, unglamorous part, and they do it " +
-      "the same way on the tenth piece as on the first.",
+      "Hold a line, repeat a design across a whole order, and cut a relief deeper and cleaner " +
+      "than a hand chisel would. They do the exact, repetitive part, the same way on the " +
+      "last piece as on the first.",
   },
   {
     label: "What the hands do",
     body:
       "Read the grain and set the blank so the figure lands where it should. Choose the depth. " +
-      "Break the edges, sand through the grits, and stop when the surface is right rather than " +
-      "when the clock says so. Then decide the piece is done.",
+      "Break the edges, sand through the grits, and stop when the surface feels right, " +
+      "however long that takes.",
   },
 ];
 
-export const HARDWOODS = ["Cherry", "Walnut", "Maple", "Ash"];
+export const HARDWOODS = ["Cherry", "Walnut", "Maple"];
 
 /** The four questions a piece has to pass before it joins the line. */
 export const STANDARD_TESTS = [
-  { n: "01", test: "Useful, meaningful, or memorable", note: "It earns a place on a table, a wall, or a desk." },
-  { n: "02", test: "Original, not fad-driven", note: "Still considered in ten years, not dated in two." },
-  { n: "03", test: "Matched to the promise", note: "Material, machining, engraving and finish all hold up." },
-  { n: "04", test: "Worth the shop's name on it", note: "We would be glad to see it years from now." },
+  { n: "01", test: "Useful or memorable", note: "Someone will use it, play it, or hang it up." },
+  { n: "02", test: "Our own design", note: "It will still look good after the trend has passed." },
+  { n: "03", test: "Worth the price", note: "The material, carving, engraving, and finish all hold up." },
+  { n: "04", test: "Worth our name", note: "We would be glad to see it on a shelf years from now." },
 ];

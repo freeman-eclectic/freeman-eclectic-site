@@ -15,9 +15,8 @@ export const BANDS = {
   gifts: 390,
   wholesale: 370,
   materials: 570,
-  order: 630,
+  order: 760,
   lead: 150,
-  quote: 560,
 } as const;
 
 export const openingPrints: PrintSpec[] = [
@@ -38,7 +37,7 @@ export const openingPrints: PrintSpec[] = [
 export const awardsPrints: PrintSpec[] = [
   { src: "/img/black-walnut-golfer-cribbage-board-img_2944.webp", w: 290, h: 216, l: 55.28, t: 5.5, rot: 2.5, z: 3,
     alt: "A round black walnut cribbage board with a golfer mid-swing carved in relief",
-    caption: "Black walnut, carved with a golfer mid-swing. A tournament piece." },
+    caption: "Black walnut, carved with a golfer mid-swing." },
   { src: "/img/round-barn-trading-co-slate-coaster-img_5324.webp", w: 250, h: 160, l: 78.61, t: 39.5, rot: -2, z: 1,
     alt: "A slate coaster engraved with the Round Barn Trading Co. barn and name",
     caption: "Round Barn Trading Co., engraved in slate." },
@@ -47,7 +46,7 @@ export const awardsPrints: PrintSpec[] = [
 export const appreciationPrints: PrintSpec[] = [
   { src: "/img/legendary-north-lumberjack-longhorn-slate-coaster-img_5649.webp", w: 270, h: 210, l: 3.89, t: 4.4, rot: -2.2, z: 1,
     alt: "A slate coaster engraved “Welcome to the Legendary North” with a lumberjack and an ox",
-    caption: "Minnesota humour on a slate coaster. These leave the booth fastest." },
+    caption: "Minnesota humor on a slate coaster. These leave the booth fastest." },
   { src: "/img/heroes-helping-heroes-rocks-glass-img_5110.webp", w: 250, h: 186, l: 29.17, t: 30, rot: 1.8, z: 3,
     alt: "A rocks glass engraved “Heroes Helping Heroes” with a vertical American flag",
     caption: "A rocks glass for Heroes Helping Heroes, the flag engraved down the side." },
@@ -57,12 +56,12 @@ export const appreciationPrints: PrintSpec[] = [
 ];
 
 export const giftsPrints: PrintSpec[] = [
-  { src: "/img/1776-liberty-bell-rocks-glass-img_5290.webp", w: 280, h: 240, l: 54.86, t: 4.62, rot: 2.3, z: 3,
-    alt: "A rocks glass engraved with the Liberty Bell and 1776",
-    caption: "The Liberty Bell and 1776, engraved on a rocks glass." },
-  { src: "/img/aerial-lift-bridge-tall-ship-slate-coaster-img_5488.webp", w: 250, h: 172, l: 78.47, t: 38.97, rot: -2.1, z: 1,
-    alt: "A slate coaster engraved with a tall ship passing under the Duluth aerial lift bridge",
-    caption: "The Duluth lift bridge, engraved in slate." },
+  { src: "/img/black-walnut-loon-cribbage-board-img_2837.webp", w: 280, h: 240, l: 54.86, t: 4.62, rot: 2.3, z: 3,
+    alt: "A round black walnut cribbage board with a 3D-carved loon",
+    caption: "A loon in walnut. The carving is cut deep, then finished by hand." },
+  { src: "/img/split-rock-lighthouse-slate-coaster-img_5454.webp", w: 250, h: 172, l: 78.47, t: 38.97, rot: -2.1, z: 1,
+    alt: "A slate coaster engraved with Split Rock Lighthouse on its cliff",
+    caption: "Split Rock Lighthouse, engraved in slate." },
 ];
 
 export const wholesalePrints: PrintSpec[] = [
@@ -71,7 +70,7 @@ export const wholesalePrints: PrintSpec[] = [
     caption: "“Back on the North Shore.” Slate, engraved." },
   { src: "/img/five-personalized-monogram-slate-coasters-img_5653.webp", w: 200, h: 240, l: 29.72, t: 12.97, rot: 1.8, z: 3,
     alt: "A set of five slate coasters, each engraved with its own initial and surname",
-    caption: "Five coasters, five initials, five names. One order, personalised piece by piece." },
+    caption: "One order of five coasters, each with its own initial and name." },
 ];
 
 export const materialsPrints: PrintSpec[] = [
@@ -92,42 +91,27 @@ export const orderPrints: PrintSpec[] = [
     caption: "A rocks glass, engraved for America’s 250th." },
 ];
 
-export const quotePrints: PrintSpec[] = [
-  { src: "/img/bourbon-goes-in-wisdom-comes-out-rocks-glass-img_5292.webp", w: 300, h: 178, l: 4.31, t: 4.29, rot: -2.2, z: 1,
-    alt: "A rocks glass engraved “Bourbon goes in, wisdom comes out”",
-    caption: "“Bourbon goes in, wisdom comes out.” A rocks glass, engraved." },
-  { src: "/img/split-rock-lighthouse-slate-coaster-img_5454.webp", w: 250, h: 290, l: 78.47, t: 6.43, rot: 2.3, z: 2,
-    alt: "A slate coaster engraved with Split Rock Lighthouse on its cliff",
-    caption: "Split Rock Lighthouse, engraved in slate." },
-  { src: "/img/things-get-wild-two-harbors-bigfoot-moose-slate-coaster-img_5617.webp", w: 230, h: 210, l: 3.47, t: 48.21, rot: 1.7, z: 2,
-    alt: "A slate coaster engraved “Things get a little wild in Two Harbors”, with Bigfoot riding a moose",
-    caption: "Slate, engraved. The joke is optional; the coffee ring is not." },
-  { src: "/img/can-t-hear-you-over-the-loons-bigfoot-slate-coaster-img_5638.webp", w: 230, h: 130, l: 79.86, t: 68.93, rot: -2, z: 1,
-    minor: true,
-    alt: "A slate coaster engraved “Sorry... can’t hear you over the loons”, with Bigfoot lounging by a lake" },
-];
-
 /** The five columns under the materials strip. */
 export const CAPABILITIES = [
   {
-    label: "Turning",
-    copy: "Round boards and bowls turned from a single hardwood blank on the lathe.",
+    label: "Round boards",
+    copy: "Cribbage, Chinese checkers, and marble boards, drilled, with 3D carving.",
   },
   {
     label: "Cutting & carving",
-    copy: "Hardwoods cut to shape and carved in deep relief. Cherry, walnut, maple, ash.",
+    copy: "Hardwoods cut to shape and carved in deep relief. Cherry, walnut, and maple.",
   },
   {
     label: "Engraving",
-    copy: "On all five materials — wood, slate, glass, metal and acrylic.",
+    copy: "Wood, slate, glass, metal, and acrylic.",
   },
   {
-    label: "Personalisation",
-    copy: "Names, dates, a mark, and lines of text, added piece by piece.",
+    label: "Personalization",
+    copy: "A different name, date, or line of text on every piece in the order.",
   },
   {
     label: "Small-batch runs",
-    copy: "Ten pieces or a few hundred, made in batches as the bench allows.",
+    copy: "One design held exactly the same across the whole order.",
   },
 ];
 
@@ -136,13 +120,7 @@ export const ORDER_STEPS = [
   { n: "01", name: "Tell us", copy: "What it is for, how many, and when you need it." },
   { n: "02", name: "Mockup", copy: "We draw it up and send a proof, with the material named." },
   { n: "03", name: "Approve", copy: "You confirm the art, the wording, and the count." },
-  { n: "04", name: "Make", copy: "Turned, cut, carved, engraved, then sanded and finished by hand." },
-  { n: "05", name: "Ship", copy: "Packed and sent, with tracking. We ship nationwide." },
+  { n: "04", name: "Make", copy: "Cut, carved, or engraved, then sanded and finished by hand." },
+  { n: "05", name: "Ship", copy: "Packed and shipped anywhere in the country." },
 ];
 
-/** The three answers the quote email asks for. */
-export const QUOTE_ASKS = [
-  { label: "What it is for", copy: "An award, a gift, a run." },
-  { label: "How many", copy: "A count, or a range." },
-  { label: "When", copy: "The date you need it." },
-];

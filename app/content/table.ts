@@ -14,7 +14,7 @@ import type { PrintSpec } from "~/components/Print";
 
 export const BANDS = {
   opening: 480,
-  games: 600,
+  games: 680,
   gifts: 600,
   pieces: 1806,
   personalisation: 294,
@@ -29,7 +29,7 @@ export const openingPrints: PrintSpec[] = [
     alt: "A wooden Farkle tray with the scoring table engraved into the floor",
     caption: "The scoring table, engraved so nobody argues." },
   { src: "/img/round-wooden-marble-game-board-img_4051.webp", w: 210, h: 140, l: 3.89, t: 52.5, rot: 1.9, z: 2,
-    alt: "A round wooden marble game board with coloured marbles and a die",
+    alt: "A round wooden marble game board with colored marbles and a die",
     caption: "Marbles, a round board, and an afternoon." },
   { src: "/img/coffee-is-like-duct-tape-slate-coaster-img_5631.webp", w: 260, h: 140, l: 75.83, t: 52.08, rot: -2.1, z: 2,
     alt: "A slate coaster engraved “Coffee is like duct tape, it fixes everything”",
@@ -38,7 +38,7 @@ export const openingPrints: PrintSpec[] = [
 
 export const gamesPrints: PrintSpec[] = [
   { src: "/img/round-wooden-chinese-checkers-board-img_4046.webp", w: 300, h: 200, l: 50.42, t: 3, rot: 2.4, z: 2,
-    alt: "A round wooden Chinese checkers board with coloured marbles set in play",
+    alt: "A round wooden Chinese checkers board with colored marbles set in play",
     caption: "Chinese checkers, turned round and drilled for the marbles." },
   { src: "/img/wooden-snakes-ladders-game-set-img_3872.webp", w: 276, h: 180, l: 74.58, t: 3.67, rot: -2.2, z: 2,
     alt: "A wooden snakes and ladders board engraved across its face, with numbered tokens and a die",
@@ -63,7 +63,7 @@ export const giftsPrints: PrintSpec[] = [
 export const personalisationPrints: PrintSpec[] = [
   { src: "/img/heyer-family-live-edge-coat-rack-img_0015.webp", w: 452, h: 172, l: 63.06, t: 8.84, rot: 1.8, z: 2,
     alt: "A live-edge family name board with a carved cross and five coat hooks",
-    caption: "An example of personalisation — a family name carved into live-edge wood, with five hooks by the door." },
+    caption: "A family name carved into live-edge wood, with five hooks by the door." },
 ];
 
 export const askPrints: PrintSpec[] = [
@@ -287,7 +287,7 @@ export const ASK_FIELDS = [
     detail: "Name it, or describe it. A photo of something close helps.",
   },
   {
-    label: "When",
-    detail: "The date you need it in hand. Most orders ship within a few weeks.",
+    label: "When you need it",
+    detail: "The date it has to be in hand. Most orders ship within a few weeks.",
   },
 ];

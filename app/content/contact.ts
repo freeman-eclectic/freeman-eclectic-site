@@ -27,7 +27,7 @@ export const openingPrints: PrintSpec[] = [
 export const startingPrints: PrintSpec[] = [
   { src: "/img/personalized-rf-rectangular-cribbage-board-img_5159.webp", w: 290, h: 200, l: 70.14, t: 69.87, rot: 2.2, z: 2,
     alt: "A long straight cribbage board engraved with a monogram",
-    caption: "A long board, personalised with a monogram." },
+    caption: "A long board, personalized with a monogram." },
   { src: "/img/lake-patio-freighter-slate-coaster-img_5396.webp", w: 300, h: 150, l: 6.67, t: 85.26, rot: -1.9, z: 2,
     alt: "A slate coaster engraved with a porch view of two Adirondack chairs, a lantern, and a freighter on the lake",
     caption: "Two chairs, a lantern, and a freighter going by. Slate, engraved." },
@@ -45,7 +45,7 @@ export const findUsPrints: PrintSpec[] = [
 export const placePrints: PrintSpec[] = [
   { src: "/img/lake-shoreline-slate-coaster-img_5401.webp", w: 560, h: 330, l: 4.17, t: 6.06, rot: -1.8, z: 1,
     alt: "A slate coaster engraved with a pine shoreline mirrored in a lake",
-    caption: "A pine shoreline, mirrored in slate. The North Shore turns up in the work a lot." },
+    caption: "A pine shoreline, mirrored in the lake. Engraved in slate." },
   { src: "/img/heyer-family-live-edge-coat-rack-img_0015.webp", w: 320, h: 145, l: 7.36, t: 67.88, rot: 1.7, z: 2,
     alt: "A live-edge family name board with a carved cross and five coat hooks",
     caption: "A family name and five hooks, by the door." },
@@ -55,14 +55,14 @@ export const placePrints: PrintSpec[] = [
 export type TellRow = { label: string; hint: string };
 
 export const BUSINESS_TELL: TellRow[] = [
-  { label: "What it is for", hint: "An award, a client gift, a run for the shelf." },
+  { label: "What it is for", hint: "An award, a client gift, or stock for your shelf." },
   { label: "How many", hint: "A count, or a range if you are still deciding." },
   { label: "When you need it", hint: "The date it has to be in hand." },
 ];
 
 export const TABLE_TELL: TellRow[] = [
   { label: "Which piece", hint: "The one you saw, or the idea of it." },
-  { label: "When", hint: "The date you would like it by." },
+  { label: "When you need it", hint: "The date you would like it by." },
 ];
 
 export const FACEBOOK_URL = "https://www.facebook.com/p/Freeman-Eclectic-61572489123732/";

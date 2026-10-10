@@ -9,25 +9,23 @@ import {
   BANDS,
   CAPABILITIES,
   ORDER_STEPS,
-  QUOTE_ASKS,
   appreciationPrints,
   awardsPrints,
   giftsPrints,
   materialsPrints,
   openingPrints,
   orderPrints,
-  quotePrints,
   wholesalePrints,
 } from "~/content/business";
 import { EMAIL, plainMail, quoteMail } from "~/lib/mail";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "For Business — Freeman Eclectic" },
+    { title: "For Business | Freeman Eclectic" },
     {
       name: "description",
       content:
-        "Awards, client and employee gifts, corporate gifts, and wholesale runs, turned, carved and engraved in one small Minnesota shop. A mockup before anything is cut.",
+        "Awards, client and employee gifts, corporate gifts, and wholesale, carved and engraved in a small Minnesota shop. You approve a mockup before anything is cut.",
     },
   ];
 }
@@ -44,7 +42,6 @@ const photographsInPageOrder = [
   ...wholesalePrints,
   ...materialsPrints,
   ...orderPrints,
-  ...quotePrints,
 ];
 
 export default function ForBusiness() {
@@ -63,9 +60,8 @@ export default function ForBusiness() {
               pieces, crafted in Minnesota.
             </h1>
             <p className="mt-6 max-w-[640px] text-[17px] leading-[1.6] text-cream-dim">
-              Commissioning means the piece is made for you &mdash; your mark, your words, your
-              count. We turn, carve, and engrave in wood, slate, glass, metal, and acrylic, and you
-              approve a mockup before anything is cut. Nothing here is picked off a shelf.
+              We put your logo and your wording on pieces carved and engraved in wood, slate,
+              glass, metal, and acrylic. You see a mockup and approve it before anything is cut.
             </p>
             <p className="mt-5 flex flex-wrap items-center gap-x-2 text-sm text-cream-dimmer">
               <TextLink href={quoteMail} tone="khaki">
@@ -94,9 +90,9 @@ export default function ForBusiness() {
               Something that stays on the desk.
             </h2>
             <p className="m-0 text-base leading-[1.6] text-cream-dim">
-              For service years, sales records, retirements, and the volunteer nobody wants to lose.
-              Turned hardwood, engraved slate, or glass with a carved wood inset &mdash; sized to sit
-              out rather than go in a drawer. Names, dates, and a mark go on the face.
+              For years of service, a retirement, a tournament, or the volunteer nobody wants to
+              lose. Carved hardwood or engraved slate and glass, sized to sit out instead of going
+              in a drawer, with the name, the date, and your logo on the face.
             </p>
             <div className="mt-4">
               <TextLink href={quoteMail} tone="khaki">
@@ -119,10 +115,9 @@ export default function ForBusiness() {
               A thank-you they will actually use.
             </h2>
             <p className="m-0 text-base leading-[1.6] text-cream-dim">
-              Slate coasters, engraved drinkware, cutting boards, and small carved pieces &mdash;
-              things that go home and get used. Good for a closing gift, a work anniversary, or the
-              whole crew at once. We can put a different name on every piece, or hold one design
-              across the run.
+              Slate coasters, engraved glasses and mugs, cutting boards, bottle openers, and
+              keychains. They go home and get used. Order one for a closing gift or a work
+              anniversary, or enough for the whole crew, with a different name on every piece.
             </p>
             <div className="mt-4">
               <TextLink href={quoteMail} tone="khaki">
@@ -145,9 +140,9 @@ export default function ForBusiness() {
               A gift with the state in it.
             </h2>
             <p className="m-0 text-base leading-[1.6] text-cream-dim">
-              Cribbage boards, Farkle, coasters, and carved scenes of the North Shore, the lift
-              bridge, and the lake country. Sent to a client, handed out at an event, or set on the
-              table at a conference. The place comes through without a logo having to shout.
+              Cribbage boards, Farkle sets, and coasters engraved with Split Rock, the lift bridge,
+              and the lake country. Send them to clients or hand them out at an event. Your logo can
+              go small in the corner and let Minnesota do the talking.
             </p>
             <div className="mt-4">
               <TextLink href={quoteMail} tone="khaki">
@@ -170,9 +165,9 @@ export default function ForBusiness() {
               Stock that sells in Minnesota.
             </h2>
             <p className="m-0 text-base leading-[1.6] text-cream-dim">
-              Slate coasters and long cribbage boards move fastest, and we can run them in a batch
-              with your town or your shop&rsquo;s name engraved. A reorder repeats the same design,
-              so the shelf looks the same in spring as it did in December.
+              Slate coasters with a little Minnesota humor sell fastest at our own craft-show booth.
+              We can engrave a batch with your town or your shop&rsquo;s name, and a reorder repeats
+              the approved design exactly.
             </p>
             <div className="mt-4">
               <TextLink href={quoteMail} tone="khaki">
@@ -192,7 +187,7 @@ export default function ForBusiness() {
           <SlatePlate l={4.44} t={56} w={1312} rot={-0.25} z={1} className={full}>
             <Eyebrow className="mb-5">Materials and capabilities</Eyebrow>
             <h2 className="engrave m-0 mb-6 font-serif text-[clamp(1.7rem,3.2vw,40px)] font-light leading-[1.1] text-ground">
-              Five materials, one bench.
+              Five materials, one shop.
             </h2>
             <MaterialsStrip tone="slate" />
             <hr className="mt-7 mb-6 h-px border-0 bg-[rgb(246_241_232/0.18)]" />
@@ -206,7 +201,7 @@ export default function ForBusiness() {
             </div>
             <hr className="mt-7 mb-5 h-px border-0 bg-[rgb(246_241_232/0.18)]" />
             <p className="m-0 font-serif text-[17px] italic leading-[1.4] text-[#e4dccc]">
-              A design is held steady across a run, so the tenth piece matches the first.
+              On a large order, the last piece matches the first.
             </p>
           </SlatePlate>
           {materialsPrints.map((s) => (
@@ -226,8 +221,8 @@ export default function ForBusiness() {
               Five steps, and a mockup before anything is cut.
             </h2>
             <p className="mt-0 mb-7 max-w-[700px] text-[16.5px] leading-[1.6] text-ink-soft">
-              Nothing is cut until you have seen it. Every step happens over email, and you will
-              always know which one you are on.
+              We're communicating with you every step of the way. You will see the design, the
+              wording, and the material before we start, and you will hear from us when it ships.
             </p>
             <div>
               {ORDER_STEPS.map((s, i) => (
@@ -239,6 +234,14 @@ export default function ForBusiness() {
                   <span className="text-[15.5px] leading-[1.5] text-ink-soft">{s.copy}</span>
                 </CatRow>
               ))}
+            </div>
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <Btn href={quoteMail} variant="ink">
+                Request a quote
+              </Btn>
+              <a href={plainMail} className="text-[15px] leading-[1.4] text-ink-soft">
+                {EMAIL}
+              </a>
             </div>
           </AshPlate>
           {orderPrints.map((s) => (
@@ -258,55 +261,6 @@ export default function ForBusiness() {
               </p>
             </div>
           </SlatePlate>
-        </div>
-      </Band>
-
-      {/* 7 · request a quote, on ash */}
-      <Band h={BANDS.quote} className="py-12 xl:py-0">
-        <div className={flow}>
-          <AshPlate l={27.78} t={50} w={792} rot={0.5} z={3} className={full}>
-            <Eyebrow tone="amber" className="mb-4">
-              Start here
-            </Eyebrow>
-            <h2 className="m-0 mb-4 font-serif text-[clamp(1.7rem,3.2vw,40px)] font-light leading-[1.12] text-ink">
-              Tell us what it is for, how many, and when.
-            </h2>
-            <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-11">
-              <div className="min-w-0 flex-auto">
-                <p className="mt-0 mb-6 text-[17px] leading-[1.6] text-ink-soft">
-                  Most of a quote comes down to three answers. Send them and we will come back with a
-                  quote and a date.
-                </p>
-                <Btn href={quoteMail} variant="ink">
-                  Request a quote
-                </Btn>
-                <p className="mt-4 mb-0 text-[15px] leading-[1.4] text-ink-soft">
-                  <a href={plainMail}>{EMAIL}</a>
-                </p>
-              </div>
-              <div className="md:flex-none md:basis-[250px]">
-                <Eyebrow tone="brass" className="mb-3 text-[11px]">
-                  The quote asks for
-                </Eyebrow>
-                <div>
-                  {QUOTE_ASKS.map((a, i) => (
-                    <div
-                      key={a.label}
-                      className={`py-2 ${i === QUOTE_ASKS.length - 1 ? "" : "border-b border-line"}`}
-                    >
-                      <p className="m-0 text-[15.5px] font-semibold leading-[1.4] text-ink">
-                        {a.label}
-                      </p>
-                      <p className="m-0 text-sm leading-[1.5] text-ink-soft">{a.copy}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </AshPlate>
-          {quotePrints.map((s) => (
-            <Print key={s.src} spec={s} />
-          ))}
         </div>
       </Band>
 

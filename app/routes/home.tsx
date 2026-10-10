@@ -19,11 +19,11 @@ import { EMAIL, pieceMail, plainMail, quoteMail } from "~/lib/mail";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Freeman Eclectic — Crafted to bring people together" },
+    { title: "Freeman Eclectic | Crafted to bring people together" },
     {
       name: "description",
       content:
-        "Turned and carved hardwood games, awards, gifts and keepsakes, made in one small Minnesota shop and shipped nationwide.",
+        "Hardwood games, awards, gifts and keepsakes, carved and engraved in a small Minnesota shop and shipped nationwide.",
     },
   ];
 }
@@ -49,15 +49,15 @@ export default function Home() {
       <Band h={BANDS.hero} className="py-12 xl:py-0">
         <div className={flow}>
           <SlatePlate l={20.28} t={330} w={856} rot={-0.5} z={3} className={full}>
-            <Eyebrow className="mb-6">Games &middot; Gifts &middot; Custom creations</Eyebrow>
+            <Eyebrow className="mb-6">Games &middot; Gifts &middot; Custom work</Eyebrow>
             <h1 className="engrave m-0 font-serif text-[clamp(2rem,6.2vw,76px)] font-light leading-[1.04] text-ground text-pretty">
               Crafted to bring{" "}
               <br className="hidden md:inline" />
               people together.
             </h1>
             <p className="mt-7 max-w-[620px] text-[19px] leading-[1.62] text-cream-dim">
-              This is the bench. Hardwood is turned, carved, drilled, and engraved on it, then
-              leaves as awards, games, and gifts made for one particular table.
+              Cribbage boards, family games, engraved slate and glass, and awards with your name
+              on them. Made in a small Minnesota shop for the table you gather around.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Btn href={quoteMail} variant="amber">
@@ -86,9 +86,8 @@ export default function Home() {
               Awards, gifts, and wholesale pieces, crafted in Minnesota.
             </h2>
             <p className="mt-5 text-[16.5px] leading-[1.6] text-cream-dim">
-              Recognition people keep on a desk instead of in a drawer. We turn, carve, and
-              engrave &mdash; wood, slate, glass, metal, and acrylic &mdash; and we hold a design
-              steady across a run so the tenth piece matches the first.
+              Recognition people keep on the desk. We carve and engrave in wood, slate, glass,
+              metal, and acrylic, one piece or a full order with every name different.
             </p>
             <div className="mt-7">
               {BUSINESS_CATEGORIES.map((c, i) => (
@@ -99,7 +98,7 @@ export default function Home() {
             </div>
             <div className="mt-6">
               <TextLink href="/for-business" tone="khaki">
-                Start a commission
+                See business work
               </TextLink>
             </div>
           </SlatePlate>
@@ -112,9 +111,9 @@ export default function Home() {
               Sit down and play.
             </h2>
             <p className="mt-4 text-base leading-[1.6] text-ink-soft">
-              Round cribbage boards turned from a single hardwood blank, plus Farkle, Scratched,
-              Wahoo, Mancala, Coin Drop, and the License Plate Hunt. Games built to be taught to a
-              kid and argued over for years.
+              Round cribbage boards with 3D carving, plus Farkle, the horse racing game, Wahoo,
+              Mancala, Coin Drop, and the License Plate Hunt. Teach one to a kid and you will be
+              arguing over the score for years.
             </p>
             <div className="mt-5">
               {TABLE_CATEGORIES.map((c, i) => (
@@ -124,7 +123,7 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-5">
-              <TextLink href="/for-your-table">Ask about this piece</TextLink>
+              <TextLink href="/for-your-table">See the games</TextLink>
             </div>
           </AshPlate>
 
@@ -145,9 +144,8 @@ export default function Home() {
               Hands get it right.
             </h2>
             <p className="mt-6 max-w-[860px] text-lg leading-[1.6] text-cream-dim">
-              We turn on the lathe, cut, carve, and engrave with modern equipment, then sand, fit,
-              and finish by hand. The machines hold a tolerance all day. They do not decide the
-              grain, the depth of a cut, or when a piece is done.
+              Modern equipment cuts, carves, and engraves. We sand, fit, and finish by hand, and
+              we decide when a piece is done.
             </p>
             <hr className="my-8 h-px border-0 bg-[rgb(246_241_232/0.18)] xl:mt-10 xl:mb-8" />
             <Eyebrow className="mb-4">What we work in</Eyebrow>
@@ -170,8 +168,8 @@ export default function Home() {
               We ship nationwide.
             </h2>
             <p className="mt-5 text-[17px] leading-[1.6] text-cream-dim">
-              Everything is made in one small shop near the Twin Cities. Lakes, pines, lighthouses,
-              and the Boundary Waters turn up in the work because that is the country around it.
+              Everything is made in one small Minnesota shop. Lakes, pines, lighthouses,
+              and the Boundary Waters show up in the work because that is the country around us.
             </p>
           </SlatePlate>
           {placePrints.map((s) => (
@@ -191,15 +189,15 @@ export default function Home() {
               Tell us what you have in mind.
             </h2>
             <p className="mt-5 text-lg leading-[1.6] text-ink-soft">
-              Most orders ship within a few weeks. We will confirm a date with your quote. Tell us
-              what it is for, how many, and when you need it.
+              Tell us what it is for, how many, and when you need it. Most orders ship within a few
+              weeks, and we will confirm a date with your quote.
             </p>
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Btn href={quoteMail} variant="ink">
                 Request a quote
               </Btn>
               <Btn href={pieceMail()} variant="outline">
-                Email us
+                Ask about a piece
               </Btn>
             </div>
             <p className="mt-5 text-[15px] text-ink-soft">

@@ -21,11 +21,11 @@ import { EMAIL, plainMail, quoteMail } from "~/lib/mail";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "About the shop — Freeman Eclectic" },
+    { title: "About the shop | Freeman Eclectic" },
     {
       name: "description",
       content:
-        "How the work happens: turned, cut, carved and engraved by machine, then sanded, fitted and finished by hand. Wood, slate, glass, metal and acrylic, crafted in Minnesota.",
+        "Cut, carved and engraved by machine, then sanded, fitted and finished by hand. Wood, slate, glass, metal and acrylic, crafted in Minnesota.",
     },
   ];
 }
@@ -54,16 +54,14 @@ export default function About() {
           <SlatePlate l={20.28} t={56} w={856} rot={-0.5} z={3} className={full}>
             <Eyebrow className="mb-5">About the shop</Eyebrow>
             <h1 className="engrave m-0 font-serif text-[clamp(1.6rem,3.1vw,38px)] font-light leading-[1.14] text-ground text-pretty">
-              We make distinctive,{" "}
+              Heirloom pieces,{" "}
               <br className="hidden md:inline" />
-              heirloom-quality pieces{" "}
-              <br className="hidden md:inline" />
-              &mdash; made to be used.
+              made to be used.
             </h1>
             <p className="mt-[22px] max-w-[660px] text-[17px] leading-[1.6] text-cream-dim">
-              Pieces that bring people together, reflect the character of Minnesota, and are worthy
-              of being used, shared, and passed down. That sentence is the whole brief. Everything
-              that leaves the bench is measured against it.
+              We make games, gifts, and keepsakes that get people sitting down together, away from
+              their screens. We want them to look like Minnesota and to last long enough to be
+              handed down.
             </p>
             <p className="mt-5 text-[15px] leading-[1.4] text-cream-dimmer">
               Crafted in Minnesota. We ship nationwide.
@@ -86,9 +84,9 @@ export default function About() {
               Hands get it right.
             </h2>
             <p className="mt-[22px] max-w-[800px] text-lg leading-[1.6] text-cream-dim">
-              We turn on the lathe, cut, carve, and engrave with modern equipment. Then we sand,
-              fit, and finish by hand. The machines hold a tolerance all day. They do not decide
-              the grain, the depth of a cut, or when a piece is done.
+              We cut, carve, and engrave with modern equipment, then sand, fit, and finish by hand.
+              The machines hold a tolerance all day. They cannot read the grain or tell when a
+              piece is done.
             </p>
             <hr className="mt-9 mb-[30px] h-px border-0 bg-[rgb(246_241_232/0.18)]" />
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-11">
@@ -132,9 +130,8 @@ export default function About() {
                 </p>
               </div>
               <p className="m-0 min-w-0 text-base leading-[1.6] text-cream-dim">
-                Chosen because they age well. Cherry darkens, walnut holds a deep relief, maple
-                takes a fine engraved line, and ash keeps a pale open grain. The finish is put on
-                to be renewed later, not to hide anything now.
+                We pick them because they age well. Cherry darkens with light, walnut holds a deep
+                carving, and maple takes a fine engraved line.
               </p>
             </div>
           </SlatePlate>
@@ -155,7 +152,7 @@ export default function About() {
               What has to be true before a piece joins the line.
             </h2>
             <p className="mt-3.5 text-[16.5px] leading-[1.6] text-ink-soft">
-              Not everything we make gets made twice. Four questions decide it.
+              We try a lot of ideas. A piece gets made again only if it passes all four.
             </p>
             <div className="mt-[26px]">
               {STANDARD_TESTS.map(({ n, test, note }, i) => (
@@ -189,12 +186,12 @@ export default function About() {
             </h2>
             <p className="mt-[22px] text-[17px] leading-[1.6] text-cream-dim">
               Everything is made in one small shop near the Twin Cities. The North Shore, the
-              Boundary Waters, lakes, cabins, pines, lighthouses and wildlife turn up in the work
-              because that is the country around it.
+              Boundary Waters, cabins, lighthouses and wildlife show up in the work because this is
+              the country we know.
             </p>
             <p className="mt-[18px] text-[17px] leading-[1.6] text-cream-dim">
-              Local history shows up too, and we take on respectful patriotic work the same way we
-              take on anything else &mdash; carefully, and without slogans.
+              So do local history and the flag. We keep the patriotic work respectful, and we keep
+              the humor friendly.
             </p>
           </SlatePlate>
           {placePrints.map((s) => (
@@ -216,14 +213,14 @@ export default function About() {
             className={`${full} xl:px-[56px] xl:py-[44px]`}
           >
             <Eyebrow tone="amber" className="mb-[18px]">
-              Two doors, one bench
+              Business or home
             </Eyebrow>
             <h2 className="m-0 font-serif text-[clamp(1.6rem,2.95vw,36px)] font-light leading-[1.14] text-ink">
               Tell us what you have in mind.
             </h2>
             <p className="mt-4 text-[17px] leading-[1.6] text-ink-soft">
-              A run of awards for your company, or one board for your own table &mdash; it starts
-              the same way.
+              A run of awards for your company and one board for your own table start the same
+              way: with an email.
             </p>
             <div className="mt-[30px] flex flex-wrap items-center gap-x-8 gap-y-3">
               <Btn href={quoteMail} variant="ink">

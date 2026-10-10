@@ -22,11 +22,11 @@ import { EMAIL, pieceMail, plainMail, quoteMail } from "~/lib/mail";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Contact — Freeman Eclectic" },
+    { title: "Contact | Freeman Eclectic" },
     {
       name: "description",
       content:
-        "No form to fill in. Email the shop directly, or send a message on Instagram or Facebook. Crafted in Minnesota, shipped nationwide.",
+        "Email the shop directly, or send a message on Instagram or Facebook. Crafted in Minnesota, shipped nationwide.",
     },
   ];
 }
@@ -47,7 +47,7 @@ export default function Contact() {
     <Bench photographs={photographsInPageOrder}>
       <AshStrip />
 
-      {/* 2 · the opening: one email, no form */}
+      {/* 2 · the opening */}
       <Band h={BANDS.opening} className="py-12 xl:py-0">
         <div className={flow}>
           <SlatePlate l={20} t={56} w={836} rot={-0.5} z={3} className={full}>
@@ -55,11 +55,11 @@ export default function Contact() {
             <h1 className="engrave m-0 font-serif text-[clamp(1.75rem,3.4vw,42px)] font-light leading-[1.12] text-ground text-pretty">
               Send us an email.
               <br className="hidden md:inline" />{" "}
-              That is the whole of it.
+              We read every one.
             </h1>
             <p className="mt-[22px] max-w-[700px] text-[17px] leading-[1.6] text-cream-dim">
-              There is no form to fill in and nothing to sign up for. An email reaches the shop
-              directly. Tell us what you have in mind, in as many or as few words as suits you.
+              Tell us what you have in mind, in as many or as few words as you like, and we will
+              write back.
             </p>
             <p className="mt-[22px] text-sm font-semibold tracking-[0.06em] text-cream-dimmer">
               <a href={plainMail} className="text-khaki hover:text-tan">
@@ -83,13 +83,13 @@ export default function Contact() {
       <Band h={BANDS.starting} className="py-12 xl:py-0">
         <div className={flow}>
           <SlatePlate l={4.44} t={36} w={748} rot={-0.4} z={3} className={full}>
-            <Eyebrow className="mb-[18px]">For a business enquiry</Eyebrow>
+            <Eyebrow className="mb-[18px]">For a business inquiry</Eyebrow>
             <h2 className="engrave m-0 mb-4 font-serif text-[clamp(1.4rem,2.7vw,34px)] font-light leading-[1.12] text-ground">
               Three things, and we can quote it.
             </h2>
             <p className="mt-0 mb-[26px] text-[16.5px] leading-[1.6] text-cream-dim">
-              Send it as it stands &mdash; there is no form and no account to make. We will come
-              back with a quote and a date.
+              The quote button opens an email with these three questions already in it. Fill them
+              in and we will reply with a price and a ship date.
             </p>
             <Eyebrow tone="brass" className="mb-3 text-[11px]">
               Tell us
@@ -124,8 +124,8 @@ export default function Contact() {
               Two things, and we can answer.
             </h2>
             <p className="mt-0 mb-[22px] text-base leading-[1.6] text-ink-soft">
-              A cribbage board, a Farkle set, coasters, or something you saw and would rather have
-              in a different wood. Write and ask.
+              A cribbage board, a Farkle set, a set of coasters, or something you saw here with a
+              different name on it. Write and ask.
             </p>
             <Eyebrow tone="brass" className="mb-3 text-[11px]">
               Tell us
@@ -141,7 +141,7 @@ export default function Contact() {
               ))}
             </div>
             <div className="mt-[22px]">
-              <TextLink href={pieceMail()}>Ask about this piece</TextLink>
+              <TextLink href={pieceMail()}>Ask about a piece</TextLink>
             </div>
           </AshPlate>
 
@@ -160,8 +160,7 @@ export default function Contact() {
               Email, or a message on either page.
             </h2>
             <p className="mt-0 mb-6 text-[16.5px] leading-[1.6] text-cream-dim">
-              All three arrive at the same bench. Email is the surest, and a message on Instagram or
-              Facebook does the job just as well.
+              All three reach us. Email is best for quotes and anything with a deadline.
             </p>
             <div>
               <CatRow tone="slate">
@@ -201,9 +200,8 @@ export default function Contact() {
               We ship nationwide.
             </h2>
             <p className="mt-[22px] text-[17px] leading-[1.6] text-cream-dim">
-              Everything is made in one small shop near the Twin Cities, Minnesota. Orders are
-              packed and sent anywhere in the country, with tracking; local delivery around the Twin
-              Cities is possible if you would rather not ship.
+              Everything is made in one small shop near the Twin Cities. We ship anywhere in the
+              country. Around the Twin Cities, local delivery is possible by arrangement.
             </p>
             <hr className="mt-[34px] mb-[26px] h-px border-0 bg-[rgb(246_241_232/0.18)]" />
             <Eyebrow tone="brass" className="mb-3.5 text-[11px]">
