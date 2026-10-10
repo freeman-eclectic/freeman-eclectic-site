@@ -1,4 +1,5 @@
 import { Wordmark } from "./Wordmark";
+import { INSTAGRAM_URL } from "~/content/contact";
 import { EMAIL, plainMail } from "~/lib/mail";
 
 /**
@@ -22,7 +23,7 @@ export function Footer() {
             {EMAIL}
           </a>
           <a
-            href="https://www.instagram.com/"
+            href={INSTAGRAM_URL}
             className="flex min-h-11 items-center text-cream-dim hover:text-tan"
           >
             Instagram

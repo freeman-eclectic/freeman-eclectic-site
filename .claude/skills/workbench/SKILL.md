@@ -138,9 +138,9 @@ handoff records one.
 Every photograph is the same staged cabin table with the piece low in the frame;
 crops are weighted to `50% 62%` so wide strips keep the piece. The heyer-family
 name board shows a real family's surname, so it is the personalisation example
-only and never a testimonial. The handoff's corporate pieces carry real
-businesses' names and phone numbers and stay off the site without the shop's
-say-so.
+only and never a testimonial. Client-branded pieces are approved and belong on
+For Business. Keep every page under half coasters, and never repeat a photograph
+within a page.
 
 ## Deeper reference
 

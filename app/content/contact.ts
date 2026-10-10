@@ -28,9 +28,9 @@ export const startingPrints: PrintSpec[] = [
   { src: "/img/personalized-rf-rectangular-cribbage-board-img_5159.webp", w: 290, h: 200, l: 70.14, t: 69.87, rot: 2.2, z: 2,
     alt: "A long straight cribbage board engraved with a monogram",
     caption: "A long board, personalised with a monogram." },
-  { src: "/img/may-your-coffee-kick-in-slate-coaster-img_5615.webp", w: 300, h: 150, l: 6.67, t: 85.26, rot: -1.9, z: 2,
-    alt: "A slate coaster engraved “May your coffee kick in before reality does”",
-    caption: "“May your coffee kick in before reality does.”" },
+  { src: "/img/lake-patio-freighter-slate-coaster-img_5396.webp", w: 300, h: 150, l: 6.67, t: 85.26, rot: -1.9, z: 2,
+    alt: "A slate coaster engraved with a porch view of two Adirondack chairs, a lantern, and a freighter on the lake",
+    caption: "Two chairs, a lantern, and a freighter going by. Slate, engraved." },
 ];
 
 export const findUsPrints: PrintSpec[] = [
@@ -67,8 +67,7 @@ export const TABLE_TELL: TellRow[] = [
 
 export const FACEBOOK_URL = "https://www.facebook.com/p/Freeman-Eclectic-61572489123732/";
 
-/** No confirmed handle yet, so this points at Instagram itself rather than a guess. */
-export const INSTAGRAM_URL = "https://www.instagram.com/";
+export const INSTAGRAM_URL = "https://www.instagram.com/eclecticfreeman/";
 
 /** Both pages are published under the same name. */
 export const SOCIAL_HANDLE = "Freeman Eclectic";

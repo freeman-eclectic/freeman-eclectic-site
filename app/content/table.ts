@@ -52,9 +52,9 @@ export const giftsPrints: PrintSpec[] = [
   { src: "/img/aitkin-lake-slate-coaster-img_5501.webp", w: 270, h: 180, l: 3.89, t: 2.67, rot: -2.2, z: 2,
     alt: "A slate coaster engraved with a lake scene and the name Aitkin Lake",
     caption: "Slate, engraved. Aitkin Lake, by name." },
-  { src: "/img/coffee-warms-the-soul-slate-coaster-img_5614.webp", w: 268, h: 172, l: 27.78, t: 4.33, rot: 1.9, z: 2,
-    alt: "A slate coaster engraved “Coffee warms the soul”",
-    caption: "“Coffee warms the soul”, on slate." },
+  { src: "/img/life-at-the-lake-is-superior-slate-coaster-img_5621.webp", w: 268, h: 172, l: 27.78, t: 4.33, rot: 1.9, z: 2,
+    alt: "A slate coaster engraved “Life at the lake is Superior” with a cabin on the shore",
+    caption: "“Life at the lake is Superior”, on slate." },
   { src: "/img/north-shore-good-coffee-bear-slate-coaster-img_5643.webp", w: 290, h: 150, l: 75.69, t: 56.67, rot: 2.1, z: 2,
     alt: "A slate coaster engraved with a North Shore bear holding a coffee mug",
     caption: "A North Shore bear and his coffee, engraved in slate." },
@@ -67,15 +67,15 @@ export const personalisationPrints: PrintSpec[] = [
 ];
 
 export const askPrints: PrintSpec[] = [
-  { src: "/img/who-you-fish-with-slate-coaster-img_5302.webp", w: 240, h: 180, l: 3.89, t: 4.21, rot: -2.2, z: 1,
-    alt: "A slate coaster engraved “Who you fish with is more important than what you catch”",
-    caption: "“Who you fish with is more important than what you catch.”" },
-  { src: "/img/wake-lake-repeat-slate-coaster-img_5646.webp", w: 250, h: 150, l: 4.17, t: 52.63, rot: 1.7, z: 2,
-    alt: "A slate coaster engraved “Wake, lake, repeat”",
-    caption: "“Wake, lake, repeat.” Slate, engraved." },
-  { src: "/img/the-lake-is-calling-slate-coaster-img_5651.webp", w: 186, h: 100, l: 83.33, t: 73.68, rot: 2.3, z: 1,
+  { src: "/img/largemouth-bass-slate-coaster-img_5477.webp", w: 240, h: 180, l: 3.89, t: 4.21, rot: -2.2, z: 1,
+    alt: "A slate coaster engraved with a largemouth bass underwater",
+    caption: "A largemouth bass, engraved in slate." },
+  { src: "/img/north-shore-less-screen-time-bear-canoe-slate-coaster-img_5636.webp", w: 250, h: 150, l: 4.17, t: 52.63, rot: 1.7, z: 2,
+    alt: "A slate coaster engraved with a North Shore bear paddling a canoe",
+    caption: "A North Shore bear in a canoe, engraved in slate." },
+  { src: "/img/moonlit-loon-slate-coaster-img_5461.webp", w: 186, h: 100, l: 83.33, t: 73.68, rot: 2.3, z: 1,
     minor: true,
-    alt: "A slate coaster engraved “The lake is calling”" },
+    alt: "A slate coaster engraved with a loon under a full moon" },
 ];
 
 /**

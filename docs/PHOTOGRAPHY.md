@@ -9,6 +9,11 @@ number so the two stay easy to reconcile.
 
 `bench-tile.jpg` is the oak texture behind every page, not a photograph.
 
+One exception: `scratched-horse-racing-game.webp` is the shop's own Facebook photo of
+Scratched, their horse racing game, because the handoff has no picture of it. It is
+720px and shot outdoors on a white table, so it does not match the cabin staging.
+Replace it when a handoff image of Scratched exists.
+
 ## Cropping
 
 Every photograph shares one composition: the piece sits in the lower middle of the
@@ -40,32 +45,35 @@ the piece itself is a sign to pick a squarer `w`/`h`, not to move the weighting.
 - Any client or family name as if it were a testimonial.
   `heyer-family-live-edge-coat-rack-img_0015.webp` shows a real family's name — caption
   it as an example of personalisation, nothing more.
-- The handoff's corporate pieces (All Saints keychain, Callender / RE/MAX bottle
-  opener, Anderson cutting board, Round Barn, Heroes Helping Heroes) carry real
-  businesses' names, logos and phone numbers. They are not on the site; using one needs
-  the shop's say-so first.
 - Personal gifts carrying a first name (the Norah and Breckan banks, "Jake loves Uncle
   Jimmy") — same reason.
 
 ## Where the photographs go
 
-No photograph appears twice anywhere on the site. Every slot on every page holds a
-different image, and `public/img/` holds exactly the images in use. Check before
-adding one:
+Two rules, checked together:
+
+- **Under half coasters on every page.** Coasters are the bulk of the catalog, so
+  they crowd out everything else unless capped.
+- **No photograph twice on one page.** Home and For Your Table share the impressive
+  boards on purpose. About and Contact reuse a few pieces because the catalog has
+  too few non-coaster pieces to fill them otherwise. No other repeats.
 
 ```
-grep -ho 'src: "/img/[^"]*' app/content/*.ts | sort | uniq -d
+for f in app/content/*.ts; do echo "$f $(grep -o 'src: "/img/[^"]*' $f | grep -c coaster)/$(grep -c 'src: "/img/' $f)"; grep -o 'src: "/img/[^"]*' $f | sort | uniq -d; done
 ```
 
 Pages are stocked by price and kind:
 
 - **Home** — the largest, most impressive pieces: every turned and carved cribbage
-  board, the long boards, the cutting board and the knife board.
-- **For Business** — smaller-ticket pieces that order well in quantity: slate
-  coasters and engraved glassware. The golfer board is the one exception, as the
-  tournament award.
-- **For Your Table** — every game, plus coasters; the name board for personalisation.
-- **About and Contact** — scenic and wildlife slate coasters.
+  board, the long boards, the cutting board, and Scratched, the horse racing game.
+- **For Business** — smaller-ticket pieces that order well in quantity: coasters,
+  glassware, and the client-branded work (All Saints keychain, the RE/MAX bottle
+  opener, the Anderson cutting board, Round Barn, Heroes Helping Heroes). Client
+  branding is approved for the site.
+- **For Your Table** — the carved boards from Home, most of the games, and coasters.
+- **About and Contact** — glassware, a few games, reused pieces, and scenic coasters.
+
+`public/img/` holds exactly the images in use.
 
 The handoff still holds well over a hundred unused coasters. To add one, convert the
 original with `cwebp -q 80 -m 6`, keep its slug, and drop the `-cabin-setting` suffix.

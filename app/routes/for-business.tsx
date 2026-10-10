@@ -58,7 +58,7 @@ export default function ForBusiness() {
           <SlatePlate l={20.28} t={70} w={856} rot={-0.5} z={3} className={full}>
             <Eyebrow className="mb-5">For business</Eyebrow>
             <h1 className="engrave m-0 font-serif text-[clamp(1.75rem,3.4vw,42px)] font-light leading-[1.12] text-ground text-pretty">
-              Awards, gifts, and wholesale
+              Awards, gifts, and wholesale{" "}
               <br className="hidden md:inline" />
               pieces, crafted in Minnesota.
             </h1>

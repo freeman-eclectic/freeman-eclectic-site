@@ -47,9 +47,9 @@ export const audiencePrints: PrintSpec[] = [
 ];
 
 export const pairingPrints: PrintSpec[] = [
-  { src: "/img/maple-magnetic-knife-display-board-img_5098.webp", w: 320, h: 166, l: 71.53, t: 1.88, rot: -2.4, z: 2,
-    alt: "A maple magnetic knife board holding four kitchen knives",
-    caption: "A maple knife board. Magnetic, so the knives stay put." },
+  { src: "/img/personalized-rf-rectangular-cribbage-board-img_5159.webp", w: 320, h: 166, l: 71.53, t: 1.88, rot: -2.4, z: 2,
+    alt: "A long straight cribbage board engraved with a monogram",
+    caption: "A long board, personalised with a monogram." },
   { src: "/img/black-walnut-woodpecker-cribbage-board-img_2943.webp", w: 320, h: 290, l: 71.11, t: 40.62, rot: 2.2, z: 3,
     alt: "A round black walnut cribbage board with a woodpecker on a tree trunk carved in relief",
     caption: "A woodpecker on the trunk, carved in black walnut." },
@@ -71,9 +71,9 @@ export const quotePrints: PrintSpec[] = [
   { src: "/img/black-walnut-three-pheasant-cribbage-board-img_2835.webp", w: 320, h: 214, l: 6.25, t: 5.56, rot: -2.2, z: 1,
     alt: "A round black walnut cribbage board with three pheasants carved in relief",
     caption: "Three pheasants in black walnut." },
-  { src: "/img/personalized-rf-rectangular-cribbage-board-img_5159.webp", w: 270, h: 352, l: 5.28, t: 44.44, rot: 1.6, z: 2,
-    alt: "A long straight cribbage board engraved with a monogram",
-    caption: "A long board, personalised with a monogram." },
+  { src: "/img/scratched-horse-racing-game.webp", w: 270, h: 352, l: 5.28, t: 44.44, rot: 1.6, z: 2,
+    alt: "A wooden Scratched horse racing board, lanes numbered 2 to 12, with pegs standing in for the horses",
+    caption: "Scratched. A horse race on pegs, starting gate to finish line." },
   { src: "/img/lake-superior-sea-arch-slate-coaster-img_5391.webp", w: 178, h: 119, l: 85.14, t: 58.33, rot: -1.6, z: 1,
     minor: true,
     alt: "A slate coaster engraved with a Lake Superior sea arch and rocky shore" },
