@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "react-router";
 
 /** A ruled row in a category list. */
 export function CatRow({
@@ -76,11 +77,27 @@ export function TextLink({
 }) {
   const c = tone === "khaki" ? "text-khaki hover:text-tan" : "text-amber hover:text-amber-deep";
   return (
-    <a
+    <SiteLink
       href={href}
       className={`inline-flex min-h-11 items-center text-sm font-semibold tracking-[0.06em] ${c}`}
     >
       {children} <span aria-hidden="true">&nbsp;&rarr;</span>
+    </SiteLink>
+  );
+}
+
+/** Internal paths go through Link so the router's basename prefixes them; external and mailto stay plain anchors. */
+export function SiteLink({ href, className, children }: { href: string; className: string; children: ReactNode }) {
+  if (href.startsWith("/")) {
+    return (
+      <Link to={href} className={className}>
+        {children}
+      </Link>
+    );
+  }
+  return (
+    <a href={href} className={className}>
+      {children}
     </a>
   );
 }

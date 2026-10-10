@@ -16,7 +16,8 @@ import {
   DialogDescription,
   DialogTitle,
 } from "~/components/ui/dialog";
-import { pieceMail } from "~/lib/mail";
+import { CONTACT_FORM_URL } from "~/lib/contactForm";
+import { withBasePath } from "~/lib/withBasePath";
 
 export type LightboxItem = {
   src: string;
@@ -24,7 +25,7 @@ export type LightboxItem = {
   caption?: string;
   w: number;
   h: number;
-  /** what the pre-filled email asks about; omit it and the ask link is omitted too */
+  /** the piece being asked about; omit it and the ask link is omitted too */
   name?: string;
 };
 
@@ -74,7 +75,7 @@ export function GalleryPhotograph({
   const openAtSrc = useContext(GalleryContext);
   const image = (
     <img
-      src={src}
+      src={withBasePath(src)}
       alt={alt}
       width={w}
       height={h}
@@ -234,7 +235,7 @@ function LightboxPrint({ item, index }: { item: LightboxItem; index: number }) {
       className="m-0 w-full rotate-[var(--rot)] bg-ground p-3 shadow-print md:p-4"
     >
       <img
-        src={src}
+        src={withBasePath(src)}
         alt={alt}
         width={w}
         height={h}
@@ -248,7 +249,7 @@ function LightboxPrint({ item, index }: { item: LightboxItem; index: number }) {
             {caption}
           </span>
         ) : null}
-        {name ? <TextLink href={pieceMail(name)}>Ask about this piece</TextLink> : null}
+        {name ? <TextLink href={CONTACT_FORM_URL}>Ask about this piece</TextLink> : null}
       </figcaption>
     </figure>
   );

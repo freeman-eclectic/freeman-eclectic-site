@@ -15,7 +15,8 @@ import {
   placePrints,
   quotePrints,
 } from "~/content/home";
-import { EMAIL, pieceMail, plainMail, quoteMail } from "~/lib/mail";
+import { EMAIL, plainMail } from "~/lib/mail";
+import { CONTACT_FORM_URL } from "~/lib/contactForm";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -60,7 +61,7 @@ export default function Home() {
               on them. Made in a small Minnesota shop for the table you gather around.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Btn href={quoteMail} variant="amber">
+              <Btn href={CONTACT_FORM_URL} variant="amber">
                 Request a quote
               </Btn>
             </div>
@@ -193,10 +194,10 @@ export default function Home() {
               weeks, and we will confirm a date with your quote.
             </p>
             <div className="mt-8 flex flex-wrap gap-3.5">
-              <Btn href={quoteMail} variant="ink">
+              <Btn href={CONTACT_FORM_URL} variant="ink">
                 Request a quote
               </Btn>
-              <Btn href={pieceMail()} variant="outline">
+              <Btn href={CONTACT_FORM_URL} variant="outline">
                 Ask about a piece
               </Btn>
             </div>

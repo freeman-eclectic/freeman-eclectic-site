@@ -18,7 +18,8 @@ import {
   placePrints,
   startingPrints,
 } from "~/content/contact";
-import { EMAIL, pieceMail, plainMail, quoteMail } from "~/lib/mail";
+import { EMAIL, plainMail } from "~/lib/mail";
+import { CONTACT_FORM_URL } from "~/lib/contactForm";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -88,8 +89,8 @@ export default function Contact() {
               Three things, and we can quote it.
             </h2>
             <p className="mt-0 mb-[26px] text-[16.5px] leading-[1.6] text-cream-dim">
-              The quote button opens an email with these three questions already in it. Fill them
-              in and we will reply with a price and a ship date.
+              The quote button opens a short form. Answer these three and we will reply with a price
+              and a ship date.
             </p>
             <Eyebrow tone="brass" className="mb-3 text-[11px]">
               Tell us
@@ -105,7 +106,7 @@ export default function Contact() {
               ))}
             </div>
             <div className="mt-7 flex flex-wrap gap-3.5">
-              <Btn href={quoteMail} variant="amber">
+              <Btn href={CONTACT_FORM_URL} variant="amber">
                 Request a quote
               </Btn>
             </div>
@@ -141,7 +142,7 @@ export default function Contact() {
               ))}
             </div>
             <div className="mt-[22px]">
-              <TextLink href={pieceMail()}>Ask about a piece</TextLink>
+              <TextLink href={CONTACT_FORM_URL}>Ask about a piece</TextLink>
             </div>
           </AshPlate>
 
@@ -222,7 +223,7 @@ export default function Contact() {
   );
 }
 
-/** One line of what a pre-filled email already asks: the label, then the hint under it. */
+/** One line of what the contact form asks: the label, then the hint under it. */
 function TellLine({
   row,
   tone,

@@ -51,7 +51,7 @@ export const placePrints: PrintSpec[] = [
     caption: "A family name and five hooks, by the door." },
 ];
 
-/** What a pre-filled email already asks for. One row per line the mail helper writes. */
+/** What the contact form asks for. */
 export type TellRow = { label: string; hint: string };
 
 export const BUSINESS_TELL: TellRow[] = [

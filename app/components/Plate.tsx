@@ -1,4 +1,5 @@
 import type { CSSProperties, ReactNode } from "react";
+import { SiteLink } from "~/components/Bits";
 
 type PlateProps = {
   children: ReactNode;
@@ -87,11 +88,11 @@ export function Btn({
     cream: "border border-[rgb(246_241_232/0.55)] text-ground hover:bg-[rgb(246_241_232/0.1)]",
   }[variant];
   return (
-    <a
+    <SiteLink
       href={href}
       className={`inline-flex h-13 min-h-[52px] items-center justify-center px-[30px] text-[13px] font-semibold uppercase tracking-[0.13em] transition-colors ${styles} ${className}`}
     >
       {children}
-    </a>
+    </SiteLink>
   );
 }

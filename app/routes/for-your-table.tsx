@@ -19,7 +19,8 @@ import {
   personalisationPrints,
   type PieceSpec,
 } from "~/content/table";
-import { EMAIL, pieceMail, plainMail } from "~/lib/mail";
+import { EMAIL, plainMail } from "~/lib/mail";
+import { CONTACT_FORM_URL } from "~/lib/contactForm";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -66,7 +67,7 @@ export default function ForYourTable() {
               and the License Plate Hunt for the drive up north.
             </p>
             <p className="mt-3 flex flex-wrap items-center gap-x-3 text-[15px] text-ink-soft">
-              <TextLink href={pieceMail()}>Ask about a piece</TextLink>
+              <TextLink href={CONTACT_FORM_URL}>Ask about a piece</TextLink>
               <span className="text-brass" aria-hidden="true">
                 &middot;
               </span>
@@ -96,7 +97,7 @@ export default function ForYourTable() {
               checkers, and snakes and ladders.
             </p>
             <div className="mt-4.5">
-              <TextLink href={pieceMail()}>Ask about a game</TextLink>
+              <TextLink href={CONTACT_FORM_URL}>Ask about a game</TextLink>
             </div>
           </AshPlate>
 
@@ -120,7 +121,7 @@ export default function ForYourTable() {
               Minnesota humor, and make hardwood cutting boards that stay out on the counter.
             </p>
             <div className="mt-4.5">
-              <TextLink href={pieceMail()} tone="khaki">
+              <TextLink href={CONTACT_FORM_URL} tone="khaki">
                 Ask about a piece
               </TextLink>
             </div>
@@ -148,7 +149,7 @@ export default function ForYourTable() {
               it becomes a keepsake.
             </p>
             <div className="mt-4.5">
-              <TextLink href={pieceMail()}>Ask about a gift</TextLink>
+              <TextLink href={CONTACT_FORM_URL}>Ask about a gift</TextLink>
             </div>
           </AshPlate>
 
@@ -163,7 +164,7 @@ export default function ForYourTable() {
               for it.
             </p>
             <div className="mt-4.5">
-              <TextLink href={pieceMail()} tone="khaki">
+              <TextLink href={CONTACT_FORM_URL} tone="khaki">
                 Ask about custom decor
               </TextLink>
             </div>
@@ -253,7 +254,7 @@ export default function ForYourTable() {
               ))}
             </div>
             <div className="mt-[30px] flex flex-wrap gap-3.5">
-              <Btn href={pieceMail()} variant="ink">
+              <Btn href={CONTACT_FORM_URL} variant="ink">
                 Ask about a piece
               </Btn>
               <Btn href={plainMail} variant="outline">
@@ -297,7 +298,7 @@ function PieceTile({ piece, index }: { piece: PieceSpec; index: number }) {
       <figcaption className="pt-2 font-serif text-[13.5px] italic leading-[1.35] text-ink-soft">
         {caption}
       </figcaption>
-      <TextLink href={pieceMail(name)}>Ask about this piece</TextLink>
+      <TextLink href={CONTACT_FORM_URL}>Ask about this piece</TextLink>
     </figure>
   );
 }

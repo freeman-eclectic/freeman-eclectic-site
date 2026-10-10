@@ -17,7 +17,8 @@ import {
   orderPrints,
   wholesalePrints,
 } from "~/content/business";
-import { EMAIL, plainMail, quoteMail } from "~/lib/mail";
+import { EMAIL, plainMail } from "~/lib/mail";
+import { CONTACT_FORM_URL } from "~/lib/contactForm";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -64,7 +65,7 @@ export default function ForBusiness() {
               glass, metal, and acrylic. You see a mockup and approve it before anything is cut.
             </p>
             <p className="mt-5 flex flex-wrap items-center gap-x-2 text-sm text-cream-dimmer">
-              <TextLink href={quoteMail} tone="khaki">
+              <TextLink href={CONTACT_FORM_URL} tone="khaki">
                 Request a quote
               </TextLink>
               <span className="text-brass" aria-hidden="true">
@@ -95,7 +96,7 @@ export default function ForBusiness() {
               in a drawer, with the name, the date, and your logo on the face.
             </p>
             <div className="mt-4">
-              <TextLink href={quoteMail} tone="khaki">
+              <TextLink href={CONTACT_FORM_URL} tone="khaki">
                 Request a quote
               </TextLink>
             </div>
@@ -120,7 +121,7 @@ export default function ForBusiness() {
               anniversary, or enough for the whole crew, with a different name on every piece.
             </p>
             <div className="mt-4">
-              <TextLink href={quoteMail} tone="khaki">
+              <TextLink href={CONTACT_FORM_URL} tone="khaki">
                 Request a quote
               </TextLink>
             </div>
@@ -145,7 +146,7 @@ export default function ForBusiness() {
               go small in the corner and let Minnesota do the talking.
             </p>
             <div className="mt-4">
-              <TextLink href={quoteMail} tone="khaki">
+              <TextLink href={CONTACT_FORM_URL} tone="khaki">
                 Request a quote
               </TextLink>
             </div>
@@ -170,7 +171,7 @@ export default function ForBusiness() {
               the approved design exactly.
             </p>
             <div className="mt-4">
-              <TextLink href={quoteMail} tone="khaki">
+              <TextLink href={CONTACT_FORM_URL} tone="khaki">
                 Request a quote
               </TextLink>
             </div>
@@ -236,7 +237,7 @@ export default function ForBusiness() {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-              <Btn href={quoteMail} variant="ink">
+              <Btn href={CONTACT_FORM_URL} variant="ink">
                 Request a quote
               </Btn>
               <a href={plainMail} className="text-[15px] leading-[1.4] text-ink-soft">

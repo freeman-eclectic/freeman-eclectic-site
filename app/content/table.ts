@@ -79,7 +79,7 @@ export const askPrints: PrintSpec[] = [
 ];
 
 /**
- * One piece in the grid. `name` is what goes into the pre-filled email, so it
+ * One piece in the grid. `name` is the label shown in the lightbox, so it
  * has to read as a thing a person would ask for; `w` and `h` are the drawn crop,
  * kept only for the tile's aspect ratio.
  */
@@ -280,7 +280,7 @@ export const PIECES: PieceSpec[] = [
   },
 ];
 
-/** The two things the pre-filled note asks for. */
+/** The two things the contact form asks for. */
 export const ASK_FIELDS = [
   {
     label: "Which piece",

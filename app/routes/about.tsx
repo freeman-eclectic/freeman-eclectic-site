@@ -17,7 +17,8 @@ import {
   placePrints,
   standardPrints,
 } from "~/content/about";
-import { EMAIL, plainMail, quoteMail } from "~/lib/mail";
+import { EMAIL, plainMail } from "~/lib/mail";
+import { CONTACT_FORM_URL } from "~/lib/contactForm";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -223,7 +224,7 @@ export default function About() {
               way: with an email.
             </p>
             <div className="mt-[30px] flex flex-wrap items-center gap-x-8 gap-y-3">
-              <Btn href={quoteMail} variant="ink">
+              <Btn href={CONTACT_FORM_URL} variant="ink">
                 Request a quote
               </Btn>
               <TextLink href="/for-business">For Business</TextLink>
