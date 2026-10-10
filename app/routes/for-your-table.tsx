@@ -5,6 +5,7 @@ import { Band, Bench } from "~/components/Bench";
 import { Footer } from "~/components/Footer";
 import { AshPlate, Btn, Eyebrow, SlatePlate } from "~/components/Plate";
 import { TextLink } from "~/components/Bits";
+import { GalleryPhotograph } from "~/components/Lightbox";
 import { Print } from "~/components/Print";
 import {
   ASK_FIELDS,
@@ -34,9 +35,18 @@ export function meta({}: Route.MetaArgs) {
 const flow = "flex flex-col gap-10 md:grid md:grid-cols-2 md:gap-8 xl:block";
 const full = "md:col-span-2";
 
+const photographsInPageOrder = [
+  ...openingPrints,
+  ...gamesPrints,
+  ...giftsPrints,
+  ...PIECES,
+  ...personalisationPrints,
+  ...askPrints,
+];
+
 export default function ForYourTable() {
   return (
-    <Bench>
+    <Bench photographs={photographsInPageOrder}>
       <AshStrip />
 
       {/* 2 · the opening: "Sit down and play." on ash, prints crowding it */}
@@ -282,16 +292,7 @@ function PieceTile({ piece, index }: { piece: PieceSpec; index: number }) {
       style={{ "--rot": `${TILTS[index % TILTS.length]}deg` } as CSSProperties}
       className="m-0 rotate-[var(--rot)] bg-ground p-2.5 shadow-print"
     >
-      <img
-        src={src}
-        alt={alt}
-        width={w}
-        height={h}
-        loading="lazy"
-        decoding="async"
-        className="block h-auto w-full object-cover"
-        style={{ aspectRatio: `${w} / ${h}` }}
-      />
+      <GalleryPhotograph src={src} alt={alt} w={w} h={h} />
       <figcaption className="pt-2 font-serif text-[13.5px] italic leading-[1.35] text-ink-soft">
         {caption}
       </figcaption>

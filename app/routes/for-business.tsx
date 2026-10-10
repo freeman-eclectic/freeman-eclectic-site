@@ -36,9 +36,20 @@ export function meta({}: Route.MetaArgs) {
 const flow = "flex flex-col gap-10 md:grid md:grid-cols-2 md:gap-8 xl:block";
 const full = "md:col-span-2";
 
+const photographsInPageOrder = [
+  ...openingPrints,
+  ...awardsPrints,
+  ...appreciationPrints,
+  ...giftsPrints,
+  ...wholesalePrints,
+  ...materialsPrints,
+  ...orderPrints,
+  ...quotePrints,
+];
+
 export default function ForBusiness() {
   return (
-    <Bench>
+    <Bench photographs={photographsInPageOrder}>
       <AshStrip />
 
       {/* 2 · the opening statement, slate plate with prints crowding it */}

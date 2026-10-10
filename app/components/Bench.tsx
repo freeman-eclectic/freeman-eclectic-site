@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Gallery, type LightboxItem } from "./Lightbox";
 
 /**
  * The page shell: one continuous oak surface, top to bottom.
@@ -7,8 +8,17 @@ import type { ReactNode } from "react";
  * the grain stays the same physical size at every viewport width and repeats on
  * both axes without a seam. (The artboards carried a 300KB pre-tiled image only
  * because the canvas runtime cannot resolve CSS url(); the web can.)
+ *
+ * `photographs` is every photograph on the page in page order; clicking any of
+ * them opens a lightbox that steps through the lot.
  */
-export function Bench({ children }: { children: ReactNode }) {
+export function Bench({
+  photographs,
+  children,
+}: {
+  photographs: LightboxItem[];
+  children: ReactNode;
+}) {
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-bench">
       <div
@@ -20,7 +30,9 @@ export function Bench({ children }: { children: ReactNode }) {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 bottom-0 h-[220px] bg-gradient-to-b from-transparent to-[rgb(14_10_7/0.42)]"
       />
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-10">
+        <Gallery items={photographs}>{children}</Gallery>
+      </div>
     </div>
   );
 }

@@ -1,124 +1,86 @@
-# Real photography — Freeman Eclectic's own work
+# Photography — Freeman Eclectic's own products
 
-These replace the stock images. They came from the shop's own Facebook page, so they
-are the ACTUAL products. Use them in preference to stock everywhere a piece is shown.
-Reference by bare filename, double-quoted: <img src="board-loon-walnut.jpg" alt="...">
+Every photograph on the site comes from the shop's product-image handoff: real pieces,
+each presented on the same staged cabin table (fireplace, lake window, pine sprigs,
+plaid). They are square, 1254px originals, served as WebP at quality 80 from
+`public/img/`. The handoff keeps its own catalog and alt-text suggestions in
+`product-image-catalog.csv`; filenames here keep the handoff's slug and source image
+number so the two stay easy to reconcile.
 
-## What the shop actually makes (learned from the real photos — use these specifics)
+`bench-tile.jpg` is the oak texture behind every page, not a photograph.
 
-The signature product is a **turned round hardwood cribbage board**: a shallow bowl,
-peg holes drilled around the rim, and a deep-relief carving in the well. Walnut, cherry,
-ash and maple. The carvings are loons, walleye, lighthouses, tall ships, the Duluth
-aerial lift bridge, cabin-and-lake scenes, roses, crosses, a golf ball on a tee.
+## Cropping
 
-Also real, and confirmed by photographs:
-- **Long straight cribbage boards** in pale maple with a lighter engraved scene:
-  canoe paddles, a loon, a pheasant, pines, the lift bridge.
-- **Engraved slate coasters** — the strongest sellers by volume. Minnesota humour
+Every photograph shares one composition: the piece sits in the lower middle of the
+frame, the fireplace and window above it. Prints crop with `object-cover` weighted to
+`50% 62%`, so a wide strip keeps the piece and loses the fireplace. A crop that cuts
+the piece itself is a sign to pick a squarer `w`/`h`, not to move the weighting.
+
+## What the shop makes (from the product images)
+
+- **Round turned cribbage boards** with a carving in the well: loon, deer skull,
+  golfer, hummingbird, three pheasants, woodpecker, leaping fish, log cabin,
+  full-rigged sailing ship. Several are named as black walnut; for the rest, the wood
+  is not recorded, so say "turned cribbage board" and name no species.
+- **Long straight cribbage boards**, engraved: a fish, a monogram.
+- **Engraved slate coasters** — by far the largest group. North Shore scenes (Split Rock
+  Lighthouse, the Duluth lift bridge, sea arches), lakes, wildlife, and Minnesota humour
   ("Sorry... can't hear you over the loons", "Things get a little wild in Two Harbors",
-  "Welcome to the Legendary North"), plus faith lines and wildlife.
-- **Carved wooden crosses** — ornate rose-covered crosses and walnut crucifixes.
-- **Farkle boards** with the scoring table engraved into the face.
-- **A pegged game called Scratched.**
-- **Minnesota-shaped cribbage boards.**
-- **Personalised family name boards** with coat hooks.
-- **Engraved glass**, and carved wood insets set into glass dishes.
-- **Turned oak medallions / rosettes** (architectural decor).
-
-The shop's own words for what it does: wood and metal products made with a wood lathe,
-CNC, and laser engraving; plus textile arts and repurposing older items. So **wood
-lathe / turning** is a real capability alongside cutting and engraving. Still never
-name a machine brand.
-
-Motifs that are genuinely theirs: loons, walleye and crappie, whitetail deer,
-pheasants, lighthouses, the Duluth lift bridge, Two Harbors, cabins, pines, the North
-Shore, tall ships, faith imagery, veterans and first responders.
+  "Welcome to the Legendary North").
+- **Engraved glassware**: rocks glasses, stemless glasses, glass mugs.
+- **Wooden games**: Farkle tray, Chinese checkers, marble game, snakes and ladders,
+  Frustration Rummy scoring board, Sticks, coin drop, a playing card holder; acrylic
+  game boards too.
+- **Kitchen and home**: striped hardwood cutting boards, a maple magnetic knife board,
+  live-edge family name boards with coat hooks, family plaques.
 
 ## Do not use
 
-- The maker's name. One photo showed a board engraved with a real name and phone
-  number; it is excluded, and the site keeps the maker offstage as before.
-- Prices. None are known and none may be invented.
-- Any client or family name as if it were a testimonial. `family-sign.jpg` shows a real
-  customer's name board — caption it as an example of personalisation, nothing more.
+- Prices or specifications. None are known and none may be invented.
+- Any client or family name as if it were a testimonial.
+  `heyer-family-live-edge-coat-rack-img_0015.webp` shows a real family's name — caption
+  it as an example of personalisation, nothing more.
+- The handoff's corporate pieces (All Saints keychain, Callender / RE/MAX bottle
+  opener, Anderson cutting board, Round Barn, Heroes Helping Heroes) carry real
+  businesses' names, logos and phone numbers. They are not on the site; using one needs
+  the shop's say-so first.
+- Personal gifts carrying a first name (the Norah and Breckan banks, "Jake loves Uncle
+  Jimmy") — same reason.
 
-## The files
+## Where the photographs go
 
-### Round turned cribbage boards — the signature piece. Square-ish, ~900px.
-board-loon-walnut.jpg    walnut, carved loon on water, on a display stand. THE hero product shot.
-board-loon-dark.jpg      walnut, carved loon, against a dark grey wall. Clean and moody.
-board-loon-grey.jpg      walnut, carved loon, grey wall, slightly wider crop.
-board-lighthouse.jpg     pale ash, carved lighthouse, deep blue-grey wall. Beautiful contrast.
-board-tall-ship.jpg      cherry, a full-rigged sailing ship in high relief. The most dramatic carving.
-board-lift-bridge.jpg    pale ash, the Duluth aerial lift bridge with a ship beneath, engraved not carved.
-board-cabin-lake.jpg     walnut, a cabin-and-shoreline scene, shot on a wood table.
-board-walleye.jpg        cherry, a leaping walleye in high relief, grey wall.
-board-fish-ash.jpg       ash, a leaping fish, green-grey wall.
-board-cross-relief.jpg   walnut, a rose-covered cross carved in the well.
-board-golf.jpg           walnut, a golf ball on a tee, carved. Good for the corporate-gift/award story.
+No photograph appears twice anywhere on the site. Every slot on every page holds a
+different image, and `public/img/` holds exactly the images in use. Check before
+adding one:
 
-### Long straight cribbage boards — wide strips, 1000x500. Good for narrow bands.
-long-paddles.jpg         pale maple, crossed canoe paddles and pines engraved.
-long-loon.jpg            (not present — use long-pheasant or long-pines instead)
-long-bridge.jpg          pale maple, the Duluth lift bridge engraved.
-long-pheasant.jpg        pale maple, a flushing pheasant engraved.
-long-pines.jpg           pale maple, a stand of pines engraved.
+```
+grep -ho 'src: "/img/[^"]*' app/content/*.ts | sort | uniq -d
+```
 
-### Engraved slate coasters — the ONLY properly styled lifestyle photographs. Square.
-coaster-loons-mug.jpg        slate coaster, "Sorry... can't hear you over the loons", beside a
-                             stoneware mug, pine sprigs, pinecones, warm light. THE best photo available.
-coaster-legendary-north.jpg  slate coaster, a lumberjack and an ox, "Welcome to the Legendary North",
-                             with a mug of coffee on dark wood.
-coaster-two-harbors.jpg      slate coaster, "Things get a little wild in Two Harbors", with a mug,
-                             a plaid blanket, pinecones and a small LAKE LIFE block.
+Pages are stocked by price and kind:
 
-### Carved crosses — tall.
-cross-roses.jpg          a pale cross entirely covered in carved roses, on a grey wall.
-cross-walnut.jpg         a dark walnut crucifix on weathered grey boards.
+- **Home** — the largest, most impressive pieces: every turned and carved cribbage
+  board, the long boards, the cutting board and the knife board.
+- **For Business** — smaller-ticket pieces that order well in quantity: slate
+  coasters and engraved glassware. The golfer board is the one exception, as the
+  tournament award.
+- **For Your Table** — every game, plus coasters; the name board for personalisation.
+- **About and Contact** — scenic and wildlife slate coasters.
 
-### Games
-farkle-board.jpg         cherry Farkle board, the whole scoring table engraved into the face. Wide.
-scratched-game.jpg       a pegged game called Scratched, pegs standing in play. Squarish.
-mn-boards-bench.jpg      Minnesota-shaped boards drying on a bench outdoors, pegs in them. Wide.
-
-### Custom, business, other materials
-family-sign.jpg          a personalised family name board with three coat hooks, oak. Wide strip.
-                         Shows a real customer's surname; caption as personalisation only.
-glass-dish.jpg           a glass dish with a carved wood inset sitting in it. Proves glass + wood.
-medallion-oak.jpg        a turned oak medallion with a carved quatrefoil, on a wood surface.
-
-### Process — the "machines get it precise, hands get it right" story
-board-on-machine.jpg     a pale ash board with a carved rose still sitting on the machine bed. BEST process shot.
-cnc-screen.jpg           a controller screen showing a toolpath. No machine brand visible. Use small.
-cutting-stock.jpg        cut hardwood stock stacked beside a saw outdoors. Weak; optional.
-
-### Stock atmosphere — the shop has NO lifestyle or landscape photography of its own,
-### so these five remain as environment only. Never present them as the shop's product.
-cards-table.jpg          dark, warm: hands playing cribbage by lit lights at night. Good dark hero.
-lake-shore.jpg           the North Shore: rocky beach, pines, open water.
-forest-lake.jpg          a still lake, dense pines, soft morning light.
-workshop.jpg             TALL. a dim rustic shed interior, hand tools on a plank wall.
-hand-tools.jpg           carving chisels laid across a pale workbench, daylight.
-fireplace.jpg            a warm cabin interior, wood stove, string lights.
-wood-grain.jpg           TALL. close ash grain, pale honey. A TEXTURE.
-wood-slab.jpg            TALL. close ash grain. A TEXTURE.
+The handoff still holds well over a hundred unused coasters. To add one, convert the
+original with `cwebp -q 80 -m 6`, keep its slug, and drop the `-cabin-setting` suffix.
 
 ## Caption bank — true statements you may use verbatim or trim
 
-Turned from a single hardwood blank, then carved and drilled.
 A loon in walnut. The carving is cut deep, then finished by hand.
-The Duluth lift bridge, engraved into pale ash.
-Cherry, with the walleye left standing in relief.
-A lighthouse in ash. The North Shore turns up in the work a lot.
+Black walnut, with the fish left standing in relief.
+A full-rigged ship, left standing in relief.
+Split Rock Lighthouse, engraved in slate.
+The Duluth lift bridge, engraved in slate.
 Slate, engraved. The joke is optional; the coffee ring is not.
 Minnesota humour on a slate coaster. These leave the booth fastest.
-Roses carved over the whole face of the cross.
-The Farkle scoring table, engraved into the board so nobody argues.
-Scratched. Pegs, a slope, and an afternoon.
-Minnesota, cut to shape and drilled for two.
-A family name and three hooks, by the door.
-A carved inset, set into glass.
-Turned oak, cut for a quatrefoil.
-Still on the bed, before the sanding starts.
+The scoring table, engraved so nobody argues.
+Marbles, a round board, and an afternoon.
+Chinese checkers, turned round and drilled for the marbles.
+A family name and five hooks, by the door.
 Cut and engraved by machine. Sanded, fitted and finished by hand.
-Wood, slate, glass, metal and acrylic. Cherry, walnut, maple and ash.

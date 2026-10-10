@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import { GalleryPhotograph } from "./Lightbox";
 
 export type PrintSpec = {
   src: string;
@@ -53,16 +54,7 @@ export function Print({ spec, className = "" }: { spec: PrintSpec; className?: s
         className,
       ].join(" ")}
     >
-      <img
-        src={src}
-        alt={alt}
-        width={w}
-        height={h}
-        loading="lazy"
-        decoding="async"
-        className="block h-auto w-full object-cover"
-        style={{ aspectRatio: `${w} / ${h}` }}
-      />
+      <GalleryPhotograph src={src} alt={alt} w={w} h={h} />
       {caption ? (
         <figcaption className="font-serif italic text-[13.5px] leading-[1.35] text-ink-soft pt-2">
           {caption}

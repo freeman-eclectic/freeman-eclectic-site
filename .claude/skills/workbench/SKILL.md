@@ -131,13 +131,16 @@ geometrically clean and visually wrong.
 
 The site's images are the shop's own work, described piece by piece in
 `references/photography.md` along with a bank of true captions. Captions are dry
-and specific and name the real piece — "Cherry, with the walleye left standing
-in relief", not "Beautiful handcrafted board".
+and specific and name the real piece — "Black walnut, with the fish left standing
+in relief", not "Beautiful handcrafted board". Name a wood species only where the
+handoff records one.
 
-Two standing cautions: the shipped images are 900px at quality 30 and want
-replacing with the shop's originals, and `family-sign.jpg` shows a real
-customer's surname, so it is the personalisation example only and never a
-testimonial.
+Every photograph is the same staged cabin table with the piece low in the frame;
+crops are weighted to `50% 62%` so wide strips keep the piece. The heyer-family
+name board shows a real family's surname, so it is the personalisation example
+only and never a testimonial. The handoff's corporate pieces carry real
+businesses' names and phone numbers and stay off the site without the shop's
+say-so.
 
 ## Deeper reference
 

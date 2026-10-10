@@ -16,39 +16,39 @@ export const BANDS = {
 } as const;
 
 export const openingPrints: PrintSpec[] = [
-  { src: "/img/cards-table.jpg", w: 268, h: 200, l: 3.06, t: 5.2, rot: -2.4, z: 1,
-    alt: "Hands playing cribbage by lamplight at a wooden table",
-    caption: "Cribbage, played late." },
-  { src: "/img/workshop.jpg", w: 234, h: 286, l: 79.72, t: 6, rot: 2.3, z: 1,
-    alt: "A dim rustic shop interior with hand tools on a plank wall",
-    caption: "Hand tools on a plank wall." },
+  { src: "/img/wooden-coin-drop-game-set-img_4042.webp", w: 268, h: 200, l: 3.06, t: 5.2, rot: -2.4, z: 1,
+    alt: "A wooden coin drop game box with numbered slots and a pile of wooden coins",
+    caption: "A coin drop game, cut and numbered." },
+  { src: "/img/meet-me-at-the-dock-glass-mug-img_5608.webp", w: 234, h: 286, l: 79.72, t: 6, rot: 2.3, z: 1,
+    alt: "A glass mug engraved “Meet me at the dock”",
+    caption: "“Meet me at the dock”, engraved on a glass mug." },
 ];
 
 export const startingPrints: PrintSpec[] = [
-  { src: "/img/board-loon-walnut.jpg", w: 290, h: 200, l: 70.14, t: 69.87, rot: 2.2, z: 2,
-    alt: "A turned walnut cribbage board with a loon carved in the well, on a stand",
-    caption: "Turned, carved and drilled." },
-  { src: "/img/coaster-loons-mug.jpg", w: 300, h: 150, l: 6.67, t: 85.26, rot: -1.9, z: 2,
-    alt: "An engraved slate coaster beside a stoneware mug, pine sprigs and pinecones",
-    caption: "Slate, engraved. Minnesota humour." },
+  { src: "/img/personalized-rf-rectangular-cribbage-board-img_5159.webp", w: 290, h: 200, l: 70.14, t: 69.87, rot: 2.2, z: 2,
+    alt: "A long straight cribbage board engraved with a monogram",
+    caption: "A long board, personalised with a monogram." },
+  { src: "/img/may-your-coffee-kick-in-slate-coaster-img_5615.webp", w: 300, h: 150, l: 6.67, t: 85.26, rot: -1.9, z: 2,
+    alt: "A slate coaster engraved “May your coffee kick in before reality does”",
+    caption: "“May your coffee kick in before reality does.”" },
 ];
 
 export const findUsPrints: PrintSpec[] = [
-  { src: "/img/board-lighthouse.jpg", w: 250, h: 290, l: 58.89, t: 6.25, rot: 2.4, z: 1,
-    alt: "A pale ash cribbage board with a lighthouse carved in the well",
-    caption: "A lighthouse in ash." },
-  { src: "/img/hand-tools.jpg", w: 300, h: 160, l: 71.53, t: 62.5, rot: -2.2, z: 1,
-    alt: "Carving chisels laid across a pale workbench in daylight",
-    caption: "Chisels, for what a machine will not do." },
+  { src: "/img/wooden-farkle-scoring-tray-img_4049.webp", w: 250, h: 290, l: 58.89, t: 6.25, rot: 2.4, z: 1,
+    alt: "A wooden Farkle tray with the scoring table engraved into the floor",
+    caption: "The scoring table, engraved so nobody argues." },
+  { src: "/img/angler-on-dock-slate-coaster-img_5317.webp", w: 300, h: 160, l: 71.53, t: 62.5, rot: -2.2, z: 1,
+    alt: "A slate coaster engraved with an angler on a dock",
+    caption: "An angler on the dock, in slate." },
 ];
 
 export const placePrints: PrintSpec[] = [
-  { src: "/img/lake-shore.jpg", w: 560, h: 330, l: 4.17, t: 6.06, rot: -1.8, z: 1,
-    alt: "A rocky North Shore beach lined with pines and open water",
-    caption: "The North Shore. The lighthouses and the loons come from here." },
-  { src: "/img/fireplace.jpg", w: 320, h: 145, l: 7.36, t: 67.88, rot: 1.7, z: 2,
-    alt: "A warm cabin interior with a wood stove and plank walls",
-    caption: "Pieces that end up on a mantel." },
+  { src: "/img/lake-shoreline-slate-coaster-img_5401.webp", w: 560, h: 330, l: 4.17, t: 6.06, rot: -1.8, z: 1,
+    alt: "A slate coaster engraved with a pine shoreline mirrored in a lake",
+    caption: "A pine shoreline, mirrored in slate. The North Shore turns up in the work a lot." },
+  { src: "/img/heyer-family-live-edge-coat-rack-img_0015.webp", w: 320, h: 145, l: 7.36, t: 67.88, rot: 1.7, z: 2,
+    alt: "A live-edge family name board with a carved cross and five coat hooks",
+    caption: "A family name and five hooks, by the door." },
 ];
 
 /** What a pre-filled email already asks for. One row per line the mail helper writes. */
