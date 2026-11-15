@@ -18,8 +18,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # Served from freeman-eclectic.github.io/freeman-eclectic-site/ until a custom domain is attached; remove this then.
-      PUBLIC_BASE_PATH: /freeman-eclectic-site/
+      # The custom domain serves both routes and assets from the domain root.
+      PUBLIC_BASE_PATH: /
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -30,7 +30,7 @@ jobs:
       - run: npm run build
       - name: Move SPA fallback to 404.html and pages to the artifact root
         run: |
-          if [ -z "$PUBLIC_BASE_PATH" ]; then
+          if [ -z "$PUBLIC_BASE_PATH" ] || [ "$PUBLIC_BASE_PATH" = "/" ]; then
             mv build/client/__spa-fallback.html build/client/404.html
           else
             prerendered_pages="build/client${PUBLIC_BASE_PATH%/}"
@@ -38,6 +38,32 @@ jobs:
             cp -R "$prerendered_pages/." build/client/
             rm -rf "$prerendered_pages"
           fi
+      - name: Verify custom-domain asset paths
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import urlsplit
+
+          root = Path("build/client")
+          assert (root / "index.html").is_file(), "Missing home page"
+          assert (root / "404.html").is_file(), "Missing SPA fallback"
+
+          class Assets(HTMLParser):
+              def handle_starttag(self, tag, attrs):
+                  for name, value in attrs:
+                      if name not in ("src", "href") or not value:
+                          continue
+                      url = urlsplit(value)
+                      if url.scheme or url.netloc:
+                          continue
+                      assert not url.path.startswith("/freeman-eclectic-site/"), value
+                      if url.path.startswith(("/assets/", "/img/")):
+                          assert (root / url.path.lstrip("/")).is_file(), value
+
+          for page in root.rglob("*.html"):
+              Assets().feed(page.read_text())
+          PY
       - uses: actions/upload-pages-artifact@v3
         with:
           path: build/client
