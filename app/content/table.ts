@@ -95,6 +95,14 @@ export type PieceSpec = {
 /** The pieces, in the order they are laid out on the artboard. */
 export const PIECES: PieceSpec[] = [
   {
+    name: "First Coffee Then We Quest Coffee Coaster",
+    src: "/img/first-coffee-then-we-quest-slate-coaster-img_6292.webp",
+    w: 230,
+    h: 230,
+    alt: "A slate coffee coaster engraved with a knight raising a coffee mug, a castle, and the words First Coffee Then We Quest, on a cabin table",
+    caption: "Coffee Coaster. “First Coffee Then We Quest”, with a knight raising his mug. Engraved in slate.",
+  },
+  {
     name: "cribbage board with a tall ship",
     src: "/img/round-sailing-ship-cribbage-board-76513823739.webp",
     w: 230,
