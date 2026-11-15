@@ -9,8 +9,19 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import { withBasePath } from "./lib/withBasePath";
 
 export const links: Route.LinksFunction = () => [
+  { rel: "icon", href: withBasePath("/favicon.ico"), type: "image/x-icon", sizes: "16x16 32x32 48x48" },
+  ...[16, 32, 48].map((size) => ({
+    rel: "icon",
+    href: withBasePath(`/favicon-${size}x${size}.png`),
+    type: "image/png",
+    sizes: `${size}x${size}`,
+  })),
+  { rel: "icon", href: withBasePath("/favicon.svg"), type: "image/svg+xml", sizes: "any" },
+  { rel: "apple-touch-icon", href: withBasePath("/apple-touch-icon.png"), sizes: "180x180" },
+  { rel: "mask-icon", href: withBasePath("/safari-pinned-tab.svg"), color: "#2b2f33" },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",

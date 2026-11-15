@@ -25,3 +25,20 @@ Image.open('assets-src/bench-oak-tile.jpg').convert('RGB') \
 `Bench` renders it at `background-size: 1440px auto` with `bg-repeat`, so the
 grain stays the same physical scale at every viewport width. Regenerate at a
 different quality or size only from this master, never from the delivered file.
+
+## Browser icons
+
+The favicon and Apple touch icon reuse the three-pine emblem in
+`app/components/Wordmark.tsx`, in ink (`#2b2f33`) on cream (`#f6f1e8`).
+The separate Safari pinned-tab SVG is a black silhouette with no background.
+`logo.svg` is a detailed, wide laser wordmark and is unsuitable at tab sizes.
+
+Regenerate all browser icons from the repository root with Pillow installed:
+
+```
+python3 scripts/generate-favicons.py
+```
+
+The shared document links use `withBasePath` for both custom-domain and
+GitHub Pages subpath builds. The ICO includes 16, 32, and 48 pixel images;
+the Apple touch PNG is opaque and 180 pixels square.
