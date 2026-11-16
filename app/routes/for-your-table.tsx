@@ -37,6 +37,34 @@ export function meta({}: Route.MetaArgs) {
 const flow = "flex flex-col gap-10 md:grid md:grid-cols-2 md:gap-8 xl:block";
 const full = "md:col-span-2";
 
+/** Expandable catalog groups: each new game or coaster design belongs in one shelf. */
+const GAME_TYPES = [
+  { name: "Cribbage boards", description: "Handcrafted boards, including our carved round designs." },
+  { name: "Carbles / Wahoo", description: "Marble games for gathering around the table." },
+  { name: "Horse racing", description: "Our wooden horse racing game." },
+  { name: "Farkle", description: "Wooden scoring trays for the dice game." },
+  { name: "Sticks", description: "A screen-free tabletop favorite." },
+  { name: "Frustration Rummy", description: "Handcrafted scoring boards for card night." },
+  { name: "Other games", description: "Coin Drop, Mancala, road-trip games, and new designs as we make them." },
+] as const;
+
+const COASTER_THEMES = [
+  { name: "North Shore & landmarks", matches: /north.shore|split.rock|superior|rushmore|lake|shore/i },
+  { name: "Wildlife & outdoors", matches: /loon|bear|bigfoot|moose|cow|cardinal|eagle|pigeon|fish|bass|owl|cabin/i },
+  { name: "Coffee & humor", matches: /coffee|quest|humor|duct.tape/i },
+  { name: "Patriotic & Americana", matches: /flag|america|rushmore|eagle/i },
+  { name: "Personalized & local", matches: /farm.island|aitkin|personal|custom/i },
+  { name: "Other coaster designs", matches: /.*/ },
+] as const;
+
+const gamePieces = PIECES.filter((piece) => !/coaster/i.test(piece.name));
+const coasterPieces = PIECES.filter((piece) => /coaster/i.test(piece.name));
+const coasterShelves = COASTER_THEMES.map((theme) => ({
+  name: theme.name,
+  pieces: coasterPieces.filter((piece) => theme.matches.test(piece.name) &&
+    !COASTER_THEMES.slice(0, COASTER_THEMES.indexOf(theme)).some((earlier) => earlier.matches.test(piece.name))),
+})).filter((shelf) => shelf.pieces.length > 0);
+
 const photographsInPageOrder = [
   ...openingPrints,
   ...gamesPrints,
@@ -176,32 +204,65 @@ export default function ForYourTable() {
         </div>
       </Band>
 
-      {/*
-        4 · the pieces.
-        The one band that is a real grid rather than the drawn scatter: it is a
-        repeating list that will grow, so it goes 1 column, 2 at md, 3 at xl, and
-        the band is released from its drawn height to flow with the list.
-      */}
+      {/* The collection is organized by product family, then by type or theme. */}
       <Band h={BANDS.pieces} className="py-12 xl:h-auto! xl:py-16">
         <div className="xl:px-14">
           <AshPlate rot={0.35} z={3} className="xl:static! xl:w-full!">
-            <Eyebrow tone="amber" className="mb-4.5">
-              The pieces
-            </Eyebrow>
+            <Eyebrow tone="amber" className="mb-4.5">For your table · the collection</Eyebrow>
             <h2 className="m-0 mb-3.5 font-serif text-[clamp(1.55rem,2.9vw,34px)] font-light italic leading-[1.12] text-ink">
-              Pick one out and ask about it.
+              Games and coasters, made to be used.
             </h2>
             <p className="m-0 text-[16.5px] leading-[1.6] text-ink-soft">
-              We made every one of these. If something here is close to what you want, ask about
-              it and we will tell you what it takes to make one for you.
+              Browse the games by type and the slate coasters by theme. See a design you like?
+              Tell us its name when you inquire. We make each piece in our Minnesota shop.
             </p>
+            <nav aria-label="Browse For Your Table" className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
+              <a href="#table-games" className="font-semibold">Browse games</a>
+              <a href="#table-coasters" className="font-semibold">Browse coasters</a>
+            </nav>
           </AshPlate>
 
-          <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 xl:mt-16 xl:grid-cols-3 xl:gap-10">
-            {PIECES.map((piece, i) => (
-              <PieceTile key={piece.src} piece={piece} index={i} />
+          <section id="table-games" aria-labelledby="table-games-heading" className="mt-14 scroll-mt-20">
+            <h2 id="table-games-heading" className="font-serif text-3xl italic text-ground">Games</h2>
+            <p className="mt-2 max-w-2xl text-cream-dim">
+              Choose your favorite tabletop game. More designs will join these collections as we make them.
+            </p>
+            <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {GAME_TYPES.map((game) => (
+                <div key={game.name} className="border border-line bg-ground p-5 text-ink shadow-print">
+                  <h3 className="font-serif text-xl">{game.name}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">{game.description}</p>
+                  <div className="mt-4"><TextLink href={CONTACT_FORM_URL}>Ask about {game.name}</TextLink></div>
+                </div>
+              ))}
+            </div>
+            <h3 className="mt-12 font-serif text-2xl italic text-ground">Game photographs</h3>
+            <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-10">
+              {gamePieces.map((piece, i) => <PieceTile key={piece.src} piece={piece} index={i} />)}
+            </div>
+          </section>
+
+          <section id="table-coasters" aria-labelledby="table-coasters-heading" className="mt-20 scroll-mt-20">
+            <h2 id="table-coasters-heading" className="font-serif text-3xl italic text-ground">Slate coasters</h2>
+            <p className="mt-2 max-w-2xl text-cream-dim">
+              Find a design by theme. Every coaster has its own name so you can request the exact design.
+            </p>
+            <nav aria-label="Coaster themes" className="mt-5 flex flex-wrap gap-x-5 gap-y-3">
+              {coasterShelves.map((shelf, i) => (
+                <a key={shelf.name} href={`#coaster-theme-${i}`} className="text-khaki underline underline-offset-4">
+                  {shelf.name}
+                </a>
+              ))}
+            </nav>
+            {coasterShelves.map((shelf, i) => (
+              <section key={shelf.name} id={`coaster-theme-${i}`} className="mt-12 scroll-mt-20" aria-label={shelf.name}>
+                <h3 className="font-serif text-2xl italic text-ground">{shelf.name}</h3>
+                <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-10">
+                  {shelf.pieces.map((piece, j) => <PieceTile key={piece.src} piece={piece} index={j} />)}
+                </div>
+              </section>
             ))}
-          </div>
+          </section>
         </div>
       </Band>
 
