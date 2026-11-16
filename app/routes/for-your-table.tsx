@@ -118,6 +118,11 @@ export default function ForYourTable() {
               games for that: cribbage, Farkle, Wahoo, Mancala, Coin Drop, the horse racing game,
               and the License Plate Hunt for the drive up north.
             </p>
+            <nav aria-label="Explore handmade collections" className="mt-5 flex flex-wrap gap-3">
+              <a href="#table-games" className="border border-ink px-4 py-2 text-sm font-semibold text-ink hover:bg-ground">Games</a>
+              <a href="#table-coasters" className="border border-ink px-4 py-2 text-sm font-semibold text-ink hover:bg-ground">Slate coasters</a>
+              <a href="#table-bottle-openers" className="border border-amber-deep bg-amber-deep px-4 py-2 text-sm font-semibold text-white hover:bg-amber">Scenic bottle openers</a>
+            </nav>
             <p className="mt-3 flex flex-wrap items-center gap-x-3 text-[15px] text-ink-soft">
               <TextLink href={CONTACT_FORM_URL}>Ask about a piece</TextLink>
               <span className="text-brass" aria-hidden="true">
