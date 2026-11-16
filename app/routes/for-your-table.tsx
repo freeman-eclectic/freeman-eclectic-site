@@ -80,9 +80,9 @@ export default function ForYourTable() {
       <AshStrip />
 
       {/* 2 · the opening: "Sit down and play." on ash, prints crowding it */}
-      <Band h={BANDS.opening} className="py-12 xl:py-0">
-        <div className={flow}>
-          <AshPlate l={20.83} t={62} w={850} rot={0.5} z={3} className={full}>
+      <Band h={BANDS.opening} className="py-12 xl:h-auto! xl:py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4 xl:gap-10">
+          <AshPlate l={20.83} t={62} w={850} rot={0.5} z={3} className="md:col-span-2 xl:static! xl:col-span-4 xl:w-full! xl:rotate-0! xl:px-12 xl:py-9">
             <Eyebrow tone="amber" className="mb-5">
               For your table
             </Eyebrow>
@@ -103,15 +103,15 @@ export default function ForYourTable() {
             </p>
           </AshPlate>
           {openingPrints.map((s) => (
-            <Print key={s.src} spec={s} />
+            <Print key={s.src} spec={s} className="xl:static! xl:w-full! xl:max-w-none! xl:rotate-0!" />
           ))}
         </div>
       </Band>
 
       {/* 3a · board games on ash, kitchen & bar engraved on slate */}
-      <Band h={BANDS.games} className="py-12 xl:py-0">
-        <div className={flow}>
-          <AshPlate l={4.44} t={26} w={620} rot={-0.5} z={3} className={full}>
+      <Band h={BANDS.games} className="py-12 xl:h-auto! xl:py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-6 xl:gap-10">
+          <AshPlate l={4.44} t={26} w={620} rot={-0.5} z={3} className="md:col-span-2 xl:static! xl:col-span-3 xl:w-full! xl:rotate-0! xl:px-9 xl:py-9">
             <Eyebrow tone="amber" className="mb-4">
               Board games
             </Eyebrow>
@@ -137,7 +137,7 @@ export default function ForYourTable() {
             w={700}
             rot={0.5}
             z={4}
-            className={`${full} xl:max-w-[50.5%]`}
+            className="md:col-span-2 xl:static! xl:col-span-3 xl:w-full! xl:max-w-none! xl:rotate-0! xl:px-9 xl:py-9"
           >
             <Eyebrow className="mb-4">Kitchen &amp; bar</Eyebrow>
             <h2 className="engrave m-0 mb-3.5 font-serif text-[clamp(1.5rem,2.6vw,30px)] font-light leading-[1.15] text-ground">
@@ -156,7 +156,7 @@ export default function ForYourTable() {
           </SlatePlate>
 
           {gamesPrints.map((s) => (
-            <Print key={s.src} spec={s} />
+            <Print key={s.src} spec={s} className="xl:static! xl:col-span-2 xl:w-full! xl:max-w-none! xl:rotate-0!" />
           ))}
         </div>
       </Band>
