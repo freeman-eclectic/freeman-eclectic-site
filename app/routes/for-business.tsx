@@ -31,9 +31,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-/** Below xl a band is ordinary flow; the wrapper only grids the prints there. */
-const flow = "flex flex-col gap-10 md:grid md:grid-cols-2 md:gap-8 xl:block";
-const full = "md:col-span-2";
+/** All business content uses a non-overlapping grid so copy never hides merchandise. */
 
 const photographsInPageOrder = [
   ...openingPrints,
@@ -51,9 +49,9 @@ export default function ForBusiness() {
       <AshStrip />
 
       {/* 2 · the opening statement, slate plate with prints crowding it */}
-      <Band h={BANDS.opening} className="py-12 xl:py-0">
-        <div className={flow}>
-          <SlatePlate l={20.28} t={70} w={856} rot={-0.5} z={3} className={full}>
+      <Band h={BANDS.opening} className="py-12 xl:h-auto! xl:py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 xl:gap-10">
+          <SlatePlate l={20.28} t={70} w={856} rot={-0.5} z={3} className="md:col-span-2 xl:static! xl:col-span-3 xl:w-full! xl:max-w-none! xl:rotate-0! xl:px-10 xl:py-9">
             <Eyebrow className="mb-5">For business</Eyebrow>
             <h1 className="engrave m-0 font-serif text-[clamp(1.75rem,3.4vw,42px)] font-light leading-[1.12] text-ground text-pretty">
               Awards, gifts, and wholesale{" "}
@@ -77,15 +75,15 @@ export default function ForBusiness() {
             </p>
           </SlatePlate>
           {openingPrints.map((s) => (
-            <Print key={s.src} spec={s} />
+            <Print key={s.src} spec={s} className="xl:static! xl:w-full! xl:max-w-none! xl:rotate-0!" />
           ))}
         </div>
       </Band>
 
       {/* 3a · awards and recognition */}
-      <Band h={BANDS.awards} className="py-12 xl:py-0">
-        <div className={flow}>
-          <SlatePlate l={4.44} t={34} w={668} rot={-0.4} z={2} className={full}>
+      <Band h={BANDS.awards} className="py-12 xl:h-auto! xl:py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 xl:gap-10">
+          <SlatePlate l={4.44} t={34} w={668} rot={-0.4} z={2} className="md:col-span-2 xl:static! xl:col-span-3 xl:w-full! xl:max-w-none! xl:rotate-0! xl:px-10 xl:py-9">
             <Eyebrow className="mb-4">Awards &amp; recognition</Eyebrow>
             <h2 className="engrave m-0 mb-3.5 font-serif text-[clamp(1.4rem,2.4vw,30px)] font-light leading-[1.15] text-ground">
               Something that stays on the desk.
@@ -102,15 +100,15 @@ export default function ForBusiness() {
             </div>
           </SlatePlate>
           {awardsPrints.map((s) => (
-            <Print key={s.src} spec={s} />
+            <Print key={s.src} spec={s} className="xl:static! xl:w-full! xl:max-w-none! xl:rotate-0!" />
           ))}
         </div>
       </Band>
 
       {/* 3b · client and employee appreciation */}
-      <Band h={BANDS.appreciation} className="py-12 xl:py-0">
-        <div className={flow}>
-          <SlatePlate l={46.11} t={46} w={700} rot={0.5} z={2} className={full}>
+      <Band h={BANDS.appreciation} className="py-12 xl:h-auto! xl:py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 xl:gap-10">
+          <SlatePlate l={46.11} t={46} w={700} rot={0.5} z={2} className="md:col-span-2 xl:static! xl:col-span-3 xl:w-full! xl:max-w-none! xl:rotate-0! xl:px-10 xl:py-9">
             <Eyebrow className="mb-4">Client &amp; employee appreciation</Eyebrow>
             <h2 className="engrave m-0 mb-3.5 font-serif text-[clamp(1.4rem,2.4vw,30px)] font-light leading-[1.15] text-ground">
               A thank-you they will actually use.
@@ -127,15 +125,15 @@ export default function ForBusiness() {
             </div>
           </SlatePlate>
           {appreciationPrints.map((s) => (
-            <Print key={s.src} spec={s} />
+            <Print key={s.src} spec={s} className="xl:static! xl:w-full! xl:max-w-none! xl:rotate-0!" />
           ))}
         </div>
       </Band>
 
       {/* 3c · corporate gifts */}
-      <Band h={BANDS.gifts} className="py-12 xl:py-0">
-        <div className={flow}>
-          <SlatePlate l={4.44} t={34} w={690} rot={-0.35} z={2} className={full}>
+      <Band h={BANDS.gifts} className="py-12 xl:h-auto! xl:py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 xl:gap-10">
+          <SlatePlate l={4.44} t={34} w={690} rot={-0.35} z={2} className="md:col-span-2 xl:static! xl:col-span-3 xl:w-full! xl:max-w-none! xl:rotate-0! xl:px-10 xl:py-9">
             <Eyebrow className="mb-4">Corporate gifts</Eyebrow>
             <h2 className="engrave m-0 mb-3.5 font-serif text-[clamp(1.4rem,2.4vw,30px)] font-light leading-[1.15] text-ground">
               A gift with the state in it.
@@ -152,15 +150,15 @@ export default function ForBusiness() {
             </div>
           </SlatePlate>
           {giftsPrints.map((s) => (
-            <Print key={s.src} spec={s} />
+            <Print key={s.src} spec={s} className="xl:static! xl:w-full! xl:max-w-none! xl:rotate-0!" />
           ))}
         </div>
       </Band>
 
       {/* 3d · wholesale for retailers */}
-      <Band h={BANDS.wholesale} className="py-12 xl:py-0">
-        <div className={flow}>
-          <SlatePlate l={43.06} t={34} w={756} rot={0.45} z={2} className={full}>
+      <Band h={BANDS.wholesale} className="py-12 xl:h-auto! xl:py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 xl:gap-10">
+          <SlatePlate l={43.06} t={34} w={756} rot={0.45} z={2} className="md:col-span-2 xl:static! xl:col-span-3 xl:w-full! xl:max-w-none! xl:rotate-0! xl:px-10 xl:py-9">
             <Eyebrow className="mb-4">Wholesale for retailers</Eyebrow>
             <h2 className="engrave m-0 mb-3.5 font-serif text-[clamp(1.4rem,2.4vw,30px)] font-light leading-[1.15] text-ground">
               Stock that sells in Minnesota.
@@ -177,15 +175,15 @@ export default function ForBusiness() {
             </div>
           </SlatePlate>
           {wholesalePrints.map((s) => (
-            <Print key={s.src} spec={s} />
+            <Print key={s.src} spec={s} className="xl:static! xl:w-full! xl:max-w-none! xl:rotate-0!" />
           ))}
         </div>
       </Band>
 
       {/* 4 · materials and capabilities, on one wide slate plate */}
-      <Band h={BANDS.materials} className="py-12 xl:py-0">
-        <div className={flow}>
-          <SlatePlate l={4.44} t={56} w={1312} rot={-0.25} z={1} className={full}>
+      <Band h={BANDS.materials} className="py-12 xl:h-auto! xl:py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 xl:gap-10">
+          <SlatePlate l={4.44} t={56} w={1312} rot={-0.25} z={1} className="md:col-span-2 xl:static! xl:col-span-3 xl:w-full! xl:max-w-none! xl:rotate-0! xl:px-10 xl:py-9">
             <Eyebrow className="mb-5">Materials and capabilities</Eyebrow>
             <h2 className="engrave m-0 mb-6 font-serif text-[clamp(1.7rem,3.2vw,40px)] font-light leading-[1.1] text-ground">
               Five materials, one shop.
@@ -206,15 +204,15 @@ export default function ForBusiness() {
             </p>
           </SlatePlate>
           {materialsPrints.map((s) => (
-            <Print key={s.src} spec={s} />
+            <Print key={s.src} spec={s} className="xl:static! xl:w-full! xl:max-w-none! xl:rotate-0!" />
           ))}
         </div>
       </Band>
 
       {/* 5 · how an order goes, on ash, given room */}
-      <Band h={BANDS.order} className="py-12 xl:py-0">
-        <div className={flow}>
-          <AshPlate l={20.83} t={76} w={1040} rot={0.45} z={3} className={full}>
+      <Band h={BANDS.order} className="py-12 xl:h-auto! xl:py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 xl:gap-10">
+          <AshPlate l={20.83} t={76} w={1040} rot={0.45} z={3} className="md:col-span-2 xl:static! xl:col-span-3 xl:w-full! xl:max-w-none! xl:rotate-0! xl:px-10 xl:py-9">
             <Eyebrow tone="amber" className="mb-4">
               How an order goes
             </Eyebrow>
@@ -246,15 +244,15 @@ export default function ForBusiness() {
             </div>
           </AshPlate>
           {orderPrints.map((s) => (
-            <Print key={s.src} spec={s} />
+            <Print key={s.src} spec={s} className="xl:static! xl:w-full! xl:max-w-none! xl:rotate-0!" />
           ))}
         </div>
       </Band>
 
       {/* 6 · lead times, stated once, plainly */}
-      <Band h={BANDS.lead} className="py-12 xl:py-0">
-        <div className={flow}>
-          <SlatePlate l={4.44} t={20} w={1312} rot={0.3} z={1} className={full}>
+      <Band h={BANDS.lead} className="py-12 xl:h-auto! xl:py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 xl:gap-10">
+          <SlatePlate l={4.44} t={20} w={1312} rot={0.3} z={1} className="md:col-span-2 xl:static! xl:col-span-3 xl:w-full! xl:max-w-none! xl:rotate-0! xl:px-10 xl:py-9">
             <div className="flex flex-col gap-4 xl:flex-row xl:items-baseline xl:justify-between xl:gap-10">
               <Eyebrow className="flex-none">Lead times</Eyebrow>
               <p className="engrave m-0 font-serif text-[clamp(1.2rem,2vw,26px)] font-light leading-[1.35] text-ground xl:text-right">
