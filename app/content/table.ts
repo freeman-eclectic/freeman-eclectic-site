@@ -183,6 +183,14 @@ export const PIECES: PieceSpec[] = [
     caption: "Turned cribbage board. A western mountain scene.",
   },
   {
+    name: "Sticks game",
+    src: "/img/sticks-wooden-contract-tile-game-set-img_3877.webp",
+    w: 230,
+    h: 180,
+    alt: "Freeman Eclectic handcrafted wooden Sticks tabletop game set",
+    caption: "Sticks. A handcrafted wooden game for gathering around the table.",
+  },
+  {
     name: "dots and boxes acrylic board",
     src: "/img/dots-and-boxes-acrylic-game-board-img_3882.webp",
     w: 230,
