@@ -223,14 +223,6 @@ export const PIECES: PieceSpec[] = [
     caption: "Slate coaster. A cabin, a dock and a loon.",
   },
   {
-    name: "pigeon slate coaster",
-    src: "/img/owl-portrait-slate-coaster-img_5728.webp",
-    w: 230,
-    h: 160,
-    alt: "A slate coaster engraved with a pigeon",
-    caption: "Slate coaster. A pigeon.",
-  },
-  {
     name: "highland cow slate coaster",
     src: "/img/highland-cow-portrait-slate-coaster-img_5543.webp",
     w: 230,
