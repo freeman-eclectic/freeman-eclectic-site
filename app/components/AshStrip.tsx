@@ -14,16 +14,16 @@ export function AshStrip() {
   const { pathname } = useLocation();
   return (
     <header className="relative z-20 bg-ground-deep text-ink shadow-strip">
-      <div className="mx-auto flex max-w-canvas flex-wrap items-center justify-between gap-4 px-6 py-4 md:px-10 xl:h-23 xl:flex-nowrap xl:px-16 xl:py-0">
-        <Link to="/" className="flex items-center gap-4 text-ink hover:text-ink" aria-label="Freeman Eclectic, home">
-          <Wordmark size={46} />
+      <div className="mx-auto flex max-w-canvas flex-wrap items-center justify-between gap-x-4 gap-y-2 px-5 py-2 md:px-8 xl:h-[68px] xl:flex-nowrap xl:px-12 xl:py-0">
+        <Link to="/" className="flex shrink-0 items-center gap-2.5 text-ink hover:text-ink" aria-label="Freeman Eclectic, home">
+          <Wordmark size={35} />
           <span className="leading-none">
-            <span className="block font-serif text-[21px] uppercase tracking-[0.15em]">Freeman</span>
-            <span className="mt-0.5 block font-serif text-[23px] italic text-tan">Eclectic</span>
+            <span className="block font-serif text-[17px] uppercase tracking-[0.13em]">Freeman</span>
+            <span className="mt-0.5 block font-serif text-[19px] italic text-tan">Eclectic</span>
           </span>
         </Link>
 
-        <nav className="flex w-full flex-wrap items-center gap-x-6 gap-y-1 xl:w-auto xl:gap-x-[34px]">
+        <nav className="flex w-full flex-wrap items-center gap-x-4 gap-y-0 xl:w-auto xl:gap-x-6">
           {NAV.map(({ to, label }) => {
             const current = pathname === to;
             return (
@@ -31,7 +31,7 @@ export function AshStrip() {
                 key={to}
                 to={to}
                 aria-current={current ? "page" : undefined}
-                className={`flex min-h-11 items-center text-sm text-ink hover:text-amber-deep ${
+                className={`flex min-h-9 items-center text-[13px] text-ink hover:text-amber-deep ${
                   current
                     ? "border-b-2 border-amber font-semibold"
                     : "border-b-2 border-transparent font-medium"
@@ -44,7 +44,7 @@ export function AshStrip() {
           <Btn
             href="/contact"
             variant="ink"
-            className="mt-2 h-11 min-h-11 w-full px-[22px] sm:mt-0 sm:w-auto"
+            className="mt-1 h-9 min-h-9 w-full px-4 text-[13px] sm:mt-0 sm:w-auto"
           >
             Request a quote
           </Btn>
