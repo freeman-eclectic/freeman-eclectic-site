@@ -73,13 +73,6 @@ const BOTTLE_OPENER_COLLECTIONS = [
   { name: "Cabin & Outdoor Adventures", designs: ["BOTTLE OPENER BOUNDARY WATERS CANOEIST","BOTTLE OPENER CANOE AND NORTHERN LIGHTS","BOTTLE OPENER MINNESOTA ROOTS","BOTTLE OPENER PORTAGE","BOTTLE OPENER SNOW MOBILE"] },
 ] as const;
 
-const bottleOpenerSample = {
-  src: "/img/callender-remax-bottle-opener-img_5569.webp",
-  alt: "A real engraved black credit-card-style stainless-steel bottle opener",
-  w: 320,
-  h: 196,
-};
-
 const customPetPhotograph = {
   src: "/img/owl-portrait-slate-coaster-img_5728.webp",
   alt: "A custom slate coaster engraved from a customer's photograph of a favorite pigeon",
@@ -93,7 +86,6 @@ const photographsInPageOrder = [
   ...giftsPrints,
   ...PIECES,
   customPetPhotograph,
-  bottleOpenerSample,
   ...personalisationPrints,
   ...askPrints,
 ];
@@ -325,7 +317,7 @@ export default function ForYourTable() {
               </div>
             </div>
           </section>
-          {/* Featured opener preview: real engraved black metal, not a generic stock opener. */}
+          {/* Credit-card format illustration: do not substitute an oval opener photo. */}
           <section id="table-bottle-openers" aria-labelledby="bottle-openers-heading" className="mt-20 scroll-mt-20">
             <div className="bg-ground-deep p-7 text-ink md:p-10">
               <Eyebrow tone="amber" className="mb-3">For your table</Eyebrow>
@@ -334,14 +326,11 @@ export default function ForYourTable() {
               </h2>
               <div className="mt-6 grid grid-cols-1 items-center gap-7 md:grid-cols-2">
                 <figure className="m-0 bg-ground p-3 shadow-print">
-                  <img
-                    src="/img/callender-remax-bottle-opener-img_5569.webp"
-                    alt="Real Freeman Eclectic flat black stainless-steel credit-card-style bottle opener with detailed engraving"
-                    className="h-auto w-full"
-                    loading="lazy"
-                  />
+                  <CreditCardOpenerIllustration />
                   <figcaption className="pt-3 text-sm italic text-ink-soft">
-                    An actual engraved credit-card bottle opener from our shop. Custom business example shown.
+                    Illustration of the correct credit-card opener shape (not a product photograph).
+                    The individual design engravings are shown by name below while the finished
+                    opener photographs are being added.
                   </figcaption>
                 </figure>
                 <div>
@@ -354,8 +343,8 @@ export default function ForYourTable() {
                     Browse the named designs by theme below and ask for your favorite.
                   </p>
                   <p className="mt-3 text-sm text-ink-soft">
-                    The scenic product photographs you supplied are being prepared for the individual
-                    design galleries. This photograph shows the actual opener style and engraved finish.
+                    These designs are identified by their exact production artwork names. Photographs
+                    of the finished individual openers are not yet published in this gallery.
                   </p>
                 </div>
               </div>
@@ -486,5 +475,49 @@ function PieceTile({ piece, index }: { piece: PieceSpec; index: number }) {
       </figcaption>
       <TextLink href={CONTACT_FORM_URL}>Ask about this piece</TextLink>
     </figure>
+  );
+}
+
+/**
+ * Shape-only illustration, deliberately not a product photograph or a substitute
+ * for an exact customer's production engraving. The card's opening is on the right.
+ */
+function CreditCardOpenerIllustration() {
+  return (
+    <svg
+      viewBox="0 0 560 350"
+      role="img"
+      aria-label="Illustration of a black credit-card-format bottle opener with an opening on the right"
+      className="h-auto w-full"
+    >
+      <defs>
+        <linearGradient id="credit-card-metal" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stopColor="#34383b" />
+          <stop offset="0.55" stopColor="#111417" />
+          <stop offset="1" stopColor="#24282a" />
+        </linearGradient>
+        <mask id="credit-card-cutout">
+          <rect width="560" height="350" fill="black" />
+          <rect x="30" y="42" width="500" height="266" rx="21" fill="white" />
+          <path
+            d="M 422 106 C 453 78 497 92 500 118 L 500 228 C 496 250 461 262 431 242
+               L 405 220 C 391 207 389 184 404 174 C 416 166 419 156 410 145
+               C 397 129 405 118 422 106 Z"
+            fill="black"
+          />
+        </mask>
+      </defs>
+      <rect x="10" y="20" width="540" height="310" rx="28" fill="#d3c7b4" opacity=".4" />
+      <rect width="560" height="350" fill="url(#credit-card-metal)" mask="url(#credit-card-cutout)" />
+      <g fill="#dfd7c9" fontFamily="Georgia,serif" textAnchor="middle">
+        <text x="214" y="135" fontSize="30" letterSpacing="3">FREEMAN</text>
+        <text x="214" y="178" fontSize="32" letterSpacing="2">ECLECTIC</text>
+        <text x="214" y="217" fontSize="15" letterSpacing="2">CREDIT-CARD</text>
+        <text x="214" y="239" fontSize="15" letterSpacing="2">BOTTLE OPENER</text>
+      </g>
+      <text x="280" y="342" textAnchor="middle" fontSize="13" fill="#756a5d">
+        Format illustration — engraving varies by design
+      </text>
+    </svg>
   );
 }
