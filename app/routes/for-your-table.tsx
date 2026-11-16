@@ -73,6 +73,13 @@ const BOTTLE_OPENER_COLLECTIONS = [
   { name: "Cabin & Outdoor Adventures", designs: ["BOTTLE OPENER BOUNDARY WATERS CANOEIST","BOTTLE OPENER CANOE AND NORTHERN LIGHTS","BOTTLE OPENER MINNESOTA ROOTS","BOTTLE OPENER PORTAGE","BOTTLE OPENER SNOW MOBILE"] },
 ] as const;
 
+const bottleOpenerSample = {
+  src: "/img/callender-remax-bottle-opener-img_5569.webp",
+  alt: "A real engraved black credit-card-style stainless-steel bottle opener",
+  w: 320,
+  h: 196,
+};
+
 const customPetPhotograph = {
   src: "/img/owl-portrait-slate-coaster-img_5728.webp",
   alt: "A custom slate coaster engraved from a customer's photograph of a favorite pigeon",
@@ -86,6 +93,7 @@ const photographsInPageOrder = [
   ...giftsPrints,
   ...PIECES,
   customPetPhotograph,
+  bottleOpenerSample,
   ...personalisationPrints,
   ...askPrints,
 ];
@@ -312,20 +320,44 @@ export default function ForYourTable() {
               </div>
             </div>
           </section>
+          {/* Featured opener preview: real engraved black metal, not a generic stock opener. */}
           <section id="table-bottle-openers" aria-labelledby="bottle-openers-heading" className="mt-20 scroll-mt-20">
             <div className="bg-ground-deep p-7 text-ink md:p-10">
               <Eyebrow tone="amber" className="mb-3">For your table</Eyebrow>
               <h2 id="bottle-openers-heading" className="font-serif text-[clamp(1.6rem,3vw,36px)] font-light italic">
                 Credit-card bottle openers
               </h2>
-              <p className="mt-3 max-w-3xl text-base leading-relaxed text-ink-soft">
-                Pocket-sized black stainless-steel bottle openers, engraved with scenes from the
-                Northwoods and beyond. Each one is $10. Browse the designs by subject and tell us
-                the design name you want. Finished product photographs are being added as each
-                design is matched to its engraving artwork.
-              </p>
-              <p className="mt-3 text-sm text-ink-soft">
-                These are the flat, credit-card-style openers — not handled bar tools.
+              <div className="mt-6 grid grid-cols-1 items-center gap-7 md:grid-cols-2">
+                <figure className="m-0 bg-ground p-3 shadow-print">
+                  <img
+                    src="/img/callender-remax-bottle-opener-img_5569.webp"
+                    alt="Real Freeman Eclectic flat black stainless-steel credit-card-style bottle opener with detailed engraving"
+                    className="h-auto w-full"
+                    loading="lazy"
+                  />
+                  <figcaption className="pt-3 text-sm italic text-ink-soft">
+                    An actual engraved credit-card bottle opener from our shop. Custom business example shown.
+                  </figcaption>
+                </figure>
+                <div>
+                  <p className="font-serif text-2xl italic leading-snug text-ink">
+                    Detailed scenes, engraved across the metal — not an ordinary bottle opener.
+                  </p>
+                  <p className="mt-4 text-base leading-relaxed text-ink-soft">
+                    Each $10 opener is a slim black stainless-steel card, carefully engraved with
+                    detailed Northwoods wildlife, lakes, landmarks, and outdoor scenes.
+                    Browse the named designs by theme below and ask for your favorite.
+                  </p>
+                  <p className="mt-3 text-sm text-ink-soft">
+                    The scenic product photographs you supplied are being prepared for the individual
+                    design galleries. This photograph shows the actual opener style and engraved finish.
+                  </p>
+                </div>
+              </div>
+              <h3 className="mt-10 font-serif text-2xl italic text-ink">Choose a scenic collection</h3>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-soft">
+                Open only the subject that interests you. All 35 currently listed production designs
+                remain available, without having to scroll through every design at once.
               </p>
               <div className="mt-7 grid grid-cols-1 gap-5 md:grid-cols-2">
                 {BOTTLE_OPENER_COLLECTIONS.map((group) => (
