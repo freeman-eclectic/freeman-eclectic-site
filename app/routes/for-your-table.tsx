@@ -65,11 +65,19 @@ const coasterShelves = COASTER_THEMES.map((theme) => ({
     !COASTER_THEMES.slice(0, COASTER_THEMES.indexOf(theme)).some((earlier) => earlier.matches.test(piece.name))),
 })).filter((shelf) => shelf.pieces.length > 0);
 
+const customPetPhotograph = {
+  src: "/img/owl-portrait-slate-coaster-img_5728.webp",
+  alt: "A custom slate coaster engraved from a customer's photograph of a favorite pigeon",
+  w: 230,
+  h: 160,
+};
+
 const photographsInPageOrder = [
   ...openingPrints,
   ...gamesPrints,
   ...giftsPrints,
   ...PIECES,
+  customPetPhotograph,
   ...personalisationPrints,
   ...askPrints,
 ];
@@ -262,6 +270,38 @@ export default function ForYourTable() {
                 </div>
               </section>
             ))}
+          </section>
+
+          <section id="custom-pet-coasters" aria-labelledby="custom-pets-heading" className="mt-20 scroll-mt-20">
+            <div className="bg-ground-deep p-7 text-ink md:p-10">
+              <Eyebrow tone="amber" className="mb-3">Custom photo engraving</Eyebrow>
+              <h2 id="custom-pets-heading" className="font-serif text-[clamp(1.6rem,3vw,36px)] font-light italic">
+                Your favorite pet, made into a keepsake.
+              </h2>
+              <p className="mt-3 max-w-3xl text-[16px] leading-relaxed text-ink-soft">
+                This pigeon coaster was a one-of-a-kind commission, engraved from a customer's
+                photograph of a favorite bird. We can also explore a portrait of your own dog,
+                cat, or other much-loved pet. Send us a clear photo and we'll discuss what works
+                best on slate.
+              </p>
+              <div className="mt-8 grid grid-cols-1 items-start gap-8 md:grid-cols-2">
+                <figure className="m-0 bg-ground p-3 shadow-print">
+                  <GalleryPhotograph {...customPetPhotograph} />
+                  <figcaption className="pt-3 font-serif text-base italic text-ink-soft">
+                    Custom pigeon portrait — made from a customer's photo.
+                  </figcaption>
+                </figure>
+                <div className="flex h-full flex-col justify-center gap-4 border border-line p-7">
+                  <h3 className="font-serif text-2xl italic text-ink">Have a favorite dog?</h3>
+                  <p className="m-0 text-base leading-relaxed text-ink-soft">
+                    A favorite photograph can be the starting point for a personal engraved
+                    coaster. Each pet portrait is discussed individually, rather than sold
+                    as a standard design.
+                  </p>
+                  <div><TextLink href={CONTACT_FORM_URL}>Ask about a custom pet coaster</TextLink></div>
+                </div>
+              </div>
+            </div>
           </section>
         </div>
       </Band>
