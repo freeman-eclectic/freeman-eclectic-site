@@ -28,7 +28,7 @@ export function meta({}: Route.MetaArgs) {
     {
       name: "description",
       content:
-        "Cribbage boards, family games, engraved slate coasters and glassware, and custom decor, made in a small Minnesota shop. Ask about any piece by email.",
+        "Handcrafted games, slate coasters and $10 credit-card bottle openers, made in Minnesota. Browse our designs and ask about your favorite.",
     },
   ];
 }
@@ -64,6 +64,14 @@ const coasterShelves = COASTER_THEMES.map((theme) => ({
   pieces: coasterPieces.filter((piece) => theme.matches.test(piece.name) &&
     !COASTER_THEMES.slice(0, COASTER_THEMES.indexOf(theme)).some((earlier) => earlier.matches.test(piece.name))),
 })).filter((shelf) => shelf.pieces.length > 0);
+
+/** Names match the engraving PNG files received November 16, 2026. */
+const BOTTLE_OPENER_COLLECTIONS = [
+  { name: "Wildlife & Northwoods", designs: ["BOTTLE OPENER BALD EAGLE","BOTTLE OPENER BLACK LAB","BOTTLE OPENER DEER","BOTTLE OPENER DEER 2","BOTTLE OPENER LOON AND CHICK","BOTTLE OPENER MOOSE","BOTTLE OPENER PHEASANT","BOTTLE OPENER PHEASANT HUNTING","BOTTLE OPENER PHEASANT HUNTING 2","BOTTLE OPENER SLEEPING DEER HUNTER"] },
+  { name: "Hunting & Fishing", designs: ["BOTTLE OPENER BOAT FISHING","BOTTLE OPENER BOW HUNTER","BOTTLE OPENER DOCK FISHING","BOTTLE OPENER DUCK HUNTER","BOTTLE OPENER ICE FISHING","BOTTLE OPENER ICE HOUSE","BOTTLE OPENER WALLEYE IN MOONLIGHT","BOTTLE OPENER WALLEYE ON LURE","BOTTLE OPENER WALLEYE UNDER THE SURFACE"] },
+  { name: "North Shore & Landmarks", designs: ["BOTTLE OPENER DULUTH LIFT BRIDGE","BOTTLE OPENER FISHING CHARTER LEAVING DULUTH HARBOR","BOTTLE OPENER GOOSE BERRY FALLS","BOTTLE OPENER GRAND MARAIS LIGHT HOUSE","BOTTLE OPENER ICY NORTH SHORE","BOTTLE OPENER ORE SHIP LEAVING DULUTH HARBOR","BOTTLE OPENER ORE SHIP","BOTTLE OPENER PALISADE HEAD","BOTTLE OPENER SHOVEL POINT","BOTTLE OPENER SPLIT ROCK","BOTTLE OPENER TWO HARBORS LIGHT HOUSE"] },
+  { name: "Cabin & Outdoor Adventures", designs: ["BOTTLE OPENER BOUNDARY WATERS CANOEIST","BOTTLE OPENER CANOE AND NORTHERN LIGHTS","BOTTLE OPENER MINNESOTA ROOTS","BOTTLE OPENER PORTAGE","BOTTLE OPENER SNOW MOBILE"] },
+] as const;
 
 const customPetPhotograph = {
   src: "/img/owl-portrait-slate-coaster-img_5728.webp",
@@ -227,6 +235,7 @@ export default function ForYourTable() {
             <nav aria-label="Browse For Your Table" className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
               <a href="#table-games" className="font-semibold">Browse games</a>
               <a href="#table-coasters" className="font-semibold">Browse coasters</a>
+              <a href="#table-bottle-openers" className="font-semibold">Browse bottle openers</a>
             </nav>
           </AshPlate>
 
@@ -300,6 +309,45 @@ export default function ForYourTable() {
                   </p>
                   <div><TextLink href={CONTACT_FORM_URL}>Ask about a custom pet coaster</TextLink></div>
                 </div>
+              </div>
+            </div>
+          </section>
+          <section id="table-bottle-openers" aria-labelledby="bottle-openers-heading" className="mt-20 scroll-mt-20">
+            <div className="bg-ground-deep p-7 text-ink md:p-10">
+              <Eyebrow tone="amber" className="mb-3">For your table</Eyebrow>
+              <h2 id="bottle-openers-heading" className="font-serif text-[clamp(1.6rem,3vw,36px)] font-light italic">
+                Credit-card bottle openers
+              </h2>
+              <p className="mt-3 max-w-3xl text-base leading-relaxed text-ink-soft">
+                Pocket-sized black stainless-steel bottle openers, engraved with scenes from the
+                Northwoods and beyond. Each one is $10. Browse the designs by subject and tell us
+                the design name you want. Finished product photographs are being added as each
+                design is matched to its engraving artwork.
+              </p>
+              <p className="mt-3 text-sm text-ink-soft">
+                These are the flat, credit-card-style openers — not handled bar tools.
+              </p>
+              <div className="mt-7 grid grid-cols-1 gap-5 md:grid-cols-2">
+                {BOTTLE_OPENER_COLLECTIONS.map((group) => (
+                  <details key={group.name} className="group border border-line bg-ground p-5 open:shadow-print">
+                    <summary className="cursor-pointer font-serif text-xl italic marker:text-amber">
+                      {group.name} <span className="font-sans text-sm not-italic text-ink-soft">({group.designs.length})</span>
+                    </summary>
+                    <ul className="mt-5 space-y-3">
+                      {group.designs.map((name) => (
+                        <li key={name} className="border-t border-line pt-3">
+                          <span className="block text-sm font-semibold text-ink">{name}</span>
+                          <a
+                            className="mt-1 inline-block text-sm text-amber-deep underline underline-offset-2"
+                            href={`mailto:${EMAIL}?subject=${encodeURIComponent("Bottle opener inquiry: " + name)}`}
+                          >
+                            Ask about this design
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                ))}
               </div>
             </div>
           </section>
