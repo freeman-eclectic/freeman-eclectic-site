@@ -49,7 +49,7 @@ export default function ForBusiness() {
       <AshStrip />
 
       <Band h={510} className="py-12 xl:h-auto! xl:py-12">
-        <section id="promotional-bottle-openers" aria-labelledby="promotional-openers-heading" className="grid grid-cols-1 gap-8">
+        <section id="promotional-bottle-openers" aria-labelledby="promotional-openers-heading" className="grid grid-cols-1 items-center gap-8 xl:grid-cols-2 xl:gap-10">
           <SlatePlate className="xl:static! xl:w-full! xl:rotate-0! xl:px-10 xl:py-9">
             <Eyebrow className="mb-4">Promotional / business-card bottle openers</Eyebrow>
             <h2 id="promotional-openers-heading" className="engrave font-serif text-[clamp(1.55rem,2.6vw,32px)] font-light leading-tight text-ground">
@@ -71,15 +71,27 @@ export default function ForBusiness() {
               and small-business promotions. Ask about quantities and a custom quote.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-cream-dimmer">
-              Finished sample photography will appear here once our actual Freeman Eclectic
-              business-card opener is photographed. The earlier digital mockup has been removed.
+              Shown alongside is our actual engraved Freeman Eclectic bottle opener.
+              Every customer's layout is customized and approved before engraving.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
               <Btn href={CONTACT_FORM_URL} variant="outline">Ask about promotional bottle openers</Btn>
               <a href={plainMail} className="self-center text-sm text-tan hover:text-khaki">{EMAIL}</a>
             </div>
           </SlatePlate>
-
+          <figure className="m-0 bg-ground p-3 shadow-print xl:p-4">
+            <img
+              src="/img/freeman-eclectic-business-card-bottle-opener.webp"
+              alt="Actual black stainless-steel Freeman Eclectic credit-card bottle opener engraved with the business name, website, QR code, and contact information; bottle opening at right"
+              className="block h-auto w-full"
+              loading="eager"
+              width={390}
+              height={232}
+            />
+            <figcaption className="pt-3 font-serif text-base italic text-ink-soft">
+              Actual Freeman Eclectic business-card bottle opener, engraved on black stainless steel.
+            </figcaption>
+          </figure>
         </section>
       </Band>
 
