@@ -79,17 +79,17 @@ export default function ForBusiness() {
               <a href={plainMail} className="self-center text-sm text-tan hover:text-khaki">{EMAIL}</a>
             </div>
           </SlatePlate>
-          <figure className="m-0 bg-ground p-3 shadow-print xl:p-4">
+          <figure className="mx-auto w-full max-w-[680px] bg-ground p-3 shadow-print xl:p-4">
             <img
-              src="/img/freeman-eclectic-business-card-bottle-opener.webp"
-              alt="Actual black stainless-steel Freeman Eclectic credit-card bottle opener engraved with the business name, website, QR code, and contact information; bottle opening at right"
+              src="/img/freeman-eclectic-bottle-opener-approved-cabin.webp"
+              alt="Freeman Eclectic engraved black stainless-steel bottle opener presented on a warm wooden cabin table with a Northwoods lake in the background"
               className="block h-auto w-full"
               loading="eager"
-              width={390}
-              height={232}
+              width={1200}
+              height={900}
             />
             <figcaption className="pt-3 font-serif text-base italic text-ink-soft">
-              Actual Freeman Eclectic business-card bottle opener, engraved on black stainless steel.
+              Cabin-scene presentation of our Freeman Eclectic engraved stainless-steel bottle opener.
             </figcaption>
           </figure>
         </section>
