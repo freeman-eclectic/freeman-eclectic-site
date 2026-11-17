@@ -132,7 +132,7 @@ export default function ForYourTable() {
 
       <Band h={740} className="py-12 xl:h-auto! xl:py-12">
         <div className="xl:px-14">
-          {/* Credit-card format illustration: do not substitute an oval opener photo. */}
+          {/* Approved cabin-scene opener example plus individual engraving design previews. */}
           <section id="table-bottle-openers" aria-labelledby="bottle-openers-heading" className="mt-20 scroll-mt-20">
             <div className="bg-ground-deep p-7 text-ink md:p-10">
               <Eyebrow tone="amber" className="mb-3">For your table</Eyebrow>
@@ -141,11 +141,17 @@ export default function ForYourTable() {
               </h2>
               <div className="mt-6 grid grid-cols-1 items-center gap-7 md:grid-cols-2">
                 <figure className="m-0 bg-ground p-3 shadow-print">
-                  <CreditCardOpenerIllustration />
+                  <img
+                    src="/img/freeman-eclectic-bottle-opener-approved-cabin.webp"
+                    alt="Freeman Eclectic business-card bottle opener displayed on a warm cabin table beside a lake view"
+                    width={1200}
+                    height={900}
+                    loading="eager"
+                    className="block h-auto w-full"
+                  />
                   <figcaption className="pt-3 text-sm italic text-ink-soft">
-                    Illustration of the correct credit-card opener shape (not a product photograph).
-                    The individual design engravings are shown by name below while the finished
-                    opener photographs are being added.
+                    Our Freeman Eclectic credit-card opener in its approved cabin-scene presentation.
+                    Browse the individual scenic engraving designs below.
                   </figcaption>
                 </figure>
                 <div>
@@ -158,15 +164,16 @@ export default function ForYourTable() {
                     Browse the named designs by theme below and ask for your favorite.
                   </p>
                   <p className="mt-3 text-sm text-ink-soft">
-                    These designs are identified by their exact production artwork names. Photographs
-                    of the finished individual openers are not yet published in this gallery.
+                    The preview images show each design using its production engraving artwork, presented
+                    consistently on the same opener and cabin background. These are digital previews,
+                    rather than photographs of individually finished openers.
                   </p>
                 </div>
               </div>
               <h3 className="mt-10 font-serif text-2xl italic text-ink">Choose a scenic collection</h3>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-soft">
-                Open only the subject that interests you. All 35 currently listed production designs
-                remain available, without having to scroll through every design at once.
+                Open only the subject that interests you. All 35 currently listed designs include a scenic preview. Each category can be opened
+                individually so you only see the designs that interest you.
               </p>
               <div className="mt-7 grid grid-cols-1 gap-5 md:grid-cols-2">
                 {BOTTLE_OPENER_COLLECTIONS.map((group) => (
@@ -174,12 +181,20 @@ export default function ForYourTable() {
                     <summary className="cursor-pointer font-serif text-xl italic marker:text-amber">
                       {group.name} <span className="font-sans text-sm not-italic text-ink-soft">({group.designs.length})</span>
                     </summary>
-                    <ul className="mt-5 space-y-3">
+                    <ul className="mt-5 grid list-none grid-cols-1 gap-5 p-0 sm:grid-cols-2">
                       {group.designs.map((name) => (
-                        <li key={name} className="border-t border-line pt-3">
-                          <span className="block text-sm font-semibold text-ink">{name}</span>
+                        <li key={name} className="min-w-0 border border-line bg-ground-deep p-2.5">
+                          <img
+                            src={`/img/${name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}.webp`}
+                            alt={`${name.replace(/^BOTTLE OPENER /, "")} engraved bottle opener design preview in a Northwoods cabin setting`}
+                            width={720}
+                            height={540}
+                            loading="lazy"
+                            className="block h-auto w-full"
+                          />
+                          <span className="mt-3 block text-sm font-semibold leading-snug text-ink">{name}</span>
                           <a
-                            className="mt-1 inline-block text-sm text-amber-deep underline underline-offset-2"
+                            className="mt-2 inline-block text-sm text-amber-deep underline underline-offset-2"
                             href={`mailto:${EMAIL}?subject=${encodeURIComponent("Bottle opener inquiry: " + name)}`}
                           >
                             Ask about this design
