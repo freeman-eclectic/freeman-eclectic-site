@@ -129,6 +129,71 @@ export default function ForYourTable() {
         </div>
       </Band>
 
+      <Band h={740} className="py-12 xl:h-auto! xl:py-12">
+        <div className="xl:px-14">
+          {/* Credit-card format illustration: do not substitute an oval opener photo. */}
+          <section id="table-bottle-openers" aria-labelledby="bottle-openers-heading" className="mt-20 scroll-mt-20">
+            <div className="bg-ground-deep p-7 text-ink md:p-10">
+              <Eyebrow tone="amber" className="mb-3">For your table</Eyebrow>
+              <h2 id="bottle-openers-heading" className="font-serif text-[clamp(1.6rem,3vw,36px)] font-light italic">
+                Credit-card bottle openers
+              </h2>
+              <div className="mt-6 grid grid-cols-1 items-center gap-7 md:grid-cols-2">
+                <figure className="m-0 bg-ground p-3 shadow-print">
+                  <CreditCardOpenerIllustration />
+                  <figcaption className="pt-3 text-sm italic text-ink-soft">
+                    Illustration of the correct credit-card opener shape (not a product photograph).
+                    The individual design engravings are shown by name below while the finished
+                    opener photographs are being added.
+                  </figcaption>
+                </figure>
+                <div>
+                  <p className="font-serif text-2xl italic leading-snug text-ink">
+                    Detailed scenes, engraved across the metal — not an ordinary bottle opener.
+                  </p>
+                  <p className="mt-4 text-base leading-relaxed text-ink-soft">
+                    Each $10 opener is a slim black stainless-steel card, carefully engraved with
+                    detailed Northwoods wildlife, lakes, landmarks, and outdoor scenes.
+                    Browse the named designs by theme below and ask for your favorite.
+                  </p>
+                  <p className="mt-3 text-sm text-ink-soft">
+                    These designs are identified by their exact production artwork names. Photographs
+                    of the finished individual openers are not yet published in this gallery.
+                  </p>
+                </div>
+              </div>
+              <h3 className="mt-10 font-serif text-2xl italic text-ink">Choose a scenic collection</h3>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-soft">
+                Open only the subject that interests you. All 35 currently listed production designs
+                remain available, without having to scroll through every design at once.
+              </p>
+              <div className="mt-7 grid grid-cols-1 gap-5 md:grid-cols-2">
+                {BOTTLE_OPENER_COLLECTIONS.map((group) => (
+                  <details key={group.name} className="group border border-line bg-ground p-5 open:shadow-print">
+                    <summary className="cursor-pointer font-serif text-xl italic marker:text-amber">
+                      {group.name} <span className="font-sans text-sm not-italic text-ink-soft">({group.designs.length})</span>
+                    </summary>
+                    <ul className="mt-5 space-y-3">
+                      {group.designs.map((name) => (
+                        <li key={name} className="border-t border-line pt-3">
+                          <span className="block text-sm font-semibold text-ink">{name}</span>
+                          <a
+                            className="mt-1 inline-block text-sm text-amber-deep underline underline-offset-2"
+                            href={`mailto:${EMAIL}?subject=${encodeURIComponent("Bottle opener inquiry: " + name)}`}
+                          >
+                            Ask about this design
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </section>
+        </div>
+      </Band>
+
       {/* 3a · board games on ash, kitchen & bar engraved on slate */}
       <Band h={BANDS.games} className="py-12 xl:h-auto! xl:py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-6 xl:gap-10">
@@ -314,66 +379,6 @@ export default function ForYourTable() {
                   </p>
                   <div><TextLink href={CONTACT_FORM_URL}>Ask about a custom pet coaster</TextLink></div>
                 </div>
-              </div>
-            </div>
-          </section>
-          {/* Credit-card format illustration: do not substitute an oval opener photo. */}
-          <section id="table-bottle-openers" aria-labelledby="bottle-openers-heading" className="mt-20 scroll-mt-20">
-            <div className="bg-ground-deep p-7 text-ink md:p-10">
-              <Eyebrow tone="amber" className="mb-3">For your table</Eyebrow>
-              <h2 id="bottle-openers-heading" className="font-serif text-[clamp(1.6rem,3vw,36px)] font-light italic">
-                Credit-card bottle openers
-              </h2>
-              <div className="mt-6 grid grid-cols-1 items-center gap-7 md:grid-cols-2">
-                <figure className="m-0 bg-ground p-3 shadow-print">
-                  <CreditCardOpenerIllustration />
-                  <figcaption className="pt-3 text-sm italic text-ink-soft">
-                    Illustration of the correct credit-card opener shape (not a product photograph).
-                    The individual design engravings are shown by name below while the finished
-                    opener photographs are being added.
-                  </figcaption>
-                </figure>
-                <div>
-                  <p className="font-serif text-2xl italic leading-snug text-ink">
-                    Detailed scenes, engraved across the metal — not an ordinary bottle opener.
-                  </p>
-                  <p className="mt-4 text-base leading-relaxed text-ink-soft">
-                    Each $10 opener is a slim black stainless-steel card, carefully engraved with
-                    detailed Northwoods wildlife, lakes, landmarks, and outdoor scenes.
-                    Browse the named designs by theme below and ask for your favorite.
-                  </p>
-                  <p className="mt-3 text-sm text-ink-soft">
-                    These designs are identified by their exact production artwork names. Photographs
-                    of the finished individual openers are not yet published in this gallery.
-                  </p>
-                </div>
-              </div>
-              <h3 className="mt-10 font-serif text-2xl italic text-ink">Choose a scenic collection</h3>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-soft">
-                Open only the subject that interests you. All 35 currently listed production designs
-                remain available, without having to scroll through every design at once.
-              </p>
-              <div className="mt-7 grid grid-cols-1 gap-5 md:grid-cols-2">
-                {BOTTLE_OPENER_COLLECTIONS.map((group) => (
-                  <details key={group.name} className="group border border-line bg-ground p-5 open:shadow-print">
-                    <summary className="cursor-pointer font-serif text-xl italic marker:text-amber">
-                      {group.name} <span className="font-sans text-sm not-italic text-ink-soft">({group.designs.length})</span>
-                    </summary>
-                    <ul className="mt-5 space-y-3">
-                      {group.designs.map((name) => (
-                        <li key={name} className="border-t border-line pt-3">
-                          <span className="block text-sm font-semibold text-ink">{name}</span>
-                          <a
-                            className="mt-1 inline-block text-sm text-amber-deep underline underline-offset-2"
-                            href={`mailto:${EMAIL}?subject=${encodeURIComponent("Bottle opener inquiry: " + name)}`}
-                          >
-                            Ask about this design
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </details>
-                ))}
               </div>
             </div>
           </section>
