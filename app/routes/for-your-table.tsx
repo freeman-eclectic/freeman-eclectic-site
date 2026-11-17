@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react";
+import { useState, type CSSProperties } from "react";
 import type { Route } from "./+types/for-your-table";
 import { AshStrip } from "~/components/AshStrip";
 import { Band, Bench } from "~/components/Bench";
@@ -63,7 +63,7 @@ const coasterShelves = COASTER_THEMES.map((theme) => ({
   name: theme.name,
   pieces: coasterPieces.filter((piece) => theme.matches.test(piece.name) &&
     !COASTER_THEMES.slice(0, COASTER_THEMES.indexOf(theme)).some((earlier) => earlier.matches.test(piece.name))),
-})).filter((shelf) => shelf.pieces.length > 0);
+}));
 
 /** Names match the engraving PNG files received November 16, 2026. */
 const BOTTLE_OPENER_COLLECTIONS = [
@@ -91,6 +91,7 @@ const photographsInPageOrder = [
 ];
 
 export default function ForYourTable() {
+  const [selectedCoasterTheme, setSelectedCoasterTheme] = useState<string>(coasterShelves[0]?.name ?? "Other coaster designs");
   return (
     <Bench photographs={photographsInPageOrder}>
       <AshStrip />
@@ -334,19 +335,41 @@ export default function ForYourTable() {
             <p className="mt-2 max-w-2xl text-cream-dim">
               Find a design by theme. Every coaster has its own name so you can request the exact design.
             </p>
-            <nav aria-label="Coaster themes" className="mt-5 flex flex-wrap gap-x-5 gap-y-3">
-              {coasterShelves.map((shelf, i) => (
-                <a key={shelf.name} href={`#coaster-theme-${i}`} className="text-khaki underline underline-offset-4">
-                  {shelf.name}
-                </a>
+            <p className="mt-3 text-sm text-cream-dim">
+              Select a theme to view just those coasters. You can switch themes at any time.
+            </p>
+            <nav aria-label="Choose a coaster theme" className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              {coasterShelves.map((shelf) => (
+                <button
+                  key={shelf.name}
+                  type="button"
+                  aria-pressed={selectedCoasterTheme === shelf.name}
+                  onClick={() => setSelectedCoasterTheme(shelf.name)}
+                  className={`border px-5 py-4 text-left text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber ${selectedCoasterTheme === shelf.name ? "border-amber bg-ground text-ink" : "border-line/40 bg-slate-plate text-ground hover:border-khaki hover:bg-ground hover:text-ink"}`}
+                >
+                  <span className="block">{shelf.name}</span>
+                  <span className={`mt-1 block text-xs font-normal ${selectedCoasterTheme === shelf.name ? "text-ink-soft" : "text-cream-dim"}`}>
+                    {shelf.pieces.length > 0 ? `${shelf.pieces.length} ${shelf.pieces.length === 1 ? "design" : "designs"}` : "More designs coming soon"}
+                  </span>
+                </button>
               ))}
+              <a href="#custom-pet-coasters" className="border border-line/40 bg-slate-plate px-5 py-4 text-left text-sm font-semibold text-ground hover:border-khaki hover:bg-ground hover:text-ink">
+                <span className="block">Custom pet portraits</span>
+                <span className="mt-1 block text-xs font-normal text-cream-dim">Made from your photo</span>
+              </a>
             </nav>
-            {coasterShelves.map((shelf, i) => (
-              <section key={shelf.name} id={`coaster-theme-${i}`} className="mt-12 scroll-mt-20" aria-label={shelf.name}>
+            {coasterShelves.filter((shelf) => shelf.name === selectedCoasterTheme).map((shelf) => (
+              <section key={shelf.name} id="selected-coaster-theme" className="mt-10 scroll-mt-20" aria-label={shelf.name}>
                 <h3 className="font-serif text-2xl italic text-ground">{shelf.name}</h3>
-                <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-10">
-                  {shelf.pieces.map((piece, j) => <PieceTile key={piece.src} piece={piece} index={j} />)}
-                </div>
+                {shelf.pieces.length > 0 ? (
+                  <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-10">
+                    {shelf.pieces.map((piece, j) => <PieceTile key={piece.src} piece={piece} index={j} />)}
+                  </div>
+                ) : (
+                  <div className="mt-6 border border-line/40 bg-slate-plate p-6 text-cream-dim">
+                    We are adding designs to this collection. <TextLink href={CONTACT_FORM_URL}>Ask about a custom coaster</TextLink>.
+                  </div>
+                )}
               </section>
             ))}
           </section>
