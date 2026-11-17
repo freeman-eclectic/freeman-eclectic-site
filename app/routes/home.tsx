@@ -47,9 +47,9 @@ export default function Home() {
       <AshStrip />
 
       {/* 2 · the tagline, on the largest slate plate */}
-      <Band h={BANDS.hero} className="py-12 xl:py-0">
-        <div className={flow}>
-          <SlatePlate l={20.28} t={330} w={856} rot={-0.5} z={3} className={full}>
+      <Band h={BANDS.hero} className="py-12 xl:h-auto! xl:py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 xl:gap-10">
+          <SlatePlate l={20.28} t={330} w={856} rot={-0.5} z={3} className="md:col-span-2 xl:static! xl:col-span-3 xl:w-full! xl:max-w-none! xl:rotate-0! xl:px-12 xl:py-10">
             <Eyebrow className="mb-6">Games &middot; Gifts &middot; Custom work</Eyebrow>
             <h1 className="engrave m-0 font-serif text-[clamp(2rem,6.2vw,76px)] font-light leading-[1.04] text-ground text-pretty">
               Crafted to bring{" "}
@@ -73,7 +73,7 @@ export default function Home() {
             </p>
           </SlatePlate>
           {heroPrints.map((s) => (
-            <Print key={s.src} spec={s} />
+            <Print key={s.src} spec={s} className="xl:static! xl:w-full! xl:max-w-none! xl:rotate-0!" />
           ))}
         </div>
       </Band>
