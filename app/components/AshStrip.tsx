@@ -12,14 +12,15 @@ const NAV = [
 /** The header: a strip of sanded ash laid across the top of the bench. */
 export function AshStrip() {
   const { pathname } = useLocation();
+  const isHome = pathname === "/";
   return (
     <header className="relative z-20 bg-ground-deep text-ink shadow-strip">
-      <div className="mx-auto flex max-w-canvas flex-wrap items-center justify-between gap-x-4 gap-y-2 px-5 py-2 md:px-8 xl:h-[68px] xl:flex-nowrap xl:px-12 xl:py-0">
+      <div className={`mx-auto flex max-w-canvas flex-wrap items-center justify-between gap-x-4 gap-y-2 px-5 md:px-8 xl:flex-nowrap xl:px-12 xl:py-0 ${isHome ? "py-4 xl:h-[104px]" : "py-2 xl:h-[68px]"}`}>
         <Link to="/" className="flex shrink-0 items-center gap-2.5 text-ink hover:text-ink" aria-label="Freeman Eclectic, home">
-          <Wordmark size={35} />
+          <Wordmark size={isHome ? 54 : 35} />
           <span className="leading-none">
-            <span className="block font-serif text-[17px] uppercase tracking-[0.13em]">Freeman</span>
-            <span className="mt-0.5 block font-serif text-[19px] italic text-tan">Eclectic</span>
+            <span className={`block font-serif uppercase tracking-[0.13em] ${isHome ? "text-[23px] md:text-[27px]" : "text-[17px]"}`}>Freeman</span>
+            <span className={`mt-0.5 block font-serif italic text-tan ${isHome ? "text-[26px] md:text-[30px]" : "text-[19px]"}`}>Eclectic</span>
           </span>
         </Link>
 
