@@ -2,7 +2,6 @@ import type { Route } from "./+types/for-business";
 import { AshStrip } from "~/components/AshStrip";
 import { Band, Bench } from "~/components/Bench";
 import { Footer } from "~/components/Footer";
-import { Wordmark } from "~/components/Wordmark";
 import { AshPlate, Btn, Eyebrow, SlatePlate } from "~/components/Plate";
 import { CatRow, MaterialsStrip, TextLink } from "~/components/Bits";
 import { Print } from "~/components/Print";
@@ -34,9 +33,6 @@ export function meta({}: Route.MetaArgs) {
 
 /** All business content uses a non-overlapping grid so copy never hides merchandise. */
 
-/** QR code encodes https://freeman-eclectic.com, replacing the old Square URL. */
-const BUSINESS_CARD_QR = "11111110101010000110001111111/10000010000000001011101000001/10111010010001011110101011101/10111010111000111010101011101/10111010111101101010001011101/10000010110001110111001000001/11111110101010101010101111111/00000000101100100111000000000/10001011101011111111111111001/01011100101010000110001111111/00001011000001110010100000001/11000100110011011100101001011/01001010010111000101110000010/00010101101011101010001111111/10110110111010001000011001101/00101000100000100110101000011/10100011100111111100110000010/11110100100100000110001111011/00001110101001110010100110101/00011100001111011111010100011/11110010000001000101111111001/00000000111111101111100010001/11111110101010001111101011101/10000010011010100111100010011/10111010110111111011111111011/10111010001101000110100100010/10111010010001010011010001111/10000010001100111000100111011/11111110111000000000110111010".split("/");
-
 const photographsInPageOrder = [
   ...openingPrints,
   ...awardsPrints,
@@ -53,7 +49,7 @@ export default function ForBusiness() {
       <AshStrip />
 
       <Band h={510} className="py-12 xl:h-auto! xl:py-12">
-        <section id="promotional-bottle-openers" aria-labelledby="promotional-openers-heading" className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:gap-10">
+        <section id="promotional-bottle-openers" aria-labelledby="promotional-openers-heading" className="grid grid-cols-1 gap-8">
           <SlatePlate className="xl:static! xl:w-full! xl:rotate-0! xl:px-10 xl:py-9">
             <Eyebrow className="mb-4">Promotional / business-card bottle openers</Eyebrow>
             <h2 id="promotional-openers-heading" className="engrave font-serif text-[clamp(1.55rem,2.6vw,32px)] font-light leading-tight text-ground">
@@ -74,50 +70,16 @@ export default function ForBusiness() {
               For customer giveaways, trade shows, open houses, appreciation gifts,
               and small-business promotions. Ask about quantities and a custom quote.
             </p>
+            <p className="mt-4 text-sm leading-relaxed text-cream-dimmer">
+              Finished sample photography will appear here once our actual Freeman Eclectic
+              business-card opener is photographed. The earlier digital mockup has been removed.
+            </p>
             <div className="mt-6 flex flex-wrap gap-4">
               <Btn href={CONTACT_FORM_URL} variant="outline">Ask about promotional bottle openers</Btn>
               <a href={plainMail} className="self-center text-sm text-tan hover:text-khaki">{EMAIL}</a>
             </div>
           </SlatePlate>
-          <div className="flex flex-col gap-6">
-            <figure className="m-0 bg-ground p-3 shadow-print">
-              <img
-                src="/img/callender-remax-bottle-opener-img_5569.webp"
-                alt="A real black stainless-steel credit-card bottle opener engraved with a business name and contact information"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-              />
-              <figcaption className="pt-2 font-serif text-sm italic text-ink-soft">
-                Actual engraved promotional bottle opener.
-              </figcaption>
-            </figure>
-            <div className="w-full rounded-lg border border-[#888] bg-[#111] p-5 text-ground shadow-print">
-              <div className="flex flex-wrap items-center gap-3">
-                <Wordmark tone="cream" size={37} />
-                <span className="font-serif text-2xl leading-none">Freeman <em className="text-tan">Eclectic</em></span>
-              </div>
-              <div className="mt-5 flex items-end justify-between gap-4">
-                <div className="min-w-0">
-                  <p className="m-0 text-sm text-cream-dim">Custom engraving &amp; handcrafted goods</p>
-                  <a href="https://freeman-eclectic.com" className="mt-3 block break-words text-base font-semibold text-ground underline underline-offset-4">
-                    freeman-eclectic.com
-                  </a>
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" role="img"
-                     aria-label="QR code for https://freeman-eclectic.com"
-                     className="h-[128px] w-[128px] shrink-0 bg-white text-black">
-                  {BUSINESS_CARD_QR.flatMap((row, y) =>
-                    row.split("").map((bit, x) =>
-                      bit === "1" ? <rect key={`${x}-${y}`} x={x + 4} y={y + 4} width="1" height="1" fill="currentColor" /> : null
-                    )
-                  )}
-                </svg>
-              </div>
-              <p className="mt-5 border-t border-white/20 pt-3 text-xs text-cream-dimmer">
-                Freeman Eclectic digital business-card layout example — not a photograph of an engraved opener.
-              </p>
-            </div>
-          </div>
+
         </section>
       </Band>
 
