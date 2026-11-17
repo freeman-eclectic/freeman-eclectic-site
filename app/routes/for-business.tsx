@@ -52,6 +52,75 @@ export default function ForBusiness() {
     <Bench photographs={photographsInPageOrder}>
       <AshStrip />
 
+      <Band h={510} className="py-12 xl:h-auto! xl:py-12">
+        <section id="promotional-bottle-openers" aria-labelledby="promotional-openers-heading" className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:gap-10">
+          <SlatePlate className="xl:static! xl:w-full! xl:rotate-0! xl:px-10 xl:py-9">
+            <Eyebrow className="mb-4">Promotional / business-card bottle openers</Eyebrow>
+            <h2 id="promotional-openers-heading" className="engrave font-serif text-[clamp(1.55rem,2.6vw,32px)] font-light leading-tight text-ground">
+              A business card your customer will keep.
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-cream-dim">
+              Put your business information on a real, working bottle opener. These flat,
+              credit-card-size black stainless-steel openers are useful promotional pieces
+              that customers can carry and reach for again, instead of another paper card
+              that might end up in the trash.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-cream-dim">
+              We can engrave your logo and business name, a QR code, phone number, website,
+              social-media contact, or a person's name. Choose the details that matter most
+              and we will prepare a layout for your approval before engraving.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-cream-dimmer">
+              For customer giveaways, trade shows, open houses, appreciation gifts,
+              and small-business promotions. Ask about quantities and a custom quote.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-4">
+              <Btn href={CONTACT_FORM_URL} variant="outline">Ask about promotional bottle openers</Btn>
+              <a href={plainMail} className="self-center text-sm text-tan hover:text-khaki">{EMAIL}</a>
+            </div>
+          </SlatePlate>
+          <div className="flex flex-col gap-6">
+            <figure className="m-0 bg-ground p-3 shadow-print">
+              <img
+                src="/img/callender-remax-bottle-opener-img_5569.webp"
+                alt="A real black stainless-steel credit-card bottle opener engraved with a business name and contact information"
+                className="h-auto w-full object-contain"
+                loading="lazy"
+              />
+              <figcaption className="pt-2 font-serif text-sm italic text-ink-soft">
+                Actual engraved promotional bottle opener.
+              </figcaption>
+            </figure>
+            <div className="w-full rounded-lg border border-[#888] bg-[#111] p-5 text-ground shadow-print">
+              <div className="flex flex-wrap items-center gap-3">
+                <Wordmark tone="cream" size={37} />
+                <span className="font-serif text-2xl leading-none">Freeman <em className="text-tan">Eclectic</em></span>
+              </div>
+              <div className="mt-5 flex items-end justify-between gap-4">
+                <div className="min-w-0">
+                  <p className="m-0 text-sm text-cream-dim">Custom engraving &amp; handcrafted goods</p>
+                  <a href="https://freeman-eclectic.com" className="mt-3 block break-words text-base font-semibold text-ground underline underline-offset-4">
+                    freeman-eclectic.com
+                  </a>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" role="img"
+                     aria-label="QR code for https://freeman-eclectic.com"
+                     className="h-[128px] w-[128px] shrink-0 bg-white text-black">
+                  {BUSINESS_CARD_QR.flatMap((row, y) =>
+                    row.split("").map((bit, x) =>
+                      bit === "1" ? <rect key={`${x}-${y}`} x={x + 4} y={y + 4} width="1" height="1" fill="currentColor" /> : null
+                    )
+                  )}
+                </svg>
+              </div>
+              <p className="mt-5 border-t border-white/20 pt-3 text-xs text-cream-dimmer">
+                Freeman Eclectic digital business-card layout example — not a photograph of an engraved opener.
+              </p>
+            </div>
+          </div>
+        </section>
+      </Band>
+
       {/* 2 · the opening statement, slate plate with prints crowding it */}
       <Band h={BANDS.opening} className="py-12 xl:h-auto! xl:py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 xl:gap-10">
@@ -185,75 +254,6 @@ export default function ForBusiness() {
       </Band>
 
       {/* Promotional opener: a real engraved example and a labeled Freeman Eclectic layout concept. */}
-      <Band h={510} className="py-12 xl:h-auto! xl:py-12">
-        <section id="promotional-bottle-openers" aria-labelledby="promotional-openers-heading" className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:gap-10">
-          <SlatePlate className="xl:static! xl:w-full! xl:rotate-0! xl:px-10 xl:py-9">
-            <Eyebrow className="mb-4">Promotional / business-card bottle openers</Eyebrow>
-            <h2 id="promotional-openers-heading" className="engrave font-serif text-[clamp(1.55rem,2.6vw,32px)] font-light leading-tight text-ground">
-              A business card your customer will keep.
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-cream-dim">
-              Put your business information on a real, working bottle opener. These flat,
-              credit-card-size black stainless-steel openers are useful promotional pieces
-              that customers can carry and reach for again, instead of another paper card
-              that might end up in the trash.
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-cream-dim">
-              We can engrave your logo and business name, a QR code, phone number, website,
-              social-media contact, or a person's name. Choose the details that matter most
-              and we will prepare a layout for your approval before engraving.
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-cream-dimmer">
-              For customer giveaways, trade shows, open houses, appreciation gifts,
-              and small-business promotions. Ask about quantities and a custom quote.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-4">
-              <Btn href={CONTACT_FORM_URL} variant="outline">Ask about promotional bottle openers</Btn>
-              <a href={plainMail} className="self-center text-sm text-tan hover:text-khaki">{EMAIL}</a>
-            </div>
-          </SlatePlate>
-          <div className="flex flex-col gap-6">
-            <figure className="m-0 bg-ground p-3 shadow-print">
-              <img
-                src="/img/callender-remax-bottle-opener-img_5569.webp"
-                alt="A real black stainless-steel credit-card bottle opener engraved with a business name and contact information"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-              />
-              <figcaption className="pt-2 font-serif text-sm italic text-ink-soft">
-                Actual engraved promotional bottle opener.
-              </figcaption>
-            </figure>
-            <div className="w-full rounded-lg border border-[#888] bg-[#111] p-5 text-ground shadow-print">
-              <div className="flex flex-wrap items-center gap-3">
-                <Wordmark tone="cream" size={37} />
-                <span className="font-serif text-2xl leading-none">Freeman <em className="text-tan">Eclectic</em></span>
-              </div>
-              <div className="mt-5 flex items-end justify-between gap-4">
-                <div className="min-w-0">
-                  <p className="m-0 text-sm text-cream-dim">Custom engraving &amp; handcrafted goods</p>
-                  <a href="https://freeman-eclectic.com" className="mt-3 block break-words text-base font-semibold text-ground underline underline-offset-4">
-                    freeman-eclectic.com
-                  </a>
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" role="img"
-                     aria-label="QR code for https://freeman-eclectic.com"
-                     className="h-[128px] w-[128px] shrink-0 bg-white text-black">
-                  {BUSINESS_CARD_QR.flatMap((row, y) =>
-                    row.split("").map((bit, x) =>
-                      bit === "1" ? <rect key={`${x}-${y}`} x={x + 4} y={y + 4} width="1" height="1" fill="currentColor" /> : null
-                    )
-                  )}
-                </svg>
-              </div>
-              <p className="mt-5 border-t border-white/20 pt-3 text-xs text-cream-dimmer">
-                Freeman Eclectic digital business-card layout example — not a photograph of an engraved opener.
-              </p>
-            </div>
-          </div>
-        </section>
-      </Band>
-
       {/* 4 · materials and capabilities, on one wide slate plate */}
       <Band h={BANDS.materials} className="py-12 xl:h-auto! xl:py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 xl:gap-10">
