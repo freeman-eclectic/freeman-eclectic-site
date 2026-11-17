@@ -15,12 +15,12 @@ export function AshStrip() {
   const isHome = pathname === "/";
   return (
     <header className="relative z-20 bg-ground-deep text-ink shadow-strip">
-      <div className={`mx-auto flex max-w-canvas flex-wrap items-center justify-between gap-x-4 gap-y-2 px-5 md:px-8 xl:flex-nowrap xl:px-12 xl:py-0 ${isHome ? "py-4 xl:h-[104px]" : "py-2 xl:h-[68px]"}`}>
-        <Link to="/" className="flex shrink-0 items-center gap-2.5 text-ink hover:text-ink" aria-label="Freeman Eclectic, home">
-          <Wordmark size={isHome ? 54 : 35} />
+      <div className={`mx-auto flex max-w-canvas flex-wrap items-center justify-between gap-x-4 gap-y-2 px-5 md:px-8 xl:flex-nowrap xl:px-12 xl:py-0 ${isHome ? "py-5 md:py-6 xl:h-[144px]" : "py-2 xl:h-[68px]"}`}>
+        <Link to="/" className={`flex shrink-0 items-center text-ink hover:text-ink ${isHome ? "gap-4" : "gap-2.5"}`} aria-label="Freeman Eclectic, home">
+          <Wordmark size={isHome ? 76 : 35} />
           <span className="leading-none">
-            <span className={`block font-serif uppercase tracking-[0.13em] ${isHome ? "text-[23px] md:text-[27px]" : "text-[17px]"}`}>Freeman</span>
-            <span className={`mt-0.5 block font-serif italic text-tan ${isHome ? "text-[26px] md:text-[30px]" : "text-[19px]"}`}>Eclectic</span>
+            <span className={`block font-serif uppercase tracking-[0.13em] ${isHome ? "text-[30px] md:text-[40px] xl:text-[42px]" : "text-[17px]"}`}>Freeman</span>
+            <span className={`mt-0.5 block font-serif italic text-tan ${isHome ? "text-[34px] md:text-[44px] xl:text-[46px]" : "text-[19px]"}`}>Eclectic</span>
           </span>
         </Link>
 
