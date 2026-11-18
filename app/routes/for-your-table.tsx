@@ -20,6 +20,7 @@ import {
   type PieceSpec,
 } from "~/content/table";
 import { EMAIL, plainMail } from "~/lib/mail";
+import { COASTER_CATALOG } from "~/content/coasterCatalog";
 import { CONTACT_FORM_URL } from "~/lib/contactForm";
 
 export function meta({}: Route.MetaArgs) {
@@ -49,20 +50,21 @@ const GAME_TYPES = [
 ] as const;
 
 const COASTER_THEMES = [
-  { name: "North Shore & landmarks", matches: /north.shore|split.rock|superior|rushmore|lake|shore/i },
-  { name: "Wildlife & outdoors", matches: /loon|bear|bigfoot|moose|cow|cardinal|eagle|pigeon|fish|bass|owl|cabin/i },
-  { name: "Coffee & humor", matches: /coffee|quest|humor|duct.tape/i },
-  { name: "Patriotic & Americana", matches: /flag|america|rushmore|eagle/i },
-  { name: "Personalized & local", matches: /farm.island|aitkin|personal|custom/i },
-  { name: "Other coaster designs", matches: /.*/ },
+  "North Shore & landmarks",
+  "Lakes & cabins",
+  "Wildlife & outdoors",
+  "Coffee & humor",
+  "Patriotic & Americana",
+  "Personalized & local",
+  "Fantasy & gaming",
+  "Other coaster designs",
 ] as const;
 
 const gamePieces = PIECES.filter((piece) => !/coaster/i.test(piece.name));
-const coasterPieces = PIECES.filter((piece) => /coaster/i.test(piece.name));
-const coasterShelves = COASTER_THEMES.map((theme) => ({
-  name: theme.name,
-  pieces: coasterPieces.filter((piece) => theme.matches.test(piece.name) &&
-    !COASTER_THEMES.slice(0, COASTER_THEMES.indexOf(theme)).some((earlier) => earlier.matches.test(piece.name))),
+/** Each catalog entry has the exact PNG basename customers should ask for. */
+const coasterShelves = COASTER_THEMES.map((name) => ({
+  name,
+  pieces: COASTER_CATALOG.filter((piece) => piece.theme === name),
 }));
 
 /** Names match the engraving PNG files received November 16, 2026. */
