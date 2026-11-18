@@ -56,10 +56,10 @@ const GAME_TYPES = [
   },
   {
     name: "Horse racing",
-    description: "A handcrafted wooden horse-racing game for family game night.",
-    hero: "/img/scratched-horse-racing-game.webp",
+    description: "Newer cherry-wood Horse Race game with 12 metal cribbage pegs. The preview is illustrative, not a photograph of a finished board.",
+    hero: "/img/horse-race-cribbage-pegs-concept.webp",
     pieces: [
-      { name: "Horse racing game", src: "/img/scratched-horse-racing-game.webp", w: 230, h: 190, alt: "Wooden horse racing tabletop game", caption: "Handcrafted horse racing game." },
+      { name: "Horse Racing game — newer peg-style model", src: "/img/horse-race-cribbage-pegs-concept.webp", w: 230, h: 190, alt: "Illustrative cabin-scene preview of the newer cherry Horse Race game with metal cribbage-style pegs; actual board details may differ", caption: "Illustrative preview, not a photograph of the finished game. Newer Horse Race model uses 12 metal cribbage pegs." },
     ],
   },
   {
@@ -405,7 +405,7 @@ export default function ForYourTable() {
               <section key={game.name} id="selected-game-type" aria-label={`${game.name} product photographs`} className="mt-12 scroll-mt-20">
                 <h3 className="font-serif text-2xl italic text-ground">{game.name} — photographs</h3>
                 <p className="mt-2 max-w-2xl text-sm text-cream-dim">
-                  Browse the actual examples below. Select a photograph to view it larger, then inquire about a design you like.
+                  Browse the examples below. Product photographs show completed work; any concept preview is explicitly labeled. Select an image to view it larger.
                 </p>
                 <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-10">
                   {game.pieces.map((piece, i) => <PieceTile key={piece.src} piece={piece} index={i} />)}
