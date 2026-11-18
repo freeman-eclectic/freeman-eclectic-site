@@ -40,14 +40,61 @@ const full = "md:col-span-2";
 
 /** Expandable catalog groups: each new game or coaster design belongs in one shelf. */
 const GAME_TYPES = [
-  { name: "Cribbage boards", description: "Handcrafted boards, including our carved round designs." },
-  { name: "Carbles / Wahoo", description: "Marble games for gathering around the table." },
-  { name: "Horse racing", description: "Our wooden horse racing game." },
-  { name: "Farkle", description: "Wooden scoring trays for the dice game." },
-  { name: "Sticks", description: "A screen-free tabletop favorite." },
-  { name: "Frustration Rummy", description: "Handcrafted scoring boards for card night." },
-  { name: "Other games", description: "Coin Drop, Mancala, road-trip games, and new designs as we make them." },
-] as const;
+  {
+    name: "Cribbage boards",
+    description: "A Freeman Eclectic signature piece: detailed carved boards in a variety of hardwood designs.",
+    hero: "/img/black-walnut-loon-cribbage-board-img_2837.webp",
+    pieces: PIECES.filter((piece) => /cribbage board/i.test(piece.name)),
+  },
+  {
+    name: "Carbles / Wahoo",
+    description: "Wooden marble games made for gathering around the table.",
+    hero: "/img/round-wooden-marble-game-board-img_4051.webp",
+    pieces: [
+      { name: "Carbles / Wahoo game board", src: "/img/round-wooden-marble-game-board-img_4051.webp", w: 230, h: 190, alt: "Round wooden Carbles and Wahoo marble game board", caption: "Carbles / Wahoo. A handmade wooden marble game." },
+    ],
+  },
+  {
+    name: "Horse racing",
+    description: "A handcrafted wooden horse-racing game for family game night.",
+    hero: "/img/scratched-horse-racing-game.webp",
+    pieces: [
+      { name: "Horse racing game", src: "/img/scratched-horse-racing-game.webp", w: 230, h: 190, alt: "Wooden horse racing tabletop game", caption: "Handcrafted horse racing game." },
+    ],
+  },
+  {
+    name: "Farkle",
+    description: "Wooden Farkle scoring trays with the rules and scoring right on the board.",
+    hero: "/img/wooden-farkle-scoring-tray-img_4049.webp",
+    pieces: [
+      { name: "Farkle scoring tray", src: "/img/wooden-farkle-scoring-tray-img_4049.webp", w: 230, h: 190, alt: "Handcrafted engraved wooden Farkle scoring board", caption: "Farkle. Engraved wooden scoring tray." },
+    ],
+  },
+  {
+    name: "Sticks",
+    description: "Our handcrafted wooden contract tile game.",
+    hero: "/img/sticks-wooden-contract-tile-game-set-img_3877.webp",
+    pieces: PIECES.filter((piece) => piece.name === "Sticks game"),
+  },
+  {
+    name: "Frustration Rummy",
+    description: "Wooden scoring boards made for card-night competition.",
+    hero: "/img/frustration-rummy-scoring-board-set-img_3875.webp",
+    pieces: [
+      { name: "Frustration Rummy scoring boards", src: "/img/frustration-rummy-scoring-board-set-img_3875.webp", w: 230, h: 190, alt: "Wooden Frustration Rummy scoring board set", caption: "Frustration Rummy. Wooden scoring boards." },
+    ],
+  },
+  {
+    name: "Other games",
+    description: "Coin Drop, Mancala, road-trip favorites and new games.",
+    hero: "/img/wooden-coin-drop-game-set-img_4042.webp",
+    pieces: [
+      { name: "Coin Drop", src: "/img/wooden-coin-drop-game-set-img_4042.webp", w: 230, h: 190, alt: "Wooden Coin Drop game", caption: "Coin Drop. A handcrafted tabletop game." },
+      ...PIECES.filter((piece) => /dots and boxes|Road Trip Find/i.test(piece.name)),
+      { name: "Chinese Checkers", src: "/img/round-wooden-chinese-checkers-board-img_4046.webp", w: 230, h: 190, alt: "Round wooden Chinese Checkers board with marbles", caption: "Chinese Checkers. Round wooden game board." },
+    ],
+  },
+] satisfies { name: string; description: string; hero: string; pieces: PieceSpec[] }[];
 
 const COASTER_THEMES = [
   "North Shore & landmarks",
@@ -97,6 +144,7 @@ const photographsInPageOrder = [
 
 export default function ForYourTable() {
   const [selectedCoasterTheme, setSelectedCoasterTheme] = useState<string>(coasterShelves[0]?.name ?? "Other coaster designs");
+  const [selectedGameType, setSelectedGameType] = useState<string>("Cribbage boards");
   return (
     <Bench photographs={photographsInPageOrder}>
       <AshStrip />
@@ -335,19 +383,35 @@ export default function ForYourTable() {
             <p className="mt-2 max-w-2xl text-cream-dim">
               Choose your favorite tabletop game. More designs will join these collections as we make them.
             </p>
-            <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+            <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
               {GAME_TYPES.map((game) => (
-                <div key={game.name} className="border border-line bg-ground p-5 text-ink shadow-print">
-                  <h3 className="font-serif text-xl">{game.name}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">{game.description}</p>
-                  <div className="mt-4"><TextLink href={CONTACT_FORM_URL}>Ask about {game.name}</TextLink></div>
-                </div>
+                <button
+                  key={game.name}
+                  type="button"
+                  aria-pressed={selectedGameType === game.name}
+                  onClick={() => setSelectedGameType(game.name)}
+                  className={`overflow-hidden border bg-ground text-left text-ink shadow-print transition-colors hover:border-amber focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber ${selectedGameType === game.name ? "border-amber ring-2 ring-amber" : "border-line"}`}
+                >
+                  <img src={game.hero} alt={`Example of Freeman Eclectic ${game.name}`} width={700} height={480} loading="lazy" className="block aspect-[4/3] w-full object-contain bg-ground-deep" />
+                  <span className="block p-5">
+                    <span className="block font-serif text-xl">{game.name}</span>
+                    <span className="mt-2 block text-sm leading-relaxed text-ink-soft">{game.description}</span>
+                    <span className="mt-3 block text-sm font-semibold text-amber-deep">See {game.pieces.length} {game.pieces.length === 1 ? "example" : "examples"}</span>
+                  </span>
+                </button>
               ))}
             </div>
-            <h3 className="mt-12 font-serif text-2xl italic text-ground">Game photographs</h3>
-            <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-10">
-              {gamePieces.map((piece, i) => <PieceTile key={piece.src} piece={piece} index={i} />)}
-            </div>
+            {GAME_TYPES.filter((game) => game.name === selectedGameType).map((game) => (
+              <section key={game.name} id="selected-game-type" aria-label={`${game.name} product photographs`} className="mt-12 scroll-mt-20">
+                <h3 className="font-serif text-2xl italic text-ground">{game.name} — photographs</h3>
+                <p className="mt-2 max-w-2xl text-sm text-cream-dim">
+                  Browse the actual examples below. Select a photograph to view it larger, then inquire about a design you like.
+                </p>
+                <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-10">
+                  {game.pieces.map((piece, i) => <PieceTile key={piece.src} piece={piece} index={i} />)}
+                </div>
+              </section>
+            ))}
           </section>
 
           <section id="table-coasters" aria-labelledby="table-coasters-heading" className="mt-20 scroll-mt-20">
@@ -367,6 +431,11 @@ export default function ForYourTable() {
                   onClick={() => setSelectedCoasterTheme(shelf.name)}
                   className={`border px-5 py-4 text-left text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber ${selectedCoasterTheme === shelf.name ? "border-amber bg-ground text-ink" : "border-line/40 bg-slate-plate text-ground hover:border-khaki hover:bg-ground hover:text-ink"}`}
                 >
+                  {shelf.pieces[0] ? (
+                    <img src={shelf.pieces[0].src} alt={`Example slate coaster in ${shelf.name}`} width={700} height={480} loading="lazy" className="mb-3 block aspect-[4/3] w-full object-contain bg-ground-deep" />
+                  ) : (
+                    <span className="mb-3 flex aspect-[4/3] w-full items-center justify-center bg-ground-deep px-3 text-center text-xs font-normal italic text-cream-dim">Coaster photograph coming soon</span>
+                  )}
                   <span className="block">{shelf.name}</span>
                   <span className={`mt-1 block text-xs font-normal ${selectedCoasterTheme === shelf.name ? "text-ink-soft" : "text-cream-dim"}`}>
                     {shelf.pieces.length > 0 ? `${shelf.pieces.length} ${shelf.pieces.length === 1 ? "design" : "designs"}` : "More designs coming soon"}
