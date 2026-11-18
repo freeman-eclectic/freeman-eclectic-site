@@ -56,7 +56,10 @@ const COASTER_THEMES = [
   "Coffee & humor",
   "Patriotic & Americana",
   "Personalized & local",
-  "Fantasy & gaming",
+  "Fantasy",
+  "Wine",
+  "Pets",
+  "Reading",
   "Other coaster designs",
 ] as const;
 
