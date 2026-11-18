@@ -55,10 +55,13 @@ const GAME_TYPES = [
     ],
   },
   {
-    name: "Horse racing",
-    description: "Our newer maple Horse Race board uses metal cribbage pegs. A photograph of the finished version is coming soon.",
-    hero: null,
-    pieces: [],
+    name: "Horse Race Game (Scratch)",
+    description: "Compact 10-inch by 6-inch maple Horse Race Game (also called Scratch), with a race track on the front and onboard storage for cards, dice and metal cribbage pegs on the back.",
+    hero: "/img/horse-race-scratch-maple-front.webp",
+    pieces: [
+      { name: "Horse Race Game (Scratch) — Front", src: "/img/horse-race-scratch-maple-front.webp", w: 230, h: 300, alt: "Actual maple Horse Race Game Scratch board showing engraved race lanes, starting gate and finish line on the front", caption: "Actual product photograph. Front: race track and scratched area." },
+      { name: "Horse Race Game (Scratch) — Back", src: "/img/horse-race-scratch-maple-back.webp", w: 230, h: 300, alt: "Actual back of the maple Horse Race Game Scratch board with built-in card dice and cribbage peg storage", caption: "Actual product photograph. Back: built-in storage for playing cards, dice and metal pegs." },
+    ],
   },
   {
     name: "Farkle",
