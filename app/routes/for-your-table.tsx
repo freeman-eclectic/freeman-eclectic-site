@@ -56,7 +56,7 @@ const COASTER_THEMES = [
   "Coffee & humor",
   "Patriotic & Americana",
   "Personalized & local",
-  "Fantasy",
+  "Fantasy & Gaming",
   "Wine",
   "Pets",
   "Reading",
@@ -147,16 +147,16 @@ export default function ForYourTable() {
               <div className="mt-6 grid grid-cols-1 items-center gap-7 md:grid-cols-2">
                 <figure className="m-0 bg-ground p-3 shadow-print">
                   <img
-                    src="/img/freeman-eclectic-bottle-opener-approved-cabin.webp"
-                    alt="Freeman Eclectic business-card bottle opener displayed on a warm cabin table beside a lake view"
+                    src="/img/bottle-opener-deer.webp"
+                    alt="Deer scenic engraving preview on a landscape black stainless-steel credit-card bottle opener in a rustic cabin scene"
                     width={1200}
                     height={900}
                     loading="eager"
                     className="block h-auto w-full"
                   />
                   <figcaption className="pt-3 text-sm italic text-ink-soft">
-                    Our Freeman Eclectic credit-card opener in its approved cabin-scene presentation.
-                    Browse the individual scenic engraving designs below.
+                    Deer scenic bottle opener design preview. Browse the other available landscapes,
+                    wildlife and outdoor designs by theme below.
                   </figcaption>
                 </figure>
                 <div>
