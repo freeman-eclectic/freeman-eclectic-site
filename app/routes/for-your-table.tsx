@@ -56,11 +56,9 @@ const GAME_TYPES = [
   },
   {
     name: "Horse racing",
-    description: "Newer cherry-wood Horse Race game with 12 metal cribbage pegs. The preview is illustrative, not a photograph of a finished board.",
-    hero: "/img/horse-race-cribbage-pegs-concept.webp",
-    pieces: [
-      { name: "Horse Racing game — newer peg-style model", src: "/img/horse-race-cribbage-pegs-concept.webp", w: 230, h: 190, alt: "Illustrative cabin-scene preview of the newer cherry Horse Race game with metal cribbage-style pegs; actual board details may differ", caption: "Illustrative preview, not a photograph of the finished game. Newer Horse Race model uses 12 metal cribbage pegs." },
-    ],
+    description: "Our newer maple Horse Race board uses metal cribbage pegs. A photograph of the finished version is coming soon.",
+    hero: null,
+    pieces: [],
   },
   {
     name: "Farkle",
@@ -94,7 +92,7 @@ const GAME_TYPES = [
       { name: "Chinese Checkers", src: "/img/round-wooden-chinese-checkers-board-img_4046.webp", w: 230, h: 190, alt: "Round wooden Chinese Checkers board with marbles", caption: "Chinese Checkers. Round wooden game board." },
     ],
   },
-] satisfies { name: string; description: string; hero: string; pieces: PieceSpec[] }[];
+] satisfies { name: string; description: string; hero: string | null; pieces: PieceSpec[] }[];
 
 const COASTER_THEMES = [
   "North Shore & landmarks",
@@ -392,11 +390,15 @@ export default function ForYourTable() {
                   onClick={() => setSelectedGameType(game.name)}
                   className={`overflow-hidden border bg-ground text-left text-ink shadow-print transition-colors hover:border-amber focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber ${selectedGameType === game.name ? "border-amber ring-2 ring-amber" : "border-line"}`}
                 >
-                  <img src={game.hero} alt={`Example of Freeman Eclectic ${game.name}`} width={700} height={480} loading="lazy" className="block aspect-[4/3] w-full object-contain bg-ground-deep" />
+                  {game.hero ? (
+                    <img src={game.hero} alt={`Example of Freeman Eclectic ${game.name}`} width={700} height={480} loading="lazy" className="block aspect-[4/3] w-full object-contain bg-ground-deep" />
+                  ) : (
+                    <span className="flex aspect-[4/3] w-full items-center justify-center bg-ground-deep px-5 text-center text-sm italic text-cream-dim">Photograph of our newer maple and cribbage-peg board coming soon</span>
+                  )}
                   <span className="block p-5">
                     <span className="block font-serif text-xl">{game.name}</span>
                     <span className="mt-2 block text-sm leading-relaxed text-ink-soft">{game.description}</span>
-                    <span className="mt-3 block text-sm font-semibold text-amber-deep">See {game.pieces.length} {game.pieces.length === 1 ? "example" : "examples"}</span>
+                    <span className="mt-3 block text-sm font-semibold text-amber-deep">{game.pieces.length > 0 ? `See ${game.pieces.length} ${game.pieces.length === 1 ? "example" : "examples"}` : "Finished product photograph coming soon"}</span>
                   </span>
                 </button>
               ))}
@@ -407,9 +409,15 @@ export default function ForYourTable() {
                 <p className="mt-2 max-w-2xl text-sm text-cream-dim">
                   Browse the examples below. Product photographs show completed work; any concept preview is explicitly labeled. Select an image to view it larger.
                 </p>
-                <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-10">
-                  {game.pieces.map((piece, i) => <PieceTile key={piece.src} piece={piece} index={i} />)}
-                </div>
+                {game.pieces.length > 0 ? (
+                  <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-10">
+                    {game.pieces.map((piece, i) => <PieceTile key={piece.src} piece={piece} index={i} />)}
+                  </div>
+                ) : (
+                  <p className="mt-6 border border-line/40 bg-slate-plate p-6 text-cream-dim">
+                    A photograph of our newer maple Horse Race game with metal cribbage pegs will be added here when available.
+                  </p>
+                )}
               </section>
             ))}
           </section>
