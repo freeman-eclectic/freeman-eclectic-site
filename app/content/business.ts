@@ -50,9 +50,9 @@ export const appreciationPrints: PrintSpec[] = [
   { src: "/img/heroes-helping-heroes-rocks-glass-img_5110.webp", w: 250, h: 186, l: 29.17, t: 30, rot: 1.8, z: 3,
     alt: "A rocks glass engraved “Heroes Helping Heroes” with a vertical American flag",
     caption: "Custom engraved whiskey glass." },
-  { src: "/img/aerial-lift-bridge-ship-slate-coaster-img_5433.webp", w: 330, h: 124, l: 3.89, t: 63.2, rot: 1.5, z: 2,
-    alt: "A slate coaster engraved with a boat under the Duluth aerial lift bridge",
-    caption: "Minnesota landmark coaster." },
+  { src: "/img/charter-boat-duluth-slate-coaster-preview.webp", w: 330, h: 260, l: 3.89, t: 63.2, rot: 1.5, z: 2,
+    alt: "Digital presentation of the CHARTER BOAT LEAVING DULUTH HARBOR COASTER design engraved on black slate, with the fishing charter boat beneath the lift bridge",
+    caption: "CHARTER BOAT LEAVING DULUTH HARBOR COASTER — digital design preview." },
 ];
 
 export const giftsPrints: PrintSpec[] = [
