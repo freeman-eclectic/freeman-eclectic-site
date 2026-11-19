@@ -418,7 +418,7 @@ export default function ForYourTable() {
                   </div>
                 ) : (
                   <p className="mt-6 border border-line/40 bg-slate-plate p-6 text-cream-dim">
-                    A photograph of our newer maple Horse Race game with metal cribbage pegs will be added here when available.
+                    More photographs of our handmade games will be added as new designs become available.
                   </p>
                 )}
               </section>
@@ -443,7 +443,7 @@ export default function ForYourTable() {
                   className={`border px-5 py-4 text-left text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber ${selectedCoasterTheme === shelf.name ? "border-amber bg-ground text-ink" : "border-line/40 bg-slate-plate text-ground hover:border-khaki hover:bg-ground hover:text-ink"}`}
                 >
                   {shelf.pieces[0] ? (
-                    <img src={shelf.pieces[0].src} alt={`Example slate coaster in ${shelf.name}`} width={700} height={480} loading="lazy" className="mb-3 block aspect-[4/3] w-full object-contain bg-ground-deep" />
+                    <img src={shelf.pieces[0].src} alt={shelf.pieces[0].caption?.includes("production artwork preview") ? `Production engraving artwork preview for ${shelf.name}` : `Finished slate coaster example in ${shelf.name}`} width={700} height={480} loading="lazy" className="mb-3 block aspect-[4/3] w-full object-contain bg-ground-deep" />
                   ) : (
                     <span className="mb-3 flex aspect-[4/3] w-full items-center justify-center bg-ground-deep px-3 text-center text-xs font-normal italic text-cream-dim">Coaster photograph coming soon</span>
                   )}
