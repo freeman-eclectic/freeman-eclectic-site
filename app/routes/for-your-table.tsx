@@ -113,10 +113,15 @@ const COASTER_THEMES = [
 
 const gamePieces = PIECES.filter((piece) => !/coaster/i.test(piece.name));
 /** Each catalog entry has the exact PNG basename customers should ask for. */
+const isArtworkPreview = (piece: (typeof COASTER_CATALOG)[number]) =>
+  piece.src.includes("/coaster-artwork-");
+
 const coasterShelves = COASTER_THEMES.map((name) => ({
   name,
-  pieces: COASTER_CATALOG.filter((piece) => piece.theme === name),
-}));
+  pieces: COASTER_CATALOG.filter((piece) => piece.theme === name && !isArtworkPreview(piece)),
+})).filter((shelf) => shelf.pieces.length > 0);
+
+const coasterArtworkPreviews = COASTER_CATALOG.filter(isArtworkPreview);
 
 /** Names match the engraving PNG files received November 16, 2026. */
 const BOTTLE_OPENER_COLLECTIONS = [
@@ -472,6 +477,22 @@ export default function ForYourTable() {
                 )}
               </section>
             ))}
+            <section id="coaster-artwork-previews" aria-labelledby="coaster-artwork-previews-heading" className="mt-14 border-t border-line/40 pt-10">
+              <h3 id="coaster-artwork-previews-heading" className="font-serif text-2xl italic text-ground">More coaster designs — artwork previews</h3>
+              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-cream-dim">
+                These are actual engraving designs, shown as artwork only — not photographs of completed slate coasters. Ask us by the exact design name if one catches your eye.
+              </p>
+              <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+                {coasterArtworkPreviews.map((piece, i) => (
+                  <div key={piece.productionFilename} className="border border-line/40 bg-slate-plate p-4">
+                    <span className="mb-3 inline-block border border-line/40 px-3 py-1 text-xs font-semibold text-cream-dim">Engraving artwork preview — not finished coaster</span>
+                    <img src={piece.src} alt={piece.alt} width={500} height={500} loading="lazy" className="block aspect-square w-full object-contain bg-ground-deep" />
+                    <p className="mt-3 font-semibold text-ground">{piece.name}</p>
+                    <p className="mt-1 text-sm text-cream-dim">{piece.theme}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
           </section>
 
           <section id="custom-pet-coasters" aria-labelledby="custom-pets-heading" className="mt-20 scroll-mt-20">
