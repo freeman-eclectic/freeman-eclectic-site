@@ -189,13 +189,13 @@ const ADDITIONAL_COASTER_PHOTOS: (PieceSpec & {theme:string})[] = [
     "caption": "Cabin Canoe — photo reference IMG_5406"
   },
   {
-    "name": "Can t Hear You Over The Loons Bigfoot",
+    "name": "Can\u0027t Hear You Over The Loons Bigfoot",
     "theme": "Coffee & humor",
     "src": "/img/can-t-hear-you-over-the-loons-bigfoot-slate-coaster-img_5638.webp",
     "w": 240,
     "h": 180,
-    "alt": "Cabin-scene presentation of Can t Hear You Over The Loons Bigfoot engraved on a slate coaster",
-    "caption": "Can t Hear You Over The Loons Bigfoot — photo reference IMG_5638"
+    "alt": "Cabin-scene presentation of Can\u0027t Hear You Over The Loons Bigfoot engraved on a slate coaster",
+    "caption": "Can\u0027t Hear You Over The Loons Bigfoot — photo reference IMG_5638"
   },
   {
     "name": "Combine Harvester",
@@ -364,6 +364,8 @@ const photographsInPageOrder = [
   ...gamesPrints,
   ...giftsPrints,
   ...PIECES,
+  ...COASTER_CATALOG,
+  ...ADDITIONAL_COASTER_PHOTOS,
   customPetPhotograph,
   ...personalisationPrints,
   ...askPrints,
@@ -669,7 +671,7 @@ export default function ForYourTable() {
               Find a design by theme. Every coaster has its own name so you can request the exact design.
             </p>
             <p className="mt-3 text-sm text-cream-dim">
-              Select a theme to view just those coasters. You can switch themes at any time.
+              Select a theme to view the designs available to inquire about. Finished-coaster photographs are shown where available; digital concept presentations are labeled separately.
             </p>
             <nav aria-label="Choose a coaster theme" className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
               {coasterShelves.map((shelf) => (
