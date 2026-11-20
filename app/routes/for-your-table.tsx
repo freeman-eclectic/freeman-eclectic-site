@@ -56,11 +56,11 @@ const GAME_TYPES = [
   },
   {
     name: "Horse Race Game (Scratch)",
-    description: "Compact 10-inch by 6-inch maple Horse Race Game (also called Scratch), with a race track on the front and onboard storage for cards, dice and metal cribbage pegs on the back.",
+    description: "Portable 10 × 6-inch maple Horse Race Game (also called Scratch). The race track is on the front; built-in storage on the back keeps the playing cards, dice and metal cribbage pegs together. Compact enough to take along to the cabin or game night.",
     hero: "/img/horse-race-scratch-maple-front.webp",
     pieces: [
-      { name: "Horse Race Game (Scratch) — Front", src: "/img/horse-race-scratch-maple-front.webp", w: 230, h: 300, alt: "Actual maple Horse Race Game Scratch board showing engraved race lanes, starting gate and finish line on the front", caption: "Actual product photograph. Front: race track and scratched area." },
-      { name: "Horse Race Game (Scratch) — Back", src: "/img/horse-race-scratch-maple-back.webp", w: 230, h: 300, alt: "Actual back of the maple Horse Race Game Scratch board with built-in card dice and cribbage peg storage", caption: "Actual product photograph. Back: built-in storage for playing cards, dice and metal pegs." },
+      { name: "Horse Race Game (Scratch) — Front", src: "/img/horse-race-scratch-maple-front.webp", w: 230, h: 300, alt: "Actual maple Horse Race Game Scratch board showing engraved race lanes, starting gate and finish line on the front", caption: "Actual product photograph. Front of the compact 10 × 6-inch maple board: race track and Scratch play area." },
+      { name: "Horse Race Game (Scratch) — Back", src: "/img/horse-race-scratch-maple-back.webp", w: 230, h: 300, alt: "Actual back of the maple Horse Race Game Scratch board with built-in card dice and cribbage peg storage", caption: "Actual product photograph. Back of the 10 × 6-inch maple board: built-in storage for playing cards, dice and metal cribbage pegs." },
     ],
   },
   {
