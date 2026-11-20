@@ -424,6 +424,58 @@ export default function ForYourTable() {
         </div>
       </Band>
 
+      {/* Fast mobile-friendly coaster category browser, immediately after the introduction. */}
+      <Band h={730} className="py-10 xl:h-auto! xl:py-12">
+        <section id="coaster-theme-browser" aria-labelledby="coaster-theme-browser-title" className="scroll-mt-12 bg-ground-deep p-5 text-ink sm:p-8 xl:mx-14">
+          <Eyebrow tone="amber" className="mb-3">Freeman Eclectic slate coasters</Eyebrow>
+          <h2 id="coaster-theme-browser-title" className="font-serif text-[clamp(1.75rem,3.6vw,44px)] font-light italic leading-tight">
+            Shop coasters by theme
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-soft sm:text-base">
+            Tap a collection to jump straight to its designs. Pick your favorite and contact us by its name — no need to scroll through every coaster.
+          </p>
+          <nav aria-label="Shop coaster themes" className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-5 xl:gap-4">
+            {coasterShelves.map((shelf) => (
+              <a
+                key={shelf.name}
+                href="#selected-coaster-theme"
+                onClick={() => setSelectedCoasterTheme(shelf.name)}
+                aria-label={`See ${shelf.pieces.length} coaster designs in ${shelf.name}`}
+                className="group block min-w-0 overflow-hidden border border-line bg-ground shadow-print transition-colors hover:border-amber focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber"
+              >
+                {isArtworkPreview(shelf.pieces[0]) ? (
+                  <div className="relative">
+                    <CoasterSceneImage piece={shelf.pieces[0]} />
+                    <span className="absolute bottom-0 inset-x-0 bg-ink/90 p-1 text-center text-[10px] font-semibold text-ground">Digital design preview</span>
+                  </div>
+                ) : (
+                  <img
+                    src={shelf.pieces[0].src}
+                    alt={`Sample coaster from ${shelf.name}`}
+                    width={500}
+                    height={500}
+                    loading="lazy"
+                    className="block aspect-square w-full object-cover transition-transform group-hover:scale-[1.025]"
+                  />
+                )}
+                <span className="block p-3">
+                  <span className="block font-serif text-base leading-tight text-ink sm:text-lg">{shelf.name}</span>
+                  <span className="mt-1 block text-xs font-medium text-ink-soft">{shelf.pieces.length} {shelf.pieces.length === 1 ? "design" : "designs"} · View collection</span>
+                </span>
+              </a>
+            ))}
+            <a href="#custom-pet-coasters" className="group block overflow-hidden border border-line bg-ground shadow-print hover:border-amber focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber">
+              <img src="/img/owl-portrait-slate-coaster-img_5728.webp" alt="Custom bird portrait engraved on slate" width={500} height={500} loading="lazy" className="block aspect-square w-full object-cover" />
+              <span className="block p-3">
+                <span className="block font-serif text-base leading-tight text-ink sm:text-lg">Custom pet portraits</span>
+                <span className="mt-1 block text-xs font-medium text-ink-soft">From your photo · View examples</span>
+              </span>
+            </a>
+          </nav>
+          <p className="mt-5 text-center text-xs text-ink-soft">All designs are available by inquiry. Digital concept presentations are identified where finished-product photos are not yet available.</p>
+        </section>
+      </Band>
+
       <Band h={740} className="py-12 xl:h-auto! xl:py-12">
         <div className="xl:px-14">
           {/* Approved cabin-scene opener example plus individual engraving design previews. */}
@@ -671,37 +723,11 @@ export default function ForYourTable() {
               Find a design by theme. Every coaster has its own name so you can request the exact design.
             </p>
             <p className="mt-3 text-sm text-cream-dim">
-              Select a theme to view the designs available to inquire about. Finished-coaster photographs are shown where available; digital concept presentations are labeled separately.
+              The selected theme appears below. Use the category image cards near the top of this page to change collections.
             </p>
-            <nav aria-label="Choose a coaster theme" className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
-              {coasterShelves.map((shelf) => (
-                <button
-                  key={shelf.name}
-                  type="button"
-                  aria-pressed={selectedCoasterTheme === shelf.name}
-                  onClick={() => setSelectedCoasterTheme(shelf.name)}
-                  className={`border px-5 py-4 text-left text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber ${selectedCoasterTheme === shelf.name ? "border-amber bg-ground text-ink" : "border-line/40 bg-slate-plate text-ground hover:border-khaki hover:bg-ground hover:text-ink"}`}
-                >
-                  {shelf.pieces[0] ? (
-                    isArtworkPreview(shelf.pieces[0]) ? (
-                      <div className="mb-3"><CoasterSceneImage piece={shelf.pieces[0]} /></div>
-                    ) : (
-                      <img src={shelf.pieces[0].src} alt={`Finished slate coaster example in ${shelf.name}`} width={700} height={480} loading="lazy" className="mb-3 block aspect-[4/3] w-full object-contain bg-ground-deep" />
-                    )
-                  ) : (
-                    <span className="mb-3 flex aspect-[4/3] w-full items-center justify-center bg-ground-deep px-3 text-center text-xs font-normal italic text-cream-dim">Coaster photograph coming soon</span>
-                  )}
-                  <span className="block">{shelf.name}</span>
-                  <span className={`mt-1 block text-xs font-normal ${selectedCoasterTheme === shelf.name ? "text-ink-soft" : "text-cream-dim"}`}>
-                    {shelf.pieces.length > 0 ? `${shelf.pieces.length} ${shelf.pieces.length === 1 ? "design" : "designs"}` : "More designs coming soon"}
-                  </span>
-                </button>
-              ))}
-              <a href="#custom-pet-coasters" className="border border-line/40 bg-slate-plate px-5 py-4 text-left text-sm font-semibold text-ground hover:border-khaki hover:bg-ground hover:text-ink">
-                <span className="block">Custom pet portraits</span>
-                <span className="mt-1 block text-xs font-normal text-cream-dim">Made from your photo</span>
-              </a>
-            </nav>
+            <a href="#coaster-theme-browser" className="mt-5 inline-block border border-line/40 px-4 py-2 text-sm font-semibold text-ground hover:border-amber focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber">
+              Back to coaster themes
+            </a>
             {coasterShelves.filter((shelf) => shelf.name === selectedCoasterTheme).map((shelf) => (
               <section key={shelf.name} id="selected-coaster-theme" className="mt-10 scroll-mt-20" aria-label={shelf.name}>
                 <h3 className="font-serif text-2xl italic text-ground">{shelf.name}</h3>
