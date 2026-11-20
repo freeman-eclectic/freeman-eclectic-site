@@ -26,7 +26,7 @@ export function meta({}: Route.MetaArgs) {
     {
       name: "description",
       content:
-        "Awards, custom realtor closing gifts, bulk Christmas ornaments, business-card bottle openers, and wholesale engraving made in Minnesota.",
+        "Personalized wooden Christmas ornaments for realtor client gifts, new-home celebrations and holiday appreciation, plus custom promotional and wholesale engraving made in Minnesota.",
     },
   ];
 }
@@ -47,6 +47,50 @@ export default function ForBusiness() {
   return (
     <Bench photographs={photographsInPageOrder}>
       <AshStrip />
+
+      {/* Featured Christmas ornaments for realtors: make holiday gifts easy to discover. */}
+      <Band h={510} className="py-12 xl:h-auto! xl:py-12">
+        <section id="realtor-christmas-ornaments" aria-labelledby="realtor-ornament-heading">
+          <SlatePlate className="xl:static! xl:w-full! xl:rotate-0! xl:px-10 xl:py-9">
+            <Eyebrow className="mb-4">Christmas ornaments · realtor &amp; client gifts</Eyebrow>
+            <h2 id="realtor-ornament-heading" className="engrave font-serif text-[clamp(1.7rem,3vw,38px)] font-light leading-tight text-ground">
+              A meaningful Christmas gift for your real estate clients.
+            </h2>
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-cream-dim">
+              Celebrate a client's first Christmas in their new home with a personalized
+              wooden Christmas ornament. A house-shaped keepsake is a thoughtful way for
+              realtors to stay connected with families long after closing day.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              <div className="border border-line/40 bg-slate-plate p-5">
+                <h3 className="font-serif text-xl italic text-ground">First Christmas in Our New Home</h3>
+                <p className="mt-3 text-sm leading-relaxed text-cream-dim">
+                  House-shaped wooden ornament with engraved holiday wording, year,
+                  snowflakes, and a hanging hole. Personalization can be discussed for
+                  each recipient or family.
+                </p>
+              </div>
+              <div className="border border-line/40 bg-slate-plate p-5">
+                <h3 className="font-serif text-xl italic text-ground">Holiday gifts for your client list</h3>
+                <p className="mt-3 text-sm leading-relaxed text-cream-dim">
+                  Ask about repeatable batches for your past clients, new homeowners,
+                  and brokerage holiday gifting. We can review wording, quantity,
+                  personalization, and delivery needs together.
+                </p>
+              </div>
+            </div>
+            <p className="mt-5 max-w-3xl text-sm leading-relaxed text-cream-dimmer">
+              The finished ornament photograph is not yet in this online gallery. Please
+              contact us for design examples, personalization options, and a quote.
+              We confirm each order's design, quantity, and timeline before production.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-5">
+              <Btn href={CONTACT_FORM_URL} variant="outline">Ask about Christmas ornaments for clients</Btn>
+              <a href={plainMail} className="text-sm text-tan hover:text-khaki">{EMAIL}</a>
+            </div>
+          </SlatePlate>
+        </section>
+      </Band>
 
       <Band h={510} className="py-12 xl:h-auto! xl:py-12">
         <section id="promotional-bottle-openers" aria-labelledby="promotional-openers-heading" className="grid grid-cols-1 items-center gap-8 xl:grid-cols-2 xl:gap-10">
@@ -175,37 +219,6 @@ export default function ForBusiness() {
             <Print key={s.src} spec={s} className="xl:static! xl:w-full! xl:max-w-none! xl:rotate-0!" />
           ))}
         </div>
-      </Band>
-
-      {/* Realtor closing gifts: repeatable custom batches and individually personalized pieces. */}
-      <Band h={510} className="py-12 xl:h-auto! xl:py-12">
-        <section id="realtor-closing-gifts" aria-labelledby="realtor-gifts-heading">
-          <SlatePlate className="xl:static! xl:w-full! xl:rotate-0! xl:px-10 xl:py-9">
-            <Eyebrow className="mb-4">Realtor &amp; closing gifts</Eyebrow>
-            <h2 id="realtor-gifts-heading" className="engrave font-serif text-[clamp(1.55rem,2.6vw,32px)] font-light leading-tight text-ground">
-              A little something to remember their first Christmas at home.
-            </h2>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-cream-dim">
-              Celebrate a new home with a personalized, house-shaped wooden Christmas ornament.
-              The example shown in our collection reads “First Christmas in Our New Home 2026,”
-              with engraved snowflakes and a hole for hanging.
-            </p>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-cream-dim">
-              Made for real estate professionals who want a thoughtful gift for their clients,
-              these ornaments can be customized with your chosen wording and year. We can
-              produce larger batches from one approved design for holiday client appreciation,
-              closings, and brokerage gifting programs.
-            </p>
-            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-cream-dimmer">
-              Tell us the quantity, wording, and deadline. We will prepare a design proof
-              and quote before production. Customization and batch quantities are quoted individually.
-            </p>
-            <div className="mt-6 flex flex-wrap items-center gap-5">
-              <Btn href={CONTACT_FORM_URL} variant="outline">Request a realtor-gift quote</Btn>
-              <a href={plainMail} className="text-sm text-tan hover:text-khaki">{EMAIL}</a>
-            </div>
-          </SlatePlate>
-        </section>
       </Band>
 
       {/* 3c · corporate gifts */}
