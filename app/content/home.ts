@@ -81,7 +81,7 @@ export const quotePrints: PrintSpec[] = [
 
 export const BUSINESS_CATEGORIES = [
   "Awards & recognition",
-  "Client & employee appreciation",
+  "Personalized Christmas ornaments for realtor client gifts",
   "Corporate gifts",
   "Wholesale for retailers",
 ];
