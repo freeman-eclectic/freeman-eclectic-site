@@ -73,7 +73,7 @@ export const quotePrints: PrintSpec[] = [
     caption: "Three pheasants in black walnut." },
   { src: "/img/horse-race-scratch-maple-front.webp", w: 270, h: 352, l: 5.28, t: 44.44, rot: 1.6, z: 2,
     alt: "Actual maple Horse Race Game Scratch board showing the engraved race track on its front",
-    caption: "Horse Race Game (Scratch). The actual handmade maple board, front view." },
+    caption: "Horse Race Game (Scratch) — compact 10 × 6-inch maple board. Cards, dice and metal pegs store in the back for easy travel." },
   { src: "/img/lake-superior-sea-arch-slate-coaster-img_5391.webp", w: 178, h: 119, l: 85.14, t: 58.33, rot: -1.6, z: 1,
     minor: true,
     alt: "A slate coaster engraved with a Lake Superior sea arch and rocky shore" },
