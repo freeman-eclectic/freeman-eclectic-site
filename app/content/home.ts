@@ -87,8 +87,8 @@ export const BUSINESS_CATEGORIES = [
 ];
 
 export const TABLE_CATEGORIES = [
-  "Board games",
-  "Kitchen & bar",
-  "Gifts & keepsakes",
-  "Custom decor",
+  "Handcrafted cribbage boards & tabletop games",
+  "Slate coasters organized by design theme",
+  "Scenic stainless-steel bottle openers",
+  "Personalized gifts & custom engraving",
 ];
