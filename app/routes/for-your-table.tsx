@@ -118,10 +118,9 @@ const isArtworkPreview = (piece: (typeof COASTER_CATALOG)[number]) =>
 
 const coasterShelves = COASTER_THEMES.map((name) => ({
   name,
-  pieces: COASTER_CATALOG.filter((piece) => piece.theme === name && !isArtworkPreview(piece)),
+  pieces: COASTER_CATALOG.filter((piece) => piece.theme === name),
 })).filter((shelf) => shelf.pieces.length > 0);
 
-const coasterArtworkPreviews = COASTER_CATALOG.filter(isArtworkPreview);
 
 /** Names match the engraving PNG files received November 16, 2026. */
 const BOTTLE_OPENER_COLLECTIONS = [
@@ -147,6 +146,18 @@ const photographsInPageOrder = [
   ...personalisationPrints,
   ...askPrints,
 ];
+
+
+function CoasterSceneImage({ piece }: { piece: (typeof COASTER_CATALOG)[number] }) {
+  return (
+    <div className="relative aspect-square overflow-hidden bg-ground-deep" role="img" aria-label={`Digital cabin scene showing the ${piece.name} engraving design on a slate coaster`}>
+      <img src="/img/first-coffee-then-we-quest-slate-coaster-img_6292.webp" alt="" width={1254} height={1254} loading="lazy" className="absolute inset-0 h-full w-full object-cover" aria-hidden="true" />
+      <div className="absolute left-[26%] top-[46%] h-[38%] w-[51%] overflow-hidden rounded-[4%] border-[3px] border-[#262523] bg-[#101010] shadow-xl [transform:perspective(700px)_rotateX(9deg)_rotateZ(-1deg)]">
+        <img src={piece.src} alt="" width={500} height={500} loading="lazy" className="h-full w-full object-fill brightness-[0.85] contrast-[1.12]" aria-hidden="true" />
+      </div>
+    </div>
+  );
+}
 
 export default function ForYourTable() {
   const [selectedCoasterTheme, setSelectedCoasterTheme] = useState<string>(coasterShelves[0]?.name ?? "Other coaster designs");
@@ -448,7 +459,11 @@ export default function ForYourTable() {
                   className={`border px-5 py-4 text-left text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber ${selectedCoasterTheme === shelf.name ? "border-amber bg-ground text-ink" : "border-line/40 bg-slate-plate text-ground hover:border-khaki hover:bg-ground hover:text-ink"}`}
                 >
                   {shelf.pieces[0] ? (
-                    <img src={shelf.pieces[0].src} alt={shelf.pieces[0].caption?.includes("production artwork preview") ? `Production engraving artwork preview for ${shelf.name}` : `Finished slate coaster example in ${shelf.name}`} width={700} height={480} loading="lazy" className="mb-3 block aspect-[4/3] w-full object-contain bg-ground-deep" />
+                    isArtworkPreview(shelf.pieces[0]) ? (
+                      <div className="mb-3"><CoasterSceneImage piece={shelf.pieces[0]} /></div>
+                    ) : (
+                      <img src={shelf.pieces[0].src} alt={`Finished slate coaster example in ${shelf.name}`} width={700} height={480} loading="lazy" className="mb-3 block aspect-[4/3] w-full object-contain bg-ground-deep" />
+                    )
                   ) : (
                     <span className="mb-3 flex aspect-[4/3] w-full items-center justify-center bg-ground-deep px-3 text-center text-xs font-normal italic text-cream-dim">Coaster photograph coming soon</span>
                   )}
@@ -468,7 +483,18 @@ export default function ForYourTable() {
                 <h3 className="font-serif text-2xl italic text-ground">{shelf.name}</h3>
                 {shelf.pieces.length > 0 ? (
                   <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-10">
-                    {shelf.pieces.map((piece, j) => <PieceTile key={piece.src} piece={piece} index={j} />)}
+                    {shelf.pieces.map((piece, j) =>
+                      isArtworkPreview(piece) ? (
+                        <div key={piece.productionFilename} className="border border-line/40 bg-slate-plate p-4">
+                          <span className="mb-3 inline-block border border-line/40 px-3 py-1 text-xs font-semibold text-cream-dim">Digital cabin-scene preview — not a finished-product photograph</span>
+                          <CoasterSceneImage piece={piece} />
+                          <p className="mt-3 font-semibold text-ground">{piece.name}</p>
+                          <p className="mt-1 text-sm text-cream-dim">Engraving design available to request</p>
+                        </div>
+                      ) : (
+                        <PieceTile key={piece.src} piece={piece} index={j} />
+                      )
+                    )}
                   </div>
                 ) : (
                   <div className="mt-6 border border-line/40 bg-slate-plate p-6 text-cream-dim">
@@ -477,27 +503,6 @@ export default function ForYourTable() {
                 )}
               </section>
             ))}
-            <section id="coaster-artwork-previews" aria-labelledby="coaster-artwork-previews-heading" className="mt-14 border-t border-line/40 pt-10">
-              <h3 id="coaster-artwork-previews-heading" className="font-serif text-2xl italic text-ground">More coaster designs — artwork previews</h3>
-              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-cream-dim">
-                These are actual engraving designs, shown as artwork only — not photographs of completed slate coasters. Ask us by the exact design name if one catches your eye.
-              </p>
-              <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-                {coasterArtworkPreviews.map((piece, i) => (
-                  <div key={piece.productionFilename} className="border border-line/40 bg-slate-plate p-4">
-                    <span className="mb-3 inline-block border border-line/40 px-3 py-1 text-xs font-semibold text-cream-dim">Digital cabin-scene preview — not a product photograph</span>
-                    <div className="relative aspect-square overflow-hidden bg-ground-deep" role="img" aria-label={`Digital cabin scene showing the ${piece.name} engraving design staged on a slate coaster`}>
-                      <img src="/img/first-coffee-then-we-quest-slate-coaster-img_6292.webp" alt="" width={1254} height={1254} loading="lazy" className="absolute inset-0 h-full w-full object-cover" aria-hidden="true" />
-                      <div className="absolute left-[26%] top-[46%] h-[38%] w-[51%] rotate-[-1deg] overflow-hidden rounded-[4%] border-[3px] border-[#262523] bg-[#101010] shadow-xl [transform:perspective(700px)_rotateX(9deg)_rotateZ(-1deg)]">
-                        <img src={piece.src} alt="" width={500} height={500} loading="lazy" className="h-full w-full object-fill brightness-[0.85] contrast-[1.12]" aria-hidden="true" />
-                      </div>
-                    </div>
-                    <p className="mt-3 font-semibold text-ground">{piece.name}</p>
-                    <p className="mt-1 text-sm text-cream-dim">{piece.theme}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
           </section>
 
           <section id="custom-pet-coasters" aria-labelledby="custom-pets-heading" className="mt-20 scroll-mt-20">
