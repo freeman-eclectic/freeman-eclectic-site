@@ -112,9 +112,10 @@ export default function Home() {
               Sit down and play.
             </h2>
             <p className="mt-4 text-base leading-[1.6] text-ink-soft">
-              Round cribbage boards with 3D carving, plus Farkle, the horse racing game, Wahoo,
-              Mancala, Coin Drop, and the License Plate Hunt. Teach one to a kid and you will be
-              arguing over the score for years.
+              Round cribbage boards with 3D carving, Farkle, Wahoo, Mancala and Coin Drop.
+              Our portable maple Horse Race Game (Scratch) measures just 10 × 6 inches and has
+              built-in storage on the back for its cards, dice and metal pegs. It is easy to
+              bring along for game night or a cabin getaway.
             </p>
             <div className="mt-5">
               {TABLE_CATEGORIES.map((c, i) => (
