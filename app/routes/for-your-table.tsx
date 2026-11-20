@@ -485,8 +485,13 @@ export default function ForYourTable() {
               <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
                 {coasterArtworkPreviews.map((piece, i) => (
                   <div key={piece.productionFilename} className="border border-line/40 bg-slate-plate p-4">
-                    <span className="mb-3 inline-block border border-line/40 px-3 py-1 text-xs font-semibold text-cream-dim">Engraving artwork preview — not finished coaster</span>
-                    <img src={piece.src} alt={piece.alt} width={500} height={500} loading="lazy" className="block aspect-square w-full object-contain bg-ground-deep" />
+                    <span className="mb-3 inline-block border border-line/40 px-3 py-1 text-xs font-semibold text-cream-dim">Digital cabin-scene preview — not a product photograph</span>
+                    <div className="relative aspect-square overflow-hidden bg-ground-deep" role="img" aria-label={`Digital cabin scene showing the ${piece.name} engraving design staged on a slate coaster`}>
+                      <img src="/img/first-coffee-then-we-quest-slate-coaster-img_6292.webp" alt="" width={1254} height={1254} loading="lazy" className="absolute inset-0 h-full w-full object-cover" aria-hidden="true" />
+                      <div className="absolute left-[26%] top-[46%] h-[38%] w-[51%] rotate-[-1deg] overflow-hidden rounded-[4%] border-[3px] border-[#262523] bg-[#101010] shadow-xl [transform:perspective(700px)_rotateX(9deg)_rotateZ(-1deg)]">
+                        <img src={piece.src} alt="" width={500} height={500} loading="lazy" className="h-full w-full object-fill brightness-[0.85] contrast-[1.12]" aria-hidden="true" />
+                      </div>
+                    </div>
                     <p className="mt-3 font-semibold text-ground">{piece.name}</p>
                     <p className="mt-1 text-sm text-cream-dim">{piece.theme}</p>
                   </div>
