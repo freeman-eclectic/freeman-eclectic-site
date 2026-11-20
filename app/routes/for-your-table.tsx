@@ -112,13 +112,235 @@ const COASTER_THEMES = [
 ] as const;
 
 const gamePieces = PIECES.filter((piece) => !/coaster/i.test(piece.name));
+/** Additional already-staged coaster scenes, labeled by their source photo reference.
+ * Production PNG basenames are deliberately NOT inferred from photography filenames.
+ */
+const ADDITIONAL_COASTER_PHOTOS: (PieceSpec & {theme:string})[] = [
+  {
+    "name": "Aerial Lift Bridge Ship",
+    "theme": "North Shore & landmarks",
+    "src": "/img/aerial-lift-bridge-ship-slate-coaster-img_5433.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Aerial Lift Bridge Ship engraved on a slate coaster",
+    "caption": "Aerial Lift Bridge Ship — photo reference IMG_5433"
+  },
+  {
+    "name": "Aerial Lift Bridge Ship",
+    "theme": "North Shore & landmarks",
+    "src": "/img/aerial-lift-bridge-ship-slate-coaster-img_5452.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Aerial Lift Bridge Ship engraved on a slate coaster",
+    "caption": "Aerial Lift Bridge Ship — photo reference IMG_5452"
+  },
+  {
+    "name": "Aerial Lift Bridge Tall Ship",
+    "theme": "North Shore & landmarks",
+    "src": "/img/aerial-lift-bridge-tall-ship-slate-coaster-img_5488.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Aerial Lift Bridge Tall Ship engraved on a slate coaster",
+    "caption": "Aerial Lift Bridge Tall Ship — photo reference IMG_5488"
+  },
+  {
+    "name": "Angler On Dock",
+    "theme": "Wildlife & outdoors",
+    "src": "/img/angler-on-dock-slate-coaster-img_5317.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Angler On Dock engraved on a slate coaster",
+    "caption": "Angler On Dock — photo reference IMG_5317"
+  },
+  {
+    "name": "Aurora Lake",
+    "theme": "Lakes & cabins",
+    "src": "/img/aurora-lake-slate-coaster-img_5373.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Aurora Lake engraved on a slate coaster",
+    "caption": "Aurora Lake — photo reference IMG_5373"
+  },
+  {
+    "name": "Back On The North Shore",
+    "theme": "North Shore & landmarks",
+    "src": "/img/back-on-the-north-shore-slate-coaster-img_5639.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Back On The North Shore engraved on a slate coaster",
+    "caption": "Back On The North Shore — photo reference IMG_5639"
+  },
+  {
+    "name": "Bald Eagle And American Flag",
+    "theme": "Patriotic & Americana",
+    "src": "/img/bald-eagle-and-american-flag-slate-coaster-img_0125.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Bald Eagle And American Flag engraved on a slate coaster",
+    "caption": "Bald Eagle And American Flag — photo reference IMG_0125"
+  },
+  {
+    "name": "Cabin Canoe",
+    "theme": "Lakes & cabins",
+    "src": "/img/cabin-canoe-slate-coaster-img_5406.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Cabin Canoe engraved on a slate coaster",
+    "caption": "Cabin Canoe — photo reference IMG_5406"
+  },
+  {
+    "name": "Can t Hear You Over The Loons Bigfoot",
+    "theme": "Coffee & humor",
+    "src": "/img/can-t-hear-you-over-the-loons-bigfoot-slate-coaster-img_5638.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Can t Hear You Over The Loons Bigfoot engraved on a slate coaster",
+    "caption": "Can t Hear You Over The Loons Bigfoot — photo reference IMG_5638"
+  },
+  {
+    "name": "Combine Harvester",
+    "theme": "Other coaster designs",
+    "src": "/img/combine-harvester-slate-coaster-img_5423.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Combine Harvester engraved on a slate coaster",
+    "caption": "Combine Harvester — photo reference IMG_5423"
+  },
+  {
+    "name": "Five Personalized Monogram",
+    "theme": "Personalized & local",
+    "src": "/img/five-personalized-monogram-slate-coasters-img_5653.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Five Personalized Monogram engraved on a slate coaster",
+    "caption": "Five Personalized Monogram — photo reference IMG_5653"
+  },
+  {
+    "name": "Foggy Dock",
+    "theme": "Lakes & cabins",
+    "src": "/img/foggy-dock-slate-coaster-img_5372.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Foggy Dock engraved on a slate coaster",
+    "caption": "Foggy Dock — photo reference IMG_5372"
+  },
+  {
+    "name": "Historic Lakeside Mansion",
+    "theme": "North Shore & landmarks",
+    "src": "/img/historic-lakeside-mansion-slate-coaster-img_5489.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Historic Lakeside Mansion engraved on a slate coaster",
+    "caption": "Historic Lakeside Mansion — photo reference IMG_5489"
+  },
+  {
+    "name": "Island Lake",
+    "theme": "Lakes & cabins",
+    "src": "/img/island-lake-slate-coaster-img_5397.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Island Lake engraved on a slate coaster",
+    "caption": "Island Lake — photo reference IMG_5397"
+  },
+  {
+    "name": "Lake Patio Freighter",
+    "theme": "North Shore & landmarks",
+    "src": "/img/lake-patio-freighter-slate-coaster-img_5396.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Lake Patio Freighter engraved on a slate coaster",
+    "caption": "Lake Patio Freighter — photo reference IMG_5396"
+  },
+  {
+    "name": "Lake Shoreline",
+    "theme": "Lakes & cabins",
+    "src": "/img/lake-shoreline-slate-coaster-img_5401.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Lake Shoreline engraved on a slate coaster",
+    "caption": "Lake Shoreline — photo reference IMG_5401"
+  },
+  {
+    "name": "Lake Superior Sea Arch",
+    "theme": "North Shore & landmarks",
+    "src": "/img/lake-superior-sea-arch-slate-coaster-img_5391.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Lake Superior Sea Arch engraved on a slate coaster",
+    "caption": "Lake Superior Sea Arch — photo reference IMG_5391"
+  },
+  {
+    "name": "Largemouth Bass",
+    "theme": "Wildlife & outdoors",
+    "src": "/img/largemouth-bass-slate-coaster-img_5477.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Largemouth Bass engraved on a slate coaster",
+    "caption": "Largemouth Bass — photo reference IMG_5477"
+  },
+  {
+    "name": "Legendary North Lumberjack Longhorn",
+    "theme": "Wildlife & outdoors",
+    "src": "/img/legendary-north-lumberjack-longhorn-slate-coaster-img_5649.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Legendary North Lumberjack Longhorn engraved on a slate coaster",
+    "caption": "Legendary North Lumberjack Longhorn — photo reference IMG_5649"
+  },
+  {
+    "name": "Lone Lake Dock",
+    "theme": "Lakes & cabins",
+    "src": "/img/lone-lake-dock-slate-coaster-img_5502.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Lone Lake Dock engraved on a slate coaster",
+    "caption": "Lone Lake Dock — photo reference IMG_5502"
+  },
+  {
+    "name": "Mount Rushmore Eagle",
+    "theme": "Patriotic & Americana",
+    "src": "/img/mount-rushmore-eagle-slate-coaster-img_5444.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Mount Rushmore Eagle engraved on a slate coaster",
+    "caption": "Mount Rushmore Eagle — photo reference IMG_5444"
+  },
+  {
+    "name": "Starry North Shore",
+    "theme": "North Shore & landmarks",
+    "src": "/img/starry-north-shore-slate-coaster-img_5286.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Starry North Shore engraved on a slate coaster",
+    "caption": "Starry North Shore — photo reference IMG_5286"
+  },
+  {
+    "name": "Underwater Fish",
+    "theme": "Wildlife & outdoors",
+    "src": "/img/underwater-fish-slate-coaster-img_5478.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Underwater Fish engraved on a slate coaster",
+    "caption": "Underwater Fish — photo reference IMG_5478"
+  },
+  {
+    "name": "Vintage Tractor Driver",
+    "theme": "Other coaster designs",
+    "src": "/img/vintage-tractor-driver-slate-coaster-img_5559.webp",
+    "w": 240,
+    "h": 180,
+    "alt": "Cabin-scene presentation of Vintage Tractor Driver engraved on a slate coaster",
+    "caption": "Vintage Tractor Driver — photo reference IMG_5559"
+  }
+];
+
 /** Each catalog entry has the exact PNG basename customers should ask for. */
-const isArtworkPreview = (piece: (typeof COASTER_CATALOG)[number]) =>
+const isArtworkPreview = (piece: {src:string}) =>
   piece.src.includes("/coaster-artwork-");
 
 const coasterShelves = COASTER_THEMES.map((name) => ({
   name,
-  pieces: COASTER_CATALOG.filter((piece) => piece.theme === name),
+  pieces: [...COASTER_CATALOG, ...ADDITIONAL_COASTER_PHOTOS].filter((piece) => piece.theme === name),
 })).filter((shelf) => shelf.pieces.length > 0);
 
 
@@ -148,7 +370,7 @@ const photographsInPageOrder = [
 ];
 
 
-function CoasterSceneImage({ piece }: { piece: (typeof COASTER_CATALOG)[number] }) {
+function CoasterSceneImage({ piece }: { piece: {src: string; name: string} }) {
   return (
     <div className="relative aspect-square overflow-hidden bg-ground-deep" role="img" aria-label={`Digital cabin scene showing the ${piece.name} engraving design on a slate coaster`}>
       <img src="/img/first-coffee-then-we-quest-slate-coaster-img_6292.webp" alt="" width={1254} height={1254} loading="lazy" className="absolute inset-0 h-full w-full object-cover" aria-hidden="true" />
@@ -485,7 +707,7 @@ export default function ForYourTable() {
                   <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-10">
                     {shelf.pieces.map((piece, j) =>
                       isArtworkPreview(piece) ? (
-                        <div key={piece.productionFilename} className="border border-line/40 bg-slate-plate p-4">
+                        <div key={piece.src} className="border border-line/40 bg-slate-plate p-4">
                           <span className="mb-3 inline-block border border-line/40 px-3 py-1 text-xs font-semibold text-cream-dim">Digital cabin-scene preview — not a finished-product photograph</span>
                           <CoasterSceneImage piece={piece} />
                           <p className="mt-3 font-semibold text-ground">{piece.name}</p>
