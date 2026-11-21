@@ -343,6 +343,12 @@ const coasterShelves = COASTER_THEMES.map((name) => ({
   pieces: COASTER_CATALOG.filter((piece) => piece.theme === name),
 })).filter((shelf) => shelf.pieces.length > 0);
 
+/** The wildlife collection cover is an actual Freeman Eclectic eagle coaster, never a stock image. */
+const coasterThemeHero = (shelf: (typeof coasterShelves)[number]) =>
+  shelf.name === "Wildlife & outdoors"
+    ? shelf.pieces.find((piece) => piece.src === "/img/eagle-over-lake-slate-coaster-img_5455.webp") ?? shelf.pieces[0]
+    : shelf.pieces[0];
+
 
 /** Names match the engraving PNG files received November 16, 2026. */
 const BOTTLE_OPENER_COLLECTIONS = [
@@ -443,14 +449,14 @@ export default function ForYourTable() {
                 aria-label={`See ${shelf.pieces.length} coaster designs in ${shelf.name}`}
                 className="group block min-w-0 overflow-hidden border border-line bg-ground shadow-print transition-colors hover:border-amber focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber"
               >
-                {isArtworkPreview(shelf.pieces[0]) ? (
+                {isArtworkPreview(coasterThemeHero(shelf)) ? (
                   <div className="relative">
-                    <CoasterSceneImage piece={shelf.pieces[0]} />
+                    <CoasterSceneImage piece={coasterThemeHero(shelf)} />
                     <span className="absolute bottom-0 inset-x-0 bg-ink/90 p-1 text-center text-[10px] font-semibold text-ground">Digital design preview</span>
                   </div>
                 ) : (
                   <img
-                    src={shelf.pieces[0].src}
+                    src={coasterThemeHero(shelf).src}
                     alt={`Sample coaster from ${shelf.name}`}
                     width={500}
                     height={500}
