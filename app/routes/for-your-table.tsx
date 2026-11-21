@@ -112,7 +112,7 @@ const COASTER_THEMES = [
 ] as const;
 
 const gamePieces = PIECES.filter((piece) => !/coaster/i.test(piece.name));
-/** Additional already-staged coaster scenes, labeled by their source photo reference.
+/** Reference-only photographs: keep archived for exact original-PNG matching before listing.\n * Do not display these 24 photo-derived entries as orderable designs without verified production filenames.\n * Additional already-staged coaster scenes, labeled by their source photo reference.
  * Production PNG basenames are deliberately NOT inferred from photography filenames.
  */
 const ADDITIONAL_COASTER_PHOTOS: (PieceSpec & {theme:string})[] = [
@@ -340,7 +340,7 @@ const isArtworkPreview = (piece: {src:string}) =>
 
 const coasterShelves = COASTER_THEMES.map((name) => ({
   name,
-  pieces: [...COASTER_CATALOG, ...ADDITIONAL_COASTER_PHOTOS].filter((piece) => piece.theme === name),
+  pieces: COASTER_CATALOG.filter((piece) => piece.theme === name),
 })).filter((shelf) => shelf.pieces.length > 0);
 
 
@@ -432,7 +432,7 @@ export default function ForYourTable() {
             Shop coasters by theme
           </h2>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-soft sm:text-base">
-            Tap a collection to jump straight to its designs. Pick your favorite and contact us by its name — no need to scroll through every coaster.
+            Tap a collection to see currently listed designs. The full collection is being added as original production names and images are checked.
           </p>
           <nav aria-label="Shop coaster themes" className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-5 xl:gap-4">
             {coasterShelves.map((shelf) => (
@@ -720,10 +720,10 @@ export default function ForYourTable() {
           <section id="table-coasters" aria-labelledby="table-coasters-heading" className="mt-20 scroll-mt-20">
             <h2 id="table-coasters-heading" className="font-serif text-3xl italic text-ground">Slate coasters</h2>
             <p className="mt-2 max-w-2xl text-cream-dim">
-              Find a design by theme. Every coaster has its own name so you can request the exact design.
+              Browse the currently named production designs by theme. More designs from our original collection will be added as their artwork and images are verified.
             </p>
             <p className="mt-3 text-sm text-cream-dim">
-              The selected theme appears below. Use the category image cards near the top of this page to change collections.
+              The selected theme appears below. The gallery shows named production designs, with artwork-only previews clearly marked. Use the category cards near the top to change collections.
             </p>
             <a href="#coaster-theme-browser" className="mt-5 inline-block border border-line/40 px-4 py-2 text-sm font-semibold text-ground hover:border-amber focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber">
               Back to coaster themes
