@@ -12,7 +12,7 @@ export type CoasterCatalogPiece = PieceSpec & {
   productionFilename: string;
 };
 
-export const COASTER_CATALOG: CoasterCatalogPiece[] = [
+const ALL_CANDIDATE_COASTERS: CoasterCatalogPiece[] = [
   {
     name: "AITKIN LAKE COASTER",
     productionFilename: "AITKIN LAKE COASTER.png",
@@ -294,3 +294,11 @@ export const COASTER_CATALOG: CoasterCatalogPiece[] = [
     caption: "THE BOOK IS BETTER THAN THE MOVIE — production artwork preview",
   },
 ];
+
+/** Public gallery: only entries backed by existing coaster photographs.
+ * Preserve artwork-only candidates for later review, but do not display staged
+ * digital composites as though they were engraved physical coasters.
+ */
+export const COASTER_CATALOG: CoasterCatalogPiece[] = ALL_CANDIDATE_COASTERS.filter(
+  (piece) => !piece.src.includes('/coaster-artwork-'),
+);
