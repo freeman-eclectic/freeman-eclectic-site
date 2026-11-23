@@ -359,10 +359,10 @@ const BOTTLE_OPENER_COLLECTIONS = [
 ] as const;
 
 const customPetPhotograph = {
-  src: "/img/owl-portrait-slate-coaster-img_5728.webp",
-  alt: "A custom slate coaster engraved from a customer's photograph of a favorite pigeon",
-  w: 230,
-  h: 160,
+  src: "/img/husky-custom-slate-coaster.webp",
+  alt: "Actual Freeman Eclectic slate coaster engraved with a Siberian Husky portrait",
+  w: 240,
+  h: 320,
 };
 
 const photographsInPageOrder = [
@@ -471,7 +471,7 @@ export default function ForYourTable() {
               </a>
             ))}
             <a href="#custom-pet-coasters" className="group block overflow-hidden border border-line bg-ground shadow-print hover:border-amber focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber">
-              <img src="/img/owl-portrait-slate-coaster-img_5728.webp" alt="Custom bird portrait engraved on slate" width={500} height={500} loading="lazy" className="block aspect-square w-full object-cover" />
+              <img src="/img/husky-custom-slate-coaster.webp" alt="Actual Husky portrait engraved on a Freeman Eclectic slate coaster" width={240} height={320} loading="lazy" className="block aspect-square w-full object-cover" />
               <span className="block p-3">
                 <span className="block font-serif text-base leading-tight text-ink sm:text-lg">Custom pet portraits</span>
                 <span className="mt-1 block text-xs font-medium text-ink-soft">From your photo · View examples</span>
@@ -768,8 +768,8 @@ export default function ForYourTable() {
                 Your favorite pet, made into a keepsake.
               </h2>
               <p className="mt-3 max-w-3xl text-[16px] leading-relaxed text-ink-soft">
-                This pigeon coaster was a one-of-a-kind commission, engraved from a customer's
-                photograph of a favorite bird. We can also explore a portrait of your own dog,
+                This Husky portrait shows an actual Freeman Eclectic slate coaster made from a
+                pet portrait. We can create a custom engraving from a photograph of your own dog,
                 cat, or other much-loved pet. Send us a clear photo and we'll discuss what works
                 best on slate.
               </p>
@@ -777,7 +777,7 @@ export default function ForYourTable() {
                 <figure className="m-0 bg-ground p-3 shadow-print">
                   <GalleryPhotograph {...customPetPhotograph} />
                   <figcaption className="pt-3 font-serif text-base italic text-ink-soft">
-                    Custom pigeon portrait — made from a customer's photo.
+                    Actual Husky portrait engraved on slate — an example of our custom pet work.
                   </figcaption>
                 </figure>
                 <div className="flex h-full flex-col justify-center gap-4 border border-line p-7">

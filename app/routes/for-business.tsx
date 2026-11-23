@@ -61,28 +61,43 @@ export default function ForBusiness() {
               wooden Christmas ornament. A house-shaped keepsake is a thoughtful way for
               realtors to stay connected with families long after closing day.
             </p>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              <div className="border border-line/40 bg-slate-plate p-5">
-                <h3 className="font-serif text-xl italic text-ground">First Christmas in Our New Home</h3>
-                <p className="mt-3 text-sm leading-relaxed text-cream-dim">
-                  House-shaped wooden ornament with engraved holiday wording, year,
-                  snowflakes, and a hanging hole. Personalization can be discussed for
-                  each recipient or family.
-                </p>
-              </div>
-              <div className="border border-line/40 bg-slate-plate p-5">
-                <h3 className="font-serif text-xl italic text-ground">Holiday gifts for your client list</h3>
-                <p className="mt-3 text-sm leading-relaxed text-cream-dim">
-                  Ask about repeatable batches for your past clients, new homeowners,
-                  and brokerage holiday gifting. We can review wording, quantity,
-                  personalization, and delivery needs together.
-                </p>
+            <div className="mt-6 grid gap-6 md:grid-cols-[minmax(0,320px)_minmax(0,1fr)]">
+              <figure className="m-0 bg-ground p-3 shadow-print">
+                <img
+                  src="/img/first-christmas-new-home-ornament.webp"
+                  alt="Actual Freeman Eclectic wooden house-shaped ornament engraved First Christmas in Our New Home 2026 with snowflakes"
+                  width={240}
+                  height={320}
+                  loading="eager"
+                  className="block h-auto w-full"
+                />
+                <figcaption className="pt-3 text-sm italic text-ink-soft">
+                  Our actual First Christmas in Our New Home wooden ornament, 2026.
+                </figcaption>
+              </figure>
+              <div className="grid content-center gap-4">
+                <div className="border border-line/40 bg-slate-plate p-5">
+                  <h3 className="font-serif text-xl italic text-ground">First Christmas in Our New Home</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-cream-dim">
+                    Our house-shaped wooden ornament is engraved with the 2026 date, snowflakes,
+                    holiday wording, and a hanging hole. Ask about personalizing ornaments for
+                    each recipient or family.
+                  </p>
+                </div>
+                <div className="border border-line/40 bg-slate-plate p-5">
+                  <h3 className="font-serif text-xl italic text-ground">Holiday gifts for your client list</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-cream-dim">
+                    Ask about repeatable batches for past clients, new homeowners,
+                    and brokerage holiday gifting. We can review wording, quantity,
+                    personalization, and delivery needs together.
+                  </p>
+                </div>
               </div>
             </div>
             <p className="mt-5 max-w-3xl text-sm leading-relaxed text-cream-dimmer">
-              The finished ornament photograph is not yet in this online gallery. Please
-              contact us for design examples, personalization options, and a quote.
-              We confirm each order's design, quantity, and timeline before production.
+              The photo above shows our real finished wooden ornament. Contact us for
+              personalization options and a quote; we confirm each order's design, quantity,
+              and timeline before production.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-5">
               <Btn href={CONTACT_FORM_URL} variant="outline">Ask about Christmas ornaments for clients</Btn>
