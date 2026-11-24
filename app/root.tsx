@@ -40,6 +40,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Google Analytics 4: Freeman Eclectic website visitor and campaign attribution. */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RBLG6FW2LN" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-RBLG6FW2LN');`,
+          }}
+        />
         <Meta />
         <Links />
       </head>
