@@ -14,6 +14,26 @@ export type CoasterCatalogPiece = PieceSpec & {
 
 const ALL_CANDIDATE_COASTERS: CoasterCatalogPiece[] = [
   {
+    "name": "Moonlit Walleye",
+    "productionFilename": "MOONLIT WALLEYE HD COASTER.png",
+    "theme": "Wildlife & outdoors",
+    "src": "/img/moonlit-walleye-img_5374.webp",
+    "w": 1024,
+    "h": 1024,
+    "alt": "Moonlit Walleye engraved on slate, shown on a wooden cabin table",
+    "caption": "Moonlit Walleye"
+  },
+  {
+    "name": "Loon on the Lake",
+    "productionFilename": "LOON HIDEF COASTER.png",
+    "theme": "Lakes & cabins",
+    "src": "/img/loon-on-the-lake-img_5375.webp",
+    "w": 1024,
+    "h": 1024,
+    "alt": "Loon on the Lake engraved on slate, shown on a wooden cabin table",
+    "caption": "Loon on the Lake"
+  },
+  {
     "name": "Ely Bull Moose",
     "productionFilename": "ELY BULL MOOSE COASTER.png",
     "theme": "Wildlife & outdoors",
