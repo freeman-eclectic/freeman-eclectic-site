@@ -5,7 +5,7 @@ import type { PieceSpec } from "./table";
  * All production filenames were found in the customer's three November 16 PNG archives.
  * Image subjects and filename associations should receive a final visual quality review
  * before being treated as definitive production matches.
- * The displayed name MUST stay identical to the production PNG basename.
+ * Owner-approved display titles may differ from the exact production filename.
  */
 export type CoasterCatalogPiece = PieceSpec & {
   theme: string;
@@ -13,6 +13,186 @@ export type CoasterCatalogPiece = PieceSpec & {
 };
 
 const ALL_CANDIDATE_COASTERS: CoasterCatalogPiece[] = [
+  {
+    "name": "Duluth Bridge and Freighter",
+    "productionFilename": "DULUTH BRIDGE AND FREIGHTER COASTER 2.png",
+    "theme": "North Shore & landmarks",
+    "src": "/img/aerial-lift-bridge-ship-slate-coaster-img_5452.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Duluth Bridge and Freighter engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Duluth Bridge and Freighter"
+  },
+  {
+    "name": "Tall Ship",
+    "productionFilename": "TALL SHIP LEAVING DULUTH HARBOR.png",
+    "theme": "North Shore & landmarks",
+    "src": "/img/aerial-lift-bridge-tall-ship-slate-coaster-img_5488.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Tall Ship engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Tall Ship"
+  },
+  {
+    "name": "Angler on Dock",
+    "productionFilename": "FISHING FROM THE DOCK HD COASTER.png",
+    "theme": "Lakes & cabins",
+    "src": "/img/angler-on-dock-slate-coaster-img_5317.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Angler on Dock engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Angler on Dock"
+  },
+  {
+    "name": "Northern Lights Over Pines",
+    "productionFilename": "NORTHERN LIGHTS OVER THE PINES.png",
+    "theme": "Lakes & cabins",
+    "src": "/img/aurora-lake-slate-coaster-img_5373.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Northern Lights Over Pines engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Northern Lights Over Pines"
+  },
+  {
+    "name": "Back on the North Shore Where the WiFi Is Weak",
+    "productionFilename": "BACK ON THE NORTH SHORE WHERE MY WIFI IS WEAK BUT MY SOUL IS STRONG COASTER.png",
+    "theme": "North Shore & landmarks",
+    "src": "/img/back-on-the-north-shore-slate-coaster-img_5639.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Back on the North Shore Where the WiFi Is Weak engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Back on the North Shore Where the WiFi Is Weak"
+  },
+  {
+    "name": "Can't Hear You Over the Loons",
+    "productionFilename": "SASQUATCH SORRY I CAN'T HEAR YOU OVE THE LOONS.png",
+    "theme": "Wildlife & outdoors",
+    "src": "/img/can-t-hear-you-over-the-loons-bigfoot-slate-coaster-img_5638.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Can't Hear You Over the Loons engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Can't Hear You Over the Loons"
+  },
+  {
+    "name": "Misty Lake",
+    "productionFilename": "MISTY LAKE HD COASTER.png",
+    "theme": "Lakes & cabins",
+    "src": "/img/foggy-dock-slate-coaster-img_5372.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Misty Lake engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Misty Lake"
+  },
+  {
+    "name": "Glensheen Mansion",
+    "productionFilename": "GLENSHEEN MANSION COASTER.png",
+    "theme": "North Shore & landmarks",
+    "src": "/img/historic-lakeside-mansion-slate-coaster-img_5489.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Glensheen Mansion engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Glensheen Mansion"
+  },
+  {
+    "name": "Ely Burnt Side Lake",
+    "productionFilename": "ELY BURNT SIDE LAKE COASTER.png",
+    "theme": "Lakes & cabins",
+    "src": "/img/island-lake-slate-coaster-img_5397.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Ely Burnt Side Lake engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Ely Burnt Side Lake"
+  },
+  {
+    "name": "Watching Ore Ship From the Cabin",
+    "productionFilename": "WATCHING ORESHIPS FROM THE CABIN HD COASTER.png",
+    "theme": "North Shore & landmarks",
+    "src": "/img/lake-patio-freighter-slate-coaster-img_5396.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Watching Ore Ship From the Cabin engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Watching Ore Ship From the Cabin"
+  },
+  {
+    "name": "Tettegouche Shovel Head",
+    "productionFilename": "TETTEGOUCHE SHOVEL POINT HD COASTER.png",
+    "theme": "North Shore & landmarks",
+    "src": "/img/lake-superior-sea-arch-slate-coaster-img_5391.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Tettegouche Shovel Head engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Tettegouche Shovel Head"
+  },
+  {
+    "name": "Largemouth Bass",
+    "productionFilename": "LARGE MOUTH BASS HD COASTER.png",
+    "theme": "Wildlife & outdoors",
+    "src": "/img/largemouth-bass-slate-coaster-img_5477.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Largemouth Bass engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Largemouth Bass"
+  },
+  {
+    "name": "Welcome to the Legendary North",
+    "productionFilename": "PAUL BUNYAN COASTER.png",
+    "theme": "North Shore & landmarks",
+    "src": "/img/legendary-north-lumberjack-longhorn-slate-coaster-img_5649.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Welcome to the Legendary North engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Welcome to the Legendary North"
+  },
+  {
+    "name": "Lone Lake Dock",
+    "productionFilename": "LONE LAKE COASTER.png",
+    "theme": "Lakes & cabins",
+    "src": "/img/lone-lake-dock-slate-coaster-img_5502.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Lone Lake Dock engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Lone Lake Dock"
+  },
+  {
+    "name": "Ely Stars Over the Bay",
+    "productionFilename": "ELY STARS OVER THE BAY COASTER.png",
+    "theme": "Lakes & cabins",
+    "src": "/img/starry-north-shore-slate-coaster-img_5286.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Ely Stars Over the Bay engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Ely Stars Over the Bay"
+  },
+  {
+    "name": "Northern Pike",
+    "productionFilename": "NORTHERN PIKE AND BAIT HD COASTER.png",
+    "theme": "Wildlife & outdoors",
+    "src": "/img/underwater-fish-slate-coaster-img_5478.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Northern Pike engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Northern Pike"
+  },
+  {
+    "name": "Vintage Tractor Driver",
+    "productionFilename": "TRACTOR PLOWING FIELD COASTER.png",
+    "theme": "Farm & country",
+    "src": "/img/vintage-tractor-driver-slate-coaster-img_5559.webp",
+    "w": 1254,
+    "h": 1254,
+    "alt": "Vintage Tractor Driver engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Vintage Tractor Driver"
+  },
+  {
+    "name": "Today's Plan Is to Drink Coffee",
+    "productionFilename": "TODAY'S PLAN IS TO DRINK COFFEE.png",
+    "theme": "Coffee & humor",
+    "src": "/img/todays-plan-coffee-slate.webp",
+    "w": 820,
+    "h": 820,
+    "alt": "Today's Plan Is to Drink Coffee engraved on a Freeman Eclectic slate coaster in a cabin setting",
+    "caption": "Today's Plan Is to Drink Coffee"
+  },
   {
     name: "AITKIN LAKE COASTER",
     productionFilename: "AITKIN LAKE COASTER.png",
