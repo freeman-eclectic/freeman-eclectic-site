@@ -14,6 +14,26 @@ export type CoasterCatalogPiece = PieceSpec & {
 
 const ALL_CANDIDATE_COASTERS: CoasterCatalogPiece[] = [
   {
+    "name": "Ely Eagle\u2019s Flight",
+    "productionFilename": "ELY EAGLE'S FLIGHT COASTER.png",
+    "theme": "Wildlife & outdoors",
+    "src": "/img/ely-eagles-flight-img_5348.webp",
+    "w": 1024,
+    "h": 1024,
+    "alt": "Ely Eagle\u2019s Flight engraved on slate, shown on a wooden cabin table",
+    "caption": "Ely Eagle\u2019s Flight"
+  },
+  {
+    "name": "Ely Campfire Reflections",
+    "productionFilename": "ELY CAMPFIRE REFLECTIONS COASTER.png",
+    "theme": "Lakes & cabins",
+    "src": "/img/ely-campfire-reflections-img_5351.webp",
+    "w": 1024,
+    "h": 1024,
+    "alt": "Ely Campfire Reflections engraved on slate, shown on a wooden cabin table",
+    "caption": "Ely Campfire Reflections"
+  },
+  {
     "name": "Ely Canoe",
     "productionFilename": "ELY CANOE COASTER.png",
     "theme": "Lakes & cabins",
