@@ -14,6 +14,26 @@ export type CoasterCatalogPiece = PieceSpec & {
 
 const ALL_CANDIDATE_COASTERS: CoasterCatalogPiece[] = [
   {
+    "name": "Ely Canoe",
+    "productionFilename": "ELY CANOE COASTER.png",
+    "theme": "Lakes & cabins",
+    "src": "/img/ely-canoe-img_5310.webp",
+    "w": 1024,
+    "h": 1024,
+    "alt": "Ely Canoe engraved on slate, shown on a wooden cabin table",
+    "caption": "Ely Canoe"
+  },
+  {
+    "name": "Deer Family in the Field at Night",
+    "productionFilename": "DEER FAMILY IN FIELD AT NIGHT HD COASTER.png",
+    "theme": "Wildlife & outdoors",
+    "src": "/img/deer-family-in-field-img_5430.webp",
+    "w": 1024,
+    "h": 1024,
+    "alt": "Deer Family in the Field at Night engraved on slate, shown on a wooden cabin table",
+    "caption": "Deer Family in the Field at Night"
+  },
+  {
     "name": "Duluth Bridge and Freighter",
     "productionFilename": "DULUTH BRIDGE AND FREIGHTER COASTER 2.png",
     "theme": "North Shore & landmarks",
