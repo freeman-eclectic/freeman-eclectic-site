@@ -13,6 +13,17 @@ export type CoasterCatalogPiece = PieceSpec & {
 };
 
 const ALL_CANDIDATE_COASTERS: CoasterCatalogPiece[] = [
+  // P07: owner verified artwork match and presentation on November 27, 2026.
+  {
+  "name": "Lake Vermillion Cabin",
+  "productionFilename": "LAKE VERMILLION CABIN COASTER.png",
+  "theme": "Lakes & cabins",
+  "src": "/img/cabin-canoe-slate-coaster-img_5406.webp",
+  "w": 1254,
+  "h": 1254,
+  "alt": "Lake Vermillion Cabin engraved on a Freeman Eclectic slate coaster",
+  "caption": "Lake Vermillion Cabin"
+},
   {
     "name": "Moonlit Walleye",
     "productionFilename": "MOONLIT WALLEYE HD COASTER.png",
